@@ -21,11 +21,6 @@ struct BinaryNumber decToBin(int number, int length){
         cacheBinNumber[i] = number % 2;    
         number = number / 2;    
     }
-    /*
-    for(int c = i+1; c < 11; c++){
-        cacheBinNumber[a] = 0;
-    }
-    */
 
     binNumber.length = length;
 
@@ -41,8 +36,31 @@ struct BinaryNumber decToBin(int number, int length){
     return binNumber; 
 }
 
+// Converts binary number in decimal number
 int binToDec(int binaryNumber[], int lenght){
-    // Create Binary to Decimal Converter
+    int indexValue = 1;
+    int number = 0;
+
+    // Test if number is correct
+    for(int i = 0; i < lenght; i++){
+        if(binaryNumber[i] != 1 && binaryNumber[i] != 0){
+            return -1;
+        }
+    }
+
+    // Calculate decimal Number
+    for(int i = lenght-1; i >= 0; i--){
+        if(binaryNumber[i] == 1){
+            number += indexValue;
+        }
+
+        if(i == lenght){
+            indexValue++;
+        }else{
+            indexValue *= 2;
+        }
+    }
+    return number;
 }
 
 #endif

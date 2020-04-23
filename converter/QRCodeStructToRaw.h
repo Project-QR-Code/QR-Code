@@ -2,7 +2,7 @@
 #define _QRCODESTRUCTTORAW_H_
 
 #include "../model.h"
-#include "./decToBin.h"
+#include "./binaryConverter.h"
 #include <stdio.h>
 
 // Processed Raw data

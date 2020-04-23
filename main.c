@@ -14,5 +14,7 @@ int main(){
     char *test_string = "TEST";
     strcpy(test.data, test_string);
     convertQrStructToRaw(test);
+    int array[] = {0, 1, 0, 0, 0};
+    printf("Decimal: %d\n", binToDec(array, 5));
     return 0;
 }
