@@ -3,6 +3,7 @@
 
 #include "../model.h"
 #include "./decToBin.h"
+#include <stdio.h>
 
 // Processed Raw data
 int QRCodeRawData[];
@@ -34,15 +35,65 @@ void convertQrStructToRaw(struct QRCode data){
     //TODO: check if char array in struct data is correct
 
     // Create Blocks of 2 Characters and calculate binary Number
-    for(int i = 0; i < data.lengthOfData/2; i++){
+    for(int i = 0; i < data.lengthOfData; i+=2){
+        
         // Calculate Block Value
-        int blockDecValue = getIndexInMapCharacters(data.data[i]) * 45;
-        blockDecValue += getIndexInMapCharacters(data.data[i+1]);
+        int blockDecValue = getIndexInMapCharacters((char)data.data[i]) * 45;
+        blockDecValue += getIndexInMapCharacters((char)data.data[i+1]);
+        printf("Block Dec Value: %d\n", blockDecValue);
         // Convert block value to binary number
-        struct BinaryNumber tempBinNumber = decToBin(blockDecValue);
+        struct BinaryNumber tempBinNumber = decToBin(blockDecValue, 11);
         // Extend binary number into length of 11 Bits (attach 0)
-        // Add binary Number to dataBlocksBinary
+        
+        printf("Binary Number: \n");
+        for(int c = 0; c < tempBinNumber.length; c++){
+            printf("%d", tempBinNumber.array[c]);
+        }
+        printf("\n");
+
+        int missingZeroes = 11 - tempBinNumber.length;
+        for(int a = lengthDataBlocksBinary; a < (lengthDataBlocksBinary + missingZeroes); a++){
+            dataBlocksBinary[a] = 0;
+        }
+        int b = 0; 
+        for(int a = lengthDataBlocksBinary + missingZeroes; a < lengthDataBlocksBinary + 11; a++){
+            dataBlocksBinary[a] = tempBinNumber.array[b];
+            b++;
+        }
+        lengthDataBlocksBinary += 11;
     }
+
+    // Write Type of Data (codification id)
+    for(int i = 0; i < 4; i++){
+        QRCodeRawData[i] = data.codificationId[i];
+    }
+    lengthRawData += 4;
+    
+    // Write length of data
+    struct BinaryNumber tmpBinNumber = decToBin(data.lengthOfData, 9);
+    for(int i = 0; i < 9; i++){
+        QRCodeRawData[i+lengthRawData] = tmpBinNumber.array[i];
+    }  
+    lengthRawData += 9;
+
+    // Write processed payload to raw array
+    for(int i = 0; i < (data.lengthOfData/2)*11; i++){
+        QRCodeRawData[i+lengthRawData] = dataBlocksBinary[i];
+    }
+    lengthRawData += (data.lengthOfData/2)*11;
+
+    // Add terminator (4 zeroes)
+    for(int i = 0; i < 4; i++){
+        QRCodeRawData[lengthRawData + i] = 0;
+    }
+    lengthRawData += 4;
+
+    printf("Binary Data: ");
+    for(int i = 0; i < lengthRawData; i++){
+        printf("%d", QRCodeRawData[i]);
+    }
+    printf("\n");
+    
 }
 
 #endif

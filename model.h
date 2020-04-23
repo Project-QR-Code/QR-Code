@@ -7,15 +7,15 @@ int QRCodeRawData[2064];
 
 struct QRCode {
     // Identification Number is to set type of data (Characters, Numbers etc) (4 Bit)
-    // Example: Character = 0010 (10)
-    int codificationId;
+    // Example: Character = 0010
+    int codificationId[4];
 
     // Gives length of Data(9 Bit)
     int lengthOfData;
 
     // Maximum Character of QR-Code is 256. But we process only that much data as lengthOfData holds
     // data[character]
-    char* data[256];
+    char data[256];
 };
 
 #endif
