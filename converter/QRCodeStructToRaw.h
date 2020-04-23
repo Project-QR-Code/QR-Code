@@ -40,16 +40,9 @@ void convertQrStructToRaw(struct QRCode data){
         // Calculate Block Value
         int blockDecValue = getIndexInMapCharacters((char)data.data[i]) * 45;
         blockDecValue += getIndexInMapCharacters((char)data.data[i+1]);
-        printf("Block Dec Value: %d\n", blockDecValue);
         // Convert block value to binary number
         struct BinaryNumber tempBinNumber = decToBin(blockDecValue, 11);
         // Extend binary number into length of 11 Bits (attach 0)
-        
-        printf("Binary Number: \n");
-        for(int c = 0; c < tempBinNumber.length; c++){
-            printf("%d", tempBinNumber.array[c]);
-        }
-        printf("\n");
 
         int missingZeroes = 11 - tempBinNumber.length;
         for(int a = lengthDataBlocksBinary; a < (lengthDataBlocksBinary + missingZeroes); a++){
@@ -88,6 +81,35 @@ void convertQrStructToRaw(struct QRCode data){
     }
     lengthRawData += 4;
 
+    
+    // Create blocks of eight out of QRCodeRawData
+    // If zeroes are to add 
+    while(lengthRawData % 8 != 0){
+        QRCodeRawData[lengthRawData + 1] = 0;
+        lengthRawData++;
+    }
+
+    // We use the small version 1 Qr-Code so max bits are 72
+    //TODO: maybe scale Qr-Code so different versions are used
+    int specialBlock1[] = {1, 1, 1, 0, 1, 1, 0, 0};
+    int specialBlock2[] = {0, 0, 0, 1, 0, 0, 0 ,1};
+    int counter = 0;
+    // Fill up raw data with special blocks until max bits reached
+    while(lengthRawData < 72){
+        if(counter % 2 == 0){
+            for(int i = 0; i < 8; i++){
+                QRCodeRawData[lengthRawData + i] = specialBlock1[i];
+            }
+        }else{
+            for(int i = 0; i < 8; i++){
+                QRCodeRawData[lengthRawData + i] = specialBlock2[i];
+            }
+        }
+        counter++;
+        lengthRawData += 8;
+    }
+    
+    
     printf("Binary Data: ");
     for(int i = 0; i < lengthRawData; i++){
         printf("%d", QRCodeRawData[i]);
