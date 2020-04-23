@@ -4,6 +4,7 @@
 #include <string.h>
 
 int main(){
+    // TESTING!
     struct QRCode test;
     test.codificationId[0] = 0;
     test.codificationId[1] = 0;
@@ -13,4 +14,5 @@ int main(){
     char *test_string = "TEST";
     strcpy(test.data, test_string);
     convertQrStructToRaw(test);
+    return 0;
 }
