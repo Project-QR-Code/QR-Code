@@ -6,7 +6,7 @@
 
 int getIndexInMapCharacters(char query){
     for(int i = 0; i < 45; i++){
-        if(mapCharacters[i] == query){
+        if(mapAlphanumericalCharacters[i] == query){
             return i;
         }
     }
