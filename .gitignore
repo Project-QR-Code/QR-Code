@@ -2,6 +2,7 @@
 *.out
 
 # visual studio stuff
+.vscode/
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
