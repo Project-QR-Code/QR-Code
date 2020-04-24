@@ -1,5 +1,5 @@
 #include "../model.h"
-#include "./binaryConverter.h"
+#include "../binaryConverter/binaryConverter.h"
 #include "./QRCodeStructToRaw.h"
 #include <stdio.h>
 

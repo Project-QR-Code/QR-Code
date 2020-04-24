@@ -1,15 +1,8 @@
-#ifndef _DECTOBIN_H_
-#define _DECTOBIN_H_
-
 #include <stdio.h>
+#include "./binaryConverter.h"
 
-struct BinaryNumber {
-    int array[11];
-    int length;
-};
 
 // Converts a decimal Number into a struct with array and bits
-
 struct BinaryNumber decToBin(int number, int length){
     
     struct BinaryNumber binNumber;
@@ -62,5 +55,3 @@ int binToDec(int binaryNumber[], int lenght){
     }
     return number;
 }
-
-#endif
