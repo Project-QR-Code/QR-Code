@@ -18,16 +18,30 @@ static int getIndexInMapCharacters(char query){
     return -1;
 }
 
+// Searches for character in alphanumeric characters, returns 0 if found, -1 if not
+static int isInMapCharacters(char query){
+    for(int i = 0; i < 45; i++){
+        if(query == mapAlphanumericalCharacters[i]){
+            return 0;
+        }
+    }
+    return -1;
+}
+
 
 // Converts struct with data to array with raw data
 // Adds hamming codes to data
 void convertQrStructToRaw(struct QRCode data){
-    // TODO: calculate Number of size or reallocate on every iteration
     // Character Data of QRCode in binary (without id and length)
     int dataBlocksBinary[256];
     int lengthDataBlocksBinary = 0;
-
-    //TODO: check if char array in struct data is correct
+    
+    for(int i = 0; i < data.lengthOfData; i++){
+        if(isInMapCharacters(data.data[i]) == -1){
+            fprintf(stderr, "Input data is not valid!\n");
+            return;
+        }
+    }
 
     // Create Blocks of 2 Characters and calculate binary Number
     for(int i = 0; i < data.lengthOfData; i+=2){
