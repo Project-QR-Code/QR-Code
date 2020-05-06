@@ -37,6 +37,7 @@ int binToDec(int binaryNumber[], int lenght){
     // Test if number is correct
     for(int i = 0; i < lenght; i++){
         if(binaryNumber[i] != 1 && binaryNumber[i] != 0){
+            fprintf(stderr, "Number is not a binary Number!\n");
             return -1;
         }
     }
