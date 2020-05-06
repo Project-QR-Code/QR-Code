@@ -10,8 +10,6 @@ int lengthRawData;
 // Map characters to special numbers(not ascii! alphanumerical code)
 const char mapAlphanumericalCharacters[45];
 
-//int getIndexInMapCharacters(char query);
-
 // Converts struct with data to array with raw data
 // Adds hamming codes to data
 void convertQrStructToRaw(struct QRCode data);
