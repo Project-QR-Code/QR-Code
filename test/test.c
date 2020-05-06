@@ -14,5 +14,6 @@ int main(){
     char *test_string = "TEST";
     strcpy(test.data, test_string);
     convertQrStructToRaw(test);
-    return 0;
+    3öasöfk
+	return 0;
 }
