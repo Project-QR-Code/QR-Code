@@ -139,7 +139,7 @@ void convertQrStructToRaw(struct QRCode data){
     /// ECC Blocks is 17
     /// Scroll down to result and copy in here
     int decimalCorrectionBlocks[] = {208, 147, 120, 235, 20, 36, 10, 42, 73, 162, 140, 142, 217, 162, 207, 0, 62};
-    // Add correction Blocks to decimal Numbers
+    /// Add correction Blocks to decimal Numbers
     for(int i = 0; i < 17; i++){
         decimalNumbers[9+i] = decimalCorrectionBlocks[i];
     }

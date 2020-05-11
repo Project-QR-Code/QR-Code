@@ -1,8 +1,0 @@
-<map id="main" name="main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,81,56,108"/>
-<area shape="rect" id="node2" href="$_q_r_code_struct_to_raw_8c.html#afad62ee005c021c4e3547ea2286f5514" title="Converts struct with data to array with raw data Adds hamming codes to data." alt="" coords="104,81,259,108"/>
-<area shape="rect" id="node3" href="$binary_converter_8c.html#a6b8d1a144f5a531eabd991246910c667" title="Converts binary number in decimal number." alt="" coords="353,5,431,32"/>
-<area shape="rect" id="node4" href="$binary_converter_8c.html#abab523f4ddcc5d2e3915eb0b76ff5bb1" title="Converts a decimal Number into a struct with array and bits." alt="" coords="353,56,431,83"/>
-<area shape="rect" id="node5" href="$_q_r_code_struct_to_raw_8c.html#a1b53dd7a25fd53875257164f857223dc" title="Returns index of searched char in mapCharacters." alt="" coords="307,107,477,133"/>
-<area shape="rect" id="node6" href="$_q_r_code_struct_to_raw_8c.html#abc3900b7abbff25d0be86a0a13d1dfc8" title="Searches for character in alphanumeric characters, returns 0 if found, &#45;1 if not." alt="" coords="327,157,457,184"/>
-</map>

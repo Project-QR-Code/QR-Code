@@ -1,7 +1,0 @@
-<map id="convertQrStructToRaw" name="convertQrStructToRaw">
-<area shape="rect" id="node1" title="Converts struct with data to array with raw data Adds hamming codes to data." alt="" coords="5,81,160,108"/>
-<area shape="rect" id="node2" href="$binary_converter_8c.html#a6b8d1a144f5a531eabd991246910c667" title="Converts binary number in decimal number." alt="" coords="255,5,332,32"/>
-<area shape="rect" id="node3" href="$binary_converter_8c.html#abab523f4ddcc5d2e3915eb0b76ff5bb1" title="Converts a decimal Number into a struct with array and bits." alt="" coords="255,56,332,83"/>
-<area shape="rect" id="node4" href="$_q_r_code_struct_to_raw_8c.html#a1b53dd7a25fd53875257164f857223dc" title="Returns index of searched char in mapCharacters." alt="" coords="208,107,379,133"/>
-<area shape="rect" id="node5" href="$_q_r_code_struct_to_raw_8c.html#abc3900b7abbff25d0be86a0a13d1dfc8" title="Searches for character in alphanumeric characters, returns 0 if found, &#45;1 if not." alt="" coords="228,157,359,184"/>
-</map>
