@@ -2,11 +2,11 @@
 #include "./binaryConverter.h"
 
 
-// Converts a decimal Number into a struct with array and bits
+/// Converts a decimal Number into a struct with array and bits
 struct BinaryNumber decToBin(int number, int length){
     
     struct BinaryNumber binNumber;
-    // In this weird aschii the highest Number is 44, so 6 bits
+    /// In this weird aschii the highest Number is 44, so 6 bits
     int cacheBinNumber[11] = {0};
     int i;
     int a = 0;
@@ -17,7 +17,7 @@ struct BinaryNumber decToBin(int number, int length){
 
     binNumber.length = length;
 
-    // Reverse numbers and store in struct
+    /// Reverse numbers and store in struct
     for(int b = 0; b < length; b++){
         binNumber.array[b] = 0; 
     }
@@ -29,7 +29,7 @@ struct BinaryNumber decToBin(int number, int length){
     return binNumber; 
 }
 
-// Converts binary number in decimal number
+/// Converts binary number in decimal number
 int binToDec(int binaryNumber[], int lenght){
     int indexValue = 1;
     int number = 0;
@@ -42,7 +42,7 @@ int binToDec(int binaryNumber[], int lenght){
         }
     }
 
-    // Calculate decimal Number
+    /// Calculate decimal Number
     for(int i = lenght-1; i >= 0; i--){
         if(binaryNumber[i] == 1){
             number += indexValue;

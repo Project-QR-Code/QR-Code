@@ -14,3 +14,7 @@ jobs:
       run: make test
     - name: clean
       run: make clean
+    - uses: mattnotmitt/doxygen-action@v1
+       with:
+        working-directory: '.'
+        doxyfile-path: 'docs/doxygen'

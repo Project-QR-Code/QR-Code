@@ -8,7 +8,7 @@ const char mapAlphanumericalCharacters[45] = {'0', '1', '2', '3', '4', '5', '6',
 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' ', '$', '%', '*', '+', '-', '.', '/', ':'};
 
 
-// Returns index of searched char in mapCharacters
+/// Returns index of searched char in mapCharacters
 static int getIndexInMapCharacters(char query){
     for(int i = 0; i < 45; i++){
         if(mapAlphanumericalCharacters[i] == query){
@@ -18,7 +18,7 @@ static int getIndexInMapCharacters(char query){
     return -1;
 }
 
-// Searches for character in alphanumeric characters, returns 0 if found, -1 if not
+/// Searches for character in alphanumeric characters, returns 0 if found, -1 if not
 static int isInMapCharacters(char query){
     for(int i = 0; i < 45; i++){
         if(query == mapAlphanumericalCharacters[i]){
@@ -29,10 +29,10 @@ static int isInMapCharacters(char query){
 }
 
 
-// Converts struct with data to array with raw data
-// Adds hamming codes to data
+/// Converts struct with data to array with raw data
+/// Adds hamming codes to data
 void convertQrStructToRaw(struct QRCode data){
-    // Character Data of QRCode in binary (without id and length)
+    /// Character Data of QRCode in binary (without id and length)
     int dataBlocksBinary[256];
     int lengthDataBlocksBinary = 0;
     
@@ -43,15 +43,15 @@ void convertQrStructToRaw(struct QRCode data){
         }
     }
 
-    // Create Blocks of 2 Characters and calculate binary Number
+    /// Create Blocks of 2 Characters and calculate binary Number
     for(int i = 0; i < data.lengthOfData; i+=2){
         
-        // Calculate Block Value
+        /// Calculate Block Value
         int blockDecValue = getIndexInMapCharacters((char)data.data[i]) * 45;
         blockDecValue += getIndexInMapCharacters((char)data.data[i+1]);
-        // Convert block value to binary number
+        /// Convert block value to binary number
         struct BinaryNumber tempBinNumber = decToBin(blockDecValue, 11);
-        // Extend binary number into length of 11 Bits (attach 0)
+        /// Extend binary number into length of 11 Bits (attach 0)
 
         int missingZeroes = 11 - tempBinNumber.length;
         for(int a = lengthDataBlocksBinary; a < (lengthDataBlocksBinary + missingZeroes); a++){
@@ -65,41 +65,40 @@ void convertQrStructToRaw(struct QRCode data){
         lengthDataBlocksBinary += 11;
     }
 
-    // Write Type of Data (codification id)
+    /// Write Type of Data (codification id)
     for(int i = 0; i < 4; i++){
         QRCodeRawData[i] = data.codificationId[i];
     }
     lengthRawData += 4;
     
-    // Write length of data
+    /// Write length of data
     struct BinaryNumber tmpBinNumber = decToBin(data.lengthOfData, 9);
     for(int i = 0; i < 9; i++){
         QRCodeRawData[i+lengthRawData] = tmpBinNumber.array[i];
     }  
     lengthRawData += 9;
 
-    // Write processed payload to raw array
+    /// Write processed payload to raw array
     for(int i = 0; i < (data.lengthOfData/2)*11; i++){
         QRCodeRawData[i+lengthRawData] = dataBlocksBinary[i];
     }
     lengthRawData += (data.lengthOfData/2)*11;
 
-    // Add terminator (4 zeroes)
+    /// Add terminator (4 zeroes)
     for(int i = 0; i < 4; i++){
         QRCodeRawData[lengthRawData + i] = 0;
     }
     lengthRawData += 4;
 
     
-    // Create blocks of eight out of QRCodeRawData
-    // If zeroes are to add 
+    /// Create blocks of eight out of QRCodeRawData
+    /// If zeroes are to add 
     while(lengthRawData % 8 != 0){
         QRCodeRawData[lengthRawData + 1] = 0;
         lengthRawData++;
     }
 
     // We use the small version 1 Qr-Code so max bits are 72
-    //TODO: maybe scale Qr-Code so different versions are used
     int specialBlock1[] = {1, 1, 1, 0, 1, 1, 0, 0};
     int specialBlock2[] = {0, 0, 0, 1, 0, 0, 0 ,1};
     int counter = 0;
@@ -118,8 +117,8 @@ void convertQrStructToRaw(struct QRCode data){
         lengthRawData += 8;
     }
 
-    // Convert Blocks into decimal data
-    // 9 For the data and then 17 for the correction blocks
+    /// Convert Blocks into decimal data
+    /// 9 For the data and then 17 for the correction blocks
     int decimalNumbers[9+17];
 
     for(int i = 0; i < lengthRawData; i+=8){
@@ -136,16 +135,16 @@ void convertQrStructToRaw(struct QRCode data){
     }
     printf("\n");
 
-    // Input decimalNumbers in this Website https://www.thonky.com/qr-code-tutorial/show-division-steps
-    // ECC Blocks is 17
-    // Scroll down to result and copy in here
+    /// Input decimalNumbers in this Website https://www.thonky.com/qr-code-tutorial/show-division-steps
+    /// ECC Blocks is 17
+    /// Scroll down to result and copy in here
     int decimalCorrectionBlocks[] = {208, 147, 120, 235, 20, 36, 10, 42, 73, 162, 140, 142, 217, 162, 207, 0, 62};
     // Add correction Blocks to decimal Numbers
     for(int i = 0; i < 17; i++){
         decimalNumbers[9+i] = decimalCorrectionBlocks[i];
     }
 
-    // COnvert Decimal Numbers with correction back to binary
+    /// COnvert Decimal Numbers with correction back to binary
     counter = 0;
     for(int i = 0; i < 26; i++){
         struct BinaryNumber number = decToBin(decimalNumbers[i], 8);
@@ -154,7 +153,7 @@ void convertQrStructToRaw(struct QRCode data){
             counter++;
         }
     }
-    // Adjust Lenght variable to new length
+    /// Adjust Lenght variable to new length
     lengthRawData = 26*8;
     printf("Binary Data: ");
     for(int i = 0; i < lengthRawData; i++){
