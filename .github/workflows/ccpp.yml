@@ -15,4 +15,5 @@ jobs:
     - name: clean
       run: make clean
     - name: doxygen-docs
+      run: sudo apt install doxygen
       run: doxygen docs/doxygen
