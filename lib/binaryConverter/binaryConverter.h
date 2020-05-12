@@ -12,7 +12,7 @@ struct BinaryNumber {
 /** Converts a decimal Number into a BinaryNumber struct.
  *  @param[in] number decimal number to convert
  *  @param[in] length length of desired output array (rest is filled with bits)
- *  @param[out] BinaryNumber struct with binary number
+ *  @return BinaryNumber struct with binary number
  */ 
 struct BinaryNumber decToBin(int number, int length);
 
@@ -20,7 +20,7 @@ struct BinaryNumber decToBin(int number, int length);
 /** Converts binary number in decimal number
  *  @param[in] binaryNumber array with binary number
  *  @param[in] length length of binary number
- *  @param[out] number converted decimal Number
+ *  @return number converted decimal Number
  */ 
 int binToDec(int binaryNumber[], int lenght);
 
