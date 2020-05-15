@@ -5,7 +5,6 @@
 
 
 
-
 int main(){
     // TESTING!
     struct QRCode test;
@@ -20,5 +19,4 @@ int main(){
     
     // Reed Solomon Test
     
-	return 0;   
 }
