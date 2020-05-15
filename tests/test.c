@@ -1,7 +1,10 @@
-#include "../lib/model.h"
+#include "../lib/QRCode/model.h"
 #include "../lib/QRCodeStructToRaw/QRCodeStructToRaw.h"
 #include <stdio.h>
 #include <string.h>
+
+
+
 
 int main(){
     // TESTING!
@@ -14,5 +17,8 @@ int main(){
     char *test_string = "TEST";
     strcpy(test.data, test_string);
     convertQrStructToRaw(test);
-	return 0;
+    
+    // Reed Solomon Test
+    
+	return 0;   
 }
