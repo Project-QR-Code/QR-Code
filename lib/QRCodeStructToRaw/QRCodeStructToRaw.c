@@ -1,6 +1,7 @@
-#include "../model.h"
+#include "../QRCode/model.h"
 #include "../binaryConverter/binaryConverter.h"
 #include "./QRCodeStructToRaw.h"
+#include "../reedSolomon/reedSolomon.h"
 #include <stdio.h>
 
 
@@ -134,6 +135,8 @@ void convertQrStructToRaw(struct QRCode data){
         printf("%d, ", decimalNumbers[i]);
     }
     printf("\n");
+
+    createReedSolomon(decimalNumbers);
 
     /// Input decimalNumbers in this Website https://www.thonky.com/qr-code-tutorial/show-division-steps
     /// ECC Blocks is 17
