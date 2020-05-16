@@ -96,31 +96,34 @@ $(document).ready(function(){initNavTree('test_8c_source.html',''); initResizabl
 <div class="title">test.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="test_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;../lib/model.h&quot;</span></div>
+<a href="test_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;../lib/QRCode/model.h&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;../lib/QRCodeStructToRaw/QRCodeStructToRaw.h&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">    6</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>(){</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="comment">// TESTING!</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_q_r_code.html">QRCode</a> test;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    test.<a class="code" href="struct_q_r_code.html#a82c93a863bdc058c45a9a7fc8708ed16">codificationId</a>[0] = 0;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    test.<a class="code" href="struct_q_r_code.html#a82c93a863bdc058c45a9a7fc8708ed16">codificationId</a>[1] = 0;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    test.<a class="code" href="struct_q_r_code.html#a82c93a863bdc058c45a9a7fc8708ed16">codificationId</a>[2] = 1;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    test.<a class="code" href="struct_q_r_code.html#a82c93a863bdc058c45a9a7fc8708ed16">codificationId</a>[3] = 0;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    test.<a class="code" href="struct_q_r_code.html#a1b7da027ac4f37dab2910b75f642fc13">lengthOfData</a> = 4;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">char</span> *test_string = <span class="stringliteral">&quot;TEST&quot;</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    strcpy(test.<a class="code" href="struct_q_r_code.html#a08a79ce862772180f006356b7014b046">data</a>, test_string);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="_q_r_code_struct_to_raw_8c.html#afad62ee005c021c4e3547ea2286f5514">convertQrStructToRaw</a>(test);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;../lib/reedSolomon/reedSolomon.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">    9</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>(){</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">// TESTING!</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_q_r_code.html">QRCode</a> test;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    test.<a class="code" href="struct_q_r_code.html#a82c93a863bdc058c45a9a7fc8708ed16">codificationId</a>[0] = 0;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    test.<a class="code" href="struct_q_r_code.html#a82c93a863bdc058c45a9a7fc8708ed16">codificationId</a>[1] = 0;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    test.<a class="code" href="struct_q_r_code.html#a82c93a863bdc058c45a9a7fc8708ed16">codificationId</a>[2] = 1;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    test.<a class="code" href="struct_q_r_code.html#a82c93a863bdc058c45a9a7fc8708ed16">codificationId</a>[3] = 0;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    test.<a class="code" href="struct_q_r_code.html#a1b7da027ac4f37dab2910b75f642fc13">lengthOfData</a> = 4;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">char</span> *test_string = <span class="stringliteral">&quot;TEST&quot;</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    strcpy(test.<a class="code" href="struct_q_r_code.html#a08a79ce862772180f006356b7014b046">data</a>, test_string);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="_q_r_code_struct_to_raw_8c.html#afad62ee005c021c4e3547ea2286f5514">convertQrStructToRaw</a>(test);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astruct_q_r_code_html_a1b7da027ac4f37dab2910b75f642fc13"><div class="ttname"><a href="struct_q_r_code.html#a1b7da027ac4f37dab2910b75f642fc13">QRCode::lengthOfData</a></div><div class="ttdeci">int lengthOfData</div><div class="ttdoc">Gives length of Data(9 Bit)</div><div class="ttdef"><b>Definition:</b> <a href="model_8h_source.html#l00016">model.h:16</a></div></div>
 <div class="ttc" id="astruct_q_r_code_html_a82c93a863bdc058c45a9a7fc8708ed16"><div class="ttname"><a href="struct_q_r_code.html#a82c93a863bdc058c45a9a7fc8708ed16">QRCode::codificationId</a></div><div class="ttdeci">int codificationId[4]</div><div class="ttdoc">Identification Number is to set type of data (Characters, Numbers etc) (4 Bit).</div><div class="ttdef"><b>Definition:</b> <a href="model_8h_source.html#l00013">model.h:13</a></div></div>
 <div class="ttc" id="astruct_q_r_code_html_a08a79ce862772180f006356b7014b046"><div class="ttname"><a href="struct_q_r_code.html#a08a79ce862772180f006356b7014b046">QRCode::data</a></div><div class="ttdeci">char data[256]</div><div class="ttdoc">Maximum Character of QR-Code is 256.</div><div class="ttdef"><b>Definition:</b> <a href="model_8h_source.html#l00020">model.h:20</a></div></div>
-<div class="ttc" id="a_q_r_code_struct_to_raw_8c_html_afad62ee005c021c4e3547ea2286f5514"><div class="ttname"><a href="_q_r_code_struct_to_raw_8c.html#afad62ee005c021c4e3547ea2286f5514">convertQrStructToRaw</a></div><div class="ttdeci">void convertQrStructToRaw(struct QRCode data)</div><div class="ttdoc">Converts struct with data to array with raw data Adds hamming codes to data.</div><div class="ttdef"><b>Definition:</b> <a href="_q_r_code_struct_to_raw_8c_source.html#l00034">QRCodeStructToRaw.c:34</a></div></div>
-<div class="ttc" id="atest_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="test_8c_source.html#l00006">test.c:6</a></div></div>
+<div class="ttc" id="a_q_r_code_struct_to_raw_8c_html_afad62ee005c021c4e3547ea2286f5514"><div class="ttname"><a href="_q_r_code_struct_to_raw_8c.html#afad62ee005c021c4e3547ea2286f5514">convertQrStructToRaw</a></div><div class="ttdeci">void convertQrStructToRaw(struct QRCode data)</div><div class="ttdoc">Converts struct with data to array with raw data Adds hamming codes to data.</div><div class="ttdef"><b>Definition:</b> <a href="_q_r_code_struct_to_raw_8c_source.html#l00035">QRCodeStructToRaw.c:35</a></div></div>
+<div class="ttc" id="atest_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="test_8c_source.html#l00009">test.c:9</a></div></div>
 <div class="ttc" id="astruct_q_r_code_html"><div class="ttname"><a href="struct_q_r_code.html">QRCode</a></div><div class="ttdoc">Struct that holds information about QR-Code.</div><div class="ttdef"><b>Definition:</b> <a href="model_8h_source.html#l00009">model.h:9</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

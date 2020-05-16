@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['length_44',['length',['../struct_binary_number.html#aa1f560e46e5c3a920a27cd11ffa23564',1,'BinaryNumber']]],
-  ['lengthofdata_45',['lengthOfData',['../struct_q_r_code.html#a1b7da027ac4f37dab2910b75f642fc13',1,'QRCode']]],
-  ['lengthrawdata_46',['lengthRawData',['../_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774',1,'QRCodeStructToRaw.h']]]
+  ['generatorpolynomexpoa_67',['generatorPolynomExpoA',['../reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8',1,'reedSolomon.h']]],
+  ['generatorpolynomexpoacopy_68',['generatorPolynomExpoACopy',['../reed_solomon_8h.html#ac376c9181b5b56942f52b71086936b80',1,'reedSolomon.h']]],
+  ['generatorpolynomexpoastartvalue_69',['generatorPolynomExpoAStartValue',['../reed_solomon_8c.html#ac60c240dc5ef2e53c3fd07e4c74040be',1,'reedSolomon.c']]],
+  ['generatorpolynomexpox_70',['generatorPolynomExpoX',['../reed_solomon_8h.html#a17801bdaa521d21ff4e88e608d6ddea1',1,'reedSolomon.h']]],
+  ['generatorpolynomexpoxcopy_71',['generatorPolynomExpoXCopy',['../reed_solomon_8h.html#a4de3890cec856b41d87c7b9a6663d957',1,'reedSolomon.h']]]
 ];

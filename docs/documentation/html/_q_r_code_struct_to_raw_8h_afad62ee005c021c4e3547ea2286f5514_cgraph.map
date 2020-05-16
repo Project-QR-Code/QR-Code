@@ -1,7 +1,11 @@
 <map id="convertQrStructToRaw" name="convertQrStructToRaw">
-<area shape="rect" id="node1" title="Converts struct with data to array with raw data." alt="" coords="5,81,160,108"/>
+<area shape="rect" id="node1" title="Converts struct with data to array with raw data." alt="" coords="5,107,160,133"/>
 <area shape="rect" id="node2" href="$binary_converter_8c.html#a6b8d1a144f5a531eabd991246910c667" title="Converts binary number in decimal number." alt="" coords="255,5,332,32"/>
-<area shape="rect" id="node3" href="$binary_converter_8c.html#abab523f4ddcc5d2e3915eb0b76ff5bb1" title="Converts a decimal Number into a struct with array and bits." alt="" coords="255,56,332,83"/>
-<area shape="rect" id="node4" href="$_q_r_code_struct_to_raw_8c.html#a1b53dd7a25fd53875257164f857223dc" title="Returns index of searched char in mapCharacters." alt="" coords="208,107,379,133"/>
-<area shape="rect" id="node5" href="$_q_r_code_struct_to_raw_8c.html#abc3900b7abbff25d0be86a0a13d1dfc8" title="Searches for character in alphanumeric characters, returns 0 if found, &#45;1 if not." alt="" coords="228,157,359,184"/>
+<area shape="rect" id="node3" href="$reed_solomon_8c.html#aa7ba0bb5965492bf9b0d30ce71fdebdc" title="Wrapper function that calles the other functions." alt="" coords="224,56,363,83"/>
+<area shape="rect" id="node7" href="$binary_converter_8c.html#abab523f4ddcc5d2e3915eb0b76ff5bb1" title="Converts a decimal Number into a struct with array and bits." alt="" coords="255,107,332,133"/>
+<area shape="rect" id="node8" href="$_q_r_code_struct_to_raw_8c.html#a1b53dd7a25fd53875257164f857223dc" title="Returns index of searched char in mapCharacters." alt="" coords="208,157,379,184"/>
+<area shape="rect" id="node9" href="$_q_r_code_struct_to_raw_8c.html#abc3900b7abbff25d0be86a0a13d1dfc8" title="Searches for character in alphanumeric characters, returns 0 if found, &#45;1 if not." alt="" coords="228,208,359,235"/>
+<area shape="rect" id="node4" href="$reed_solomon_8c.html#a67675cc73f1a027b716d6f4b1e392da3" title="Prepares Messagepolynom and Generatorpolynom." alt="" coords="427,56,549,83"/>
+<area shape="rect" id="node5" href="$reed_solomon_8c.html#a8f7407b719f86ba8eccdd1a655729d44" title="Multiplies generatorPolynom with lead of previous generatorPolynom." alt="" coords="597,56,713,83"/>
+<area shape="rect" id="node6" href="$reed_solomon_8c.html#a731e630efb38930ebe789e2a03da27bf" title="XORs generatorPolynom with previous generatorPolynom." alt="" coords="761,56,837,83"/>
 </map>
