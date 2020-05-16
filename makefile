@@ -1,8 +1,28 @@
-compile: src/main.c lib/QRCodeStructToRaw/QRCodeStructToRaw.c lib/binaryConverter/binaryConverter.c lib/reedSolomon/reedSolomon.c
-	gcc -Wall src/main.c lib/QRCodeStructToRaw/QRCodeStructToRaw.c lib/binaryConverter/binaryConverter.c lib/reedSolomon/reedSolomon.c
+QRCodeStructToRaw = $(wildcard lib/QRCodeStructToRaw/*.c)
+binaryConverter = $(wildcard lib/binaryConverter/*.c)
+reedSolomon = $(wildcard lib/reedSolomon/*.c)
 
-test: tests/test.c lib/QRCodeStructToRaw/QRCodeStructToRaw.c lib/binaryConverter/binaryConverter.c lib/reedSolomon/reedSolomon.c
-	gcc -Wall tests/test.c lib/QRCodeStructToRaw/QRCodeStructToRaw.c lib/binaryConverter/binaryConverter.c lib/reedSolomon/reedSolomon.c
+libs = $(QRCodeStructToRaw) $(binaryConverter) $(reedSolomon)
+
+main = $(wildcard src/*.c)
+test = $(wildcard tests/*.c)
+
+FLAGS = -g -Wall
+
+
+.PHONY: compile
+
+compile: $(main) $(libs)
+	gcc $(FLAGS) $^
+
+
+.PHONY: test
+
+test: $(test) $(libs)
+	gcc $(FLAGS) $^
+
+
+.PHONY: clean
 
 clean: 
 	rm -f *.out
