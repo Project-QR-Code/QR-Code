@@ -1,7 +1,9 @@
 #ifndef _DRAWQR_H_
 #define _DRAWQR_H_
+#define LENGHT 21   //our version has 21x21 size
 
-int drawRectangle(int data, int lenght);
+
+void drawRectangle(int data);
 int insertData(int array[]);
 
 #endif
