@@ -12,13 +12,15 @@ int insertdata(int array[]){
 void drawRectangle(int data){
     
 
-    if(x<21)
+    if(x<LENGHT)
         x++;
         printf("%d ",data);
-    else if(x==21){
+    else if(x==LENGHT){
         x=0;
         y++;
         printf("%d \n",data);
+    else if(y==LENGHT)
+        printf("Done!");
     }else  
         printf("Error!!!");
 }

@@ -1,6 +1,7 @@
 #include "../lib/QRCode/model.h"
 #include "../lib/QRCodeStructToRaw/QRCodeStructToRaw.h"
 #include "../lib/reedSolomon/reedSolomon.h"
+#include "../lib/drawQr/drawQr.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
