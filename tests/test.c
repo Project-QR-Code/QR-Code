@@ -19,4 +19,5 @@ int main(){
     strcpy(test.data, test_string);
     convertQrStructToRaw(test);
     printf("\n");
+    insertData(QRCodeRawData);
 }
