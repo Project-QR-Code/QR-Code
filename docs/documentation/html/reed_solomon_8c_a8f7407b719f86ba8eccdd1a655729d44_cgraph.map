@@ -1,0 +1,4 @@
+<map id="multiplyPolynom" name="multiplyPolynom">
+<area shape="rect" id="node1" title="Multiplies generatorPolynom with lead of previous generatorPolynom." alt="" coords="5,5,121,32"/>
+<area shape="rect" id="node2" href="$reed_solomon_8c.html#a731e630efb38930ebe789e2a03da27bf" title="XORs generatorPolynom with previous generatorPolynom." alt="" coords="169,5,245,32"/>
+</map>
