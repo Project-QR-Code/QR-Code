@@ -4,7 +4,8 @@ reedSolomon = $(wildcard lib/reedSolomon/*.c)
 
 libs = $(QRCodeStructToRaw) $(binaryConverter) $(reedSolomon)
 
-main = $(wildcard src/*.c)
+main_write = src/write.c
+main_read = src/read.c
 test = $(wildcard tests/*.c)
 
 FLAGS = -g -Wall
@@ -12,8 +13,9 @@ FLAGS = -g -Wall
 
 .PHONY: compile
 
-compile: $(main) $(libs)
-	gcc $(FLAGS) $^
+compile: $(main_write) $(main_read) $(libs)
+	gcc $(FLAGS) $(libs) $(main_write) -o write
+	gcc $(FLAGS) $(libs) $(main_read) -o read
 
 
 .PHONY: test
@@ -24,7 +26,9 @@ test: $(test) $(libs)
 
 .PHONY: clean
 
-clean: 
+clean:
+	rm read
+	rm write
 	rm -f *.out
 	rm -f *.exe
 
