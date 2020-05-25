@@ -1,6 +1,6 @@
 # QR-Code 
 [![build](https://github.com/Project-QR-Code/QR-Code/workflows/C/C++%20CI/badge.svg)](https://github.com/Project-QR-Code/QR-Code/actions)
-![GitHub issues](https://img.shields.io/github/issues/badges/shields)
+![GitHub issues](https://img.shields.io/github/issues/Project-QR-Code/QR-Code)
 
 ## How-To
 Execute `make test` in the main directory to compile test.c file in tests folder, the executable is in the main folder. This file is used to test individual functions. Execute `make` to compile main.c in src, this is the main file which is used in production. Before pushing to GitHub execute `make clean`, this removes all executables and cleans the project.
