@@ -24,6 +24,6 @@ int main(){
     }
     printf("\n");
     struct QRCode finishedCode;
-    finishedCode = decodedRawData(QRCodeRawData, lengthRawData);
+    finishedCode = decodeRawData(QRCodeRawData, lengthRawData);
 
 }

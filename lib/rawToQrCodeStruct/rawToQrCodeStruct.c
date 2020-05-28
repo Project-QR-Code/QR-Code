@@ -2,14 +2,26 @@
 #include "rawToQrCodeStruct.h"
 #include <stdio.h>
 
-void extractModeIndicator();
+void extractModeIndicator() {
+    
+}
 
-void extractMessageLength();
+void extractMessageLength() {
 
-void encodeInBinary();
+}
 
-void addTerminator();
+void encodeInBinary() {
 
-void convertToString();
+}
 
-struct QRCode decodeRawData(int rawData[]);
+void addTerminator() {
+
+}
+
+void convertToString() {
+
+}
+
+struct QRCode decodeRawData(int *rawData, int lenghtRawData){
+
+}
