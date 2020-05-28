@@ -1,5 +1,6 @@
 #include "../lib/QRCode/model.h"
 #include "../lib/QRCodeStructToRaw/QRCodeStructToRaw.h"
+#include "../lib/rawToQrCodeStruct/rawToQrCodeStruct.h"
 #include "../lib/reedSolomon/reedSolomon.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -17,5 +18,12 @@ int main(){
     char *test_string = "TEST";
     strcpy(test.data, test_string);
     convertQrStructToRaw(test);
+    printf("Binary Data: ");
+    for (int i = 0; i < lengthRawData; i++){
+        printf("%d", QRCodeRawData[i]);
+    }
     printf("\n");
+    struct QRCode finishedCode;
+    finishedCode = decodedRawData(QRCodeRawData, lengthRawData);
+
 }

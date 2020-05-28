@@ -175,10 +175,4 @@ void convertQrStructToRaw(struct QRCode data){
     }
 
     addErrorCorrectionBlocks();
-
-    printf("Binary Data: ");
-    for (int i = 0; i < lengthRawData; i++){
-        printf("%d", QRCodeRawData[i]);
-    }
-    printf("\n");
 }
