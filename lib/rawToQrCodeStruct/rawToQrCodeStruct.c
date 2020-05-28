@@ -23,5 +23,5 @@ void convertToString() {
 }
 
 struct QRCode decodeRawData(int *rawData, int lenghtRawData){
-
+    
 }

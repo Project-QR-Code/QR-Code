@@ -1,8 +1,9 @@
 QRCodeStructToRaw = $(wildcard lib/QRCodeStructToRaw/*.c)
 binaryConverter = $(wildcard lib/binaryConverter/*.c)
 reedSolomon = $(wildcard lib/reedSolomon/*.c)
+rawToQrCodeStruct = $(wildcard lib/rawToQrCodeStruct/*.c)
 
-libs = $(QRCodeStructToRaw) $(binaryConverter) $(reedSolomon)
+libs = $(QRCodeStructToRaw) $(binaryConverter) $(reedSolomon) $(rawToQrCodeStruct)
 
 main_write = src/write.c
 main_read = src/read.c
@@ -27,8 +28,8 @@ test: $(test) $(libs)
 .PHONY: clean
 
 clean:
-	rm read
-	rm write
+	rm -f read
+	rm -f write
 	rm -f *.out
 	rm -f *.exe
 
