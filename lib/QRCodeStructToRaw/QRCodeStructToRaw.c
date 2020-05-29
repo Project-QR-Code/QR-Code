@@ -8,6 +8,8 @@
 const char mapAlphanumericalCharacters[45] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
                                               'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' ', '$', '%', '*', '+', '-', '.', '/', ':'};
 
+
+
 /// Returns index of searched char in mapCharacters
 static int getIndexInMapCharacters(char query){
     for (int i = 0; i < 45; i++){
@@ -141,6 +143,7 @@ void convertQrStructToRaw(struct QRCode data){
         QRCodeRawData[i + lengthRawData] = dataBlocksBinary[i];
     }
     lengthRawData += (data.lengthOfData / 2) * 11;
+
 
     // Add terminator (4 zeroes)
     for (int i = 0; i < 4; i++){

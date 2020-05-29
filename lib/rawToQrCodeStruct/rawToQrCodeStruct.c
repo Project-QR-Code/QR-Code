@@ -3,6 +3,7 @@
 #include "../binaryConverter/binaryConverter.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /** 
  * QRCode Struct with the decoded Data
@@ -14,8 +15,7 @@ static int *QRCodeRawData;
 /// Length of Raw data
 static int lengthQRCodeRawData;
 
-/// Processed Data gets cached here, delimits sections with space
-static int processedRawData[];
+
 
 
 /** 
@@ -51,20 +51,38 @@ static int extractMessageLength() {
     return decimalLength;
 }
 
-/// Encode in Binary (to chart convertable) representation 
-static void encodeInBinary() {
+/** 
+ * Gets two chars out of 11 Bit number.
+ * @return string char[] with final decoded string
+ */ 
+static char* decodeToString() {
+    //TODO: get exact number of length
+    char *string = malloc(20 * sizeof(int));
+    int counter = 0;
+    // Go trough whole array
+    for(int i = 13; i < lengthQRCodeRawData; i+=11){
+        // So that there is no overflow
+        if(i+11 > lengthQRCodeRawData){
+            break;
+        }
+        // There are two chars stored in one 11 Bit number
+        int twoCharsBinary[11];
+        // Get 11 bits to get two chars
+        for(int a = 0; a < 11; a++){
+            twoCharsBinary[a] = QRCodeRawData[a+i];
+        }
+        int nextTwoCharsBits = binToDec(twoCharsBinary, 11);
 
+        // Encode : (first_char * 45) + second_char
+        // So this is the reversed
+        string[counter] = mapAlphanumericalCharacters[nextTwoCharsBits / 45];
+        counter++;
+        string[counter] = mapAlphanumericalCharacters[nextTwoCharsBits % 45];
+        counter++;
+    }
+    return string;
 }
 
-/// Adds a terminator to the end of the rawdata
-static void addTerminator() {
-
-}
-
-/// Convert binary number to String
-static void convertToString() {
-
-}
 
 struct QRCode decodeRawData(int *rawData, int lenghtRawData){
     // Write parameters to local variable
@@ -74,8 +92,6 @@ struct QRCode decodeRawData(int *rawData, int lenghtRawData){
     }
     lengthQRCodeRawData = lenghtRawData;
     
-    struct QRCode decodedRawData;
-
     // Call extract Mode Function and write result to struct
     int *modeIndicator = extractModeIndicator();
     for(int i = 0; i < 4; i++){
@@ -83,19 +99,18 @@ struct QRCode decodeRawData(int *rawData, int lenghtRawData){
     }
     free(modeIndicator);
 
-
+    // Copy length to return struct
     decodedRawData.lengthOfData = extractMessageLength();
-    printf("Length: %d \n", decodedRawData.lengthOfData);
-    encodeInBinary();
-    addTerminator();
-    convertToString();
-    
-    /*
-    for (int i = 0; i < lengthQRCodeRawData; i++){
-        printf("%d", QRCodeRawData[i]);
+
+    // Copy only the data and not the ECC Blocks in the struct data
+    strncpy(decodedRawData.data, decodeToString(), 9);
+
+    printf("String: ");
+    for (int i = 0; i < decodedRawData.lengthOfData; i++){
+        printf("%c", decodedRawData.data[i]);
     }
     printf("\n");
-    */
     
-    //return finishedCode
+    
+    return decodedRawData;
 }
