@@ -22,6 +22,6 @@ struct BinaryNumber decToBin(int number, int length);
  *  @param[in] length length of binary number
  *  @return number converted decimal Number
  */ 
-int binToDec(int binaryNumber[], int lenght);
+int binToDec(int binaryNumber[], int length);
 
 #endif

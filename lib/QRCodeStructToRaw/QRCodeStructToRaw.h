@@ -3,7 +3,7 @@
 
 
 /// Processed Raw data
-int QRCodeRawData[];
+int QRCodeRawData[2064];
 /// Length of Raw data
 int lengthRawData;
 

@@ -125,7 +125,7 @@ void convertQrStructToRaw(struct QRCode data){
 
     // Write Type of Data (codification id)
     for (int i = 0; i < 4; i++){
-        QRCodeRawData[i] = data.codificationId[i];
+        QRCodeRawData[i] = data.modeIndicator[i];
     }
     lengthRawData += 4;
 
