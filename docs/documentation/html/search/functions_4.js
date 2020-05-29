@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['isinmapcharacters_57',['isInMapCharacters',['../_q_r_code_struct_to_raw_8c.html#abc3900b7abbff25d0be86a0a13d1dfc8',1,'QRCodeStructToRaw.c']]]
+  ['extractmessagelength_73',['extractMessageLength',['../raw_to_qr_code_struct_8c.html#a24fefd64aae15562e7e6f9d5ed4c8180',1,'rawToQrCodeStruct.c']]],
+  ['extractmodeindicator_74',['extractModeIndicator',['../raw_to_qr_code_struct_8c.html#aa495384e7b0188ac1fbc9d3b110d8a50',1,'rawToQrCodeStruct.c']]]
 ];

@@ -1,6 +1,9 @@
 <map id="model.h" name="model.h">
-<area shape="rect" id="node1" title=" " alt="" coords="184,5,251,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="332,5,399,32"/>
 <area shape="rect" id="node2" href="$_q_r_code_struct_to_raw_8c.html" title=" " alt="" coords="5,80,163,107"/>
-<area shape="rect" id="node3" href="$main_8c.html" title=" " alt="" coords="187,80,247,107"/>
-<area shape="rect" id="node4" href="$test_8c.html" title=" " alt="" coords="271,80,326,107"/>
+<area shape="rect" id="node3" href="$raw_to_qr_code_struct_8c.html" title=" " alt="" coords="175,155,321,181"/>
+<area shape="rect" id="node4" href="$raw_to_qr_code_struct_8h.html" title=" " alt="" coords="237,80,384,107"/>
+<area shape="rect" id="node5" href="$test_8c.html" title=" " alt="" coords="370,155,425,181"/>
+<area shape="rect" id="node6" href="$read_8c.html" title=" " alt="" coords="459,80,517,107"/>
+<area shape="rect" id="node7" href="$write_8c.html" title=" " alt="" coords="541,80,601,107"/>
 </map>

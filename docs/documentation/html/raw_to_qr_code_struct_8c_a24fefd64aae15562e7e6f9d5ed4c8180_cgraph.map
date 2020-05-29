@@ -1,0 +1,4 @@
+<map id="extractMessageLength" name="extractMessageLength">
+<area shape="rect" id="node1" title="Get message Length from rawData." alt="" coords="5,5,160,32"/>
+<area shape="rect" id="node2" href="$binary_converter_8c.html#a841f73995274942717704226df26004d" title="Converts binary number in decimal number." alt="" coords="208,5,285,32"/>
+</map>

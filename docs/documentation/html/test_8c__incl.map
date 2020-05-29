@@ -1,9 +1,10 @@
 <map id="test.c" name="test.c">
-<area shape="rect" id="node1" title=" " alt="" coords="470,5,525,32"/>
-<area shape="rect" id="node2" href="$model_8h.html" title=" " alt="" coords="5,87,152,114"/>
-<area shape="rect" id="node3" href="$_q_r_code_struct_to_raw_8h.html" title=" " alt="" coords="177,80,351,121"/>
-<area shape="rect" id="node4" href="$reed_solomon_8h.html" title=" " alt="" coords="376,80,501,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="526,87,589,114"/>
-<area shape="rect" id="node6" title=" " alt="" coords="613,87,673,114"/>
-<area shape="rect" id="node7" title=" " alt="" coords="697,87,761,114"/>
+<area shape="rect" id="node1" title=" " alt="" coords="449,5,504,32"/>
+<area shape="rect" id="node2" href="$model_8h.html" title=" " alt="" coords="74,169,220,196"/>
+<area shape="rect" id="node3" href="$_q_r_code_struct_to_raw_8h.html" title=" " alt="" coords="26,80,201,121"/>
+<area shape="rect" id="node4" href="$raw_to_qr_code_struct_8h.html" title=" " alt="" coords="225,80,389,121"/>
+<area shape="rect" id="node5" href="$reed_solomon_8h.html" title=" " alt="" coords="414,80,539,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="564,87,626,114"/>
+<area shape="rect" id="node7" title=" " alt="" coords="650,87,710,114"/>
+<area shape="rect" id="node8" title=" " alt="" coords="735,87,799,114"/>
 </map>

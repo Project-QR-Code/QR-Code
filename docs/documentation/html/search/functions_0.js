@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bintodec_52',['binToDec',['../binary_converter_8c.html#a6b8d1a144f5a531eabd991246910c667',1,'binToDec(int binaryNumber[], int lenght):&#160;binaryConverter.c'],['../binary_converter_8h.html#a6b8d1a144f5a531eabd991246910c667',1,'binToDec(int binaryNumber[], int lenght):&#160;binaryConverter.c']]]
+  ['adderrorcorrectionblocks_66',['addErrorCorrectionBlocks',['../_q_r_code_struct_to_raw_8c.html#a4ac6b101def99db6d8a10e8cb949e525',1,'QRCodeStructToRaw.c']]]
 ];

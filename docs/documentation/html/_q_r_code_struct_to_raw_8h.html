@@ -106,10 +106,11 @@ $(document).ready(function(){initNavTree('_q_r_code_struct_to_raw_8h.html',''); 
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="_q_r_code_struct_to_raw_8h__dep__incl.png" border="0" usemap="#_q_r_code_struct_to_raw_8hdep" alt=""/></div>
 <map name="_q_r_code_struct_to_raw_8hdep" id="_q_r_code_struct_to_raw_8hdep">
-<area shape="rect" title=" " alt="" coords="139,5,296,32"/>
+<area shape="rect" title=" " alt="" coords="179,5,336,32"/>
 <area shape="rect" href="_q_r_code_struct_to_raw_8c.html" title=" " alt="" coords="5,80,163,107"/>
-<area shape="rect" href="main_8c.html" title=" " alt="" coords="187,80,247,107"/>
-<area shape="rect" href="test_8c.html" title=" " alt="" coords="271,80,326,107"/>
+<area shape="rect" href="read_8c.html" title=" " alt="" coords="187,80,245,107"/>
+<area shape="rect" href="write_8c.html" title=" " alt="" coords="269,80,329,107"/>
+<area shape="rect" href="test_8c.html" title=" " alt="" coords="353,80,407,107"/>
 </map>
 </div>
 </div>
@@ -123,15 +124,12 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a74dc663db1cbbd453c179836d7f9f454"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_q_r_code_struct_to_raw_8h.html#a74dc663db1cbbd453c179836d7f9f454">QRCodeRawData</a> []</td></tr>
-<tr class="memdesc:a74dc663db1cbbd453c179836d7f9f454"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processed Raw data.  <a href="_q_r_code_struct_to_raw_8h.html#a74dc663db1cbbd453c179836d7f9f454">More...</a><br /></td></tr>
-<tr class="separator:a74dc663db1cbbd453c179836d7f9f454"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab806ba672c2bbd5ae4f24d2e35a02ef7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_q_r_code_struct_to_raw_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a> [2064]</td></tr>
+<tr class="memdesc:ab806ba672c2bbd5ae4f24d2e35a02ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processed Raw data.  <a href="_q_r_code_struct_to_raw_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">More...</a><br /></td></tr>
+<tr class="separator:ab806ba672c2bbd5ae4f24d2e35a02ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab85c400a0206d1e616da734bfbe2d774"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a></td></tr>
 <tr class="memdesc:ab85c400a0206d1e616da734bfbe2d774"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of Raw data.  <a href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">More...</a><br /></td></tr>
 <tr class="separator:ab85c400a0206d1e616da734bfbe2d774"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61b3fca04081436951a63ab47742269c"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_q_r_code_struct_to_raw_8h.html#a61b3fca04081436951a63ab47742269c">mapAlphanumericalCharacters</a> [45]</td></tr>
-<tr class="memdesc:a61b3fca04081436951a63ab47742269c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map characters to special numbers(not ascii! alphanumerical code)  <a href="_q_r_code_struct_to_raw_8h.html#a61b3fca04081436951a63ab47742269c">More...</a><br /></td></tr>
-<tr class="separator:a61b3fca04081436951a63ab47742269c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="afad62ee005c021c4e3547ea2286f5514"></a>
@@ -159,141 +157,107 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
-<p>Converts struct with data to array with raw data. </p>
-<p>Character Data of <a class="el" href="struct_q_r_code.html" title="Struct that holds information about QR-Code.">QRCode</a> in binary (without id and length)</p>
-<p>Create Blocks of 2 Characters and calculate binary Number</p>
-<p>Calculate Block Value</p>
-<p>Convert block value to binary number</p>
-<p>Extend binary number into length of 11 Bits (attach 0)</p>
-<p>Write Type of Data (codification id)</p>
-<p>Write length of data</p>
-<p>Write processed payload to raw array</p>
-<p>Add terminator (4 zeroes)</p>
-<p>Create blocks of eight out of QRCodeRawData If zeroes are to add <br  />
-</p>
-<p>Convert Blocks into decimal data 9 For the data and then 17 for the correction blocks</p>
-<p>Input decimalNumbers in this Website <a href="https://www.thonky.com/qr-code-tutorial/show-division-steps">https://www.thonky.com/qr-code-tutorial/show-division-steps</a> ECC Blocks is 17 Scroll down to result and copy in here</p>
-<p>Add correction Blocks to decimal Numbers</p>
-<p>COnvert Decimal Numbers with correction back to binary</p>
-<p>Adjust Lenght variable to new length</p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_q_r_code_struct_to_raw_8c_source.html#l00035">35</a> of file <a class="el" href="_q_r_code_struct_to_raw_8c_source.html">QRCodeStructToRaw.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                             {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> dataBlocksBinary[256];</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> lengthDataBlocksBinary = 0;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; data.<a class="code" href="struct_q_r_code.html#a1b7da027ac4f37dab2910b75f642fc13">lengthOfData</a>; i++){</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="_q_r_code_struct_to_raw_8c.html#abc3900b7abbff25d0be86a0a13d1dfc8">isInMapCharacters</a>(data.<a class="code" href="struct_q_r_code.html#a08a79ce862772180f006356b7014b046">data</a>[i]) == -1){</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            fprintf(stderr, <span class="stringliteral">&quot;Input data is not valid!\n&quot;</span>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; data.<a class="code" href="struct_q_r_code.html#a1b7da027ac4f37dab2910b75f642fc13">lengthOfData</a>; i+=2){</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">int</span> blockDecValue = <a class="code" href="_q_r_code_struct_to_raw_8c.html#a1b53dd7a25fd53875257164f857223dc">getIndexInMapCharacters</a>((<span class="keywordtype">char</span>)data.<a class="code" href="struct_q_r_code.html#a08a79ce862772180f006356b7014b046">data</a>[i]) * 45;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        blockDecValue += <a class="code" href="_q_r_code_struct_to_raw_8c.html#a1b53dd7a25fd53875257164f857223dc">getIndexInMapCharacters</a>((<span class="keywordtype">char</span>)data.<a class="code" href="struct_q_r_code.html#a08a79ce862772180f006356b7014b046">data</a>[i+1]);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">struct </span><a class="code" href="struct_binary_number.html">BinaryNumber</a> tempBinNumber = <a class="code" href="binary_converter_8c.html#abab523f4ddcc5d2e3915eb0b76ff5bb1">decToBin</a>(blockDecValue, 11);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">int</span> missingZeroes = 11 - tempBinNumber.<a class="code" href="struct_binary_number.html#aa1f560e46e5c3a920a27cd11ffa23564">length</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> a = lengthDataBlocksBinary; a &lt; (lengthDataBlocksBinary + missingZeroes); a++){</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            dataBlocksBinary[a] = 0;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">int</span> b = 0; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> a = lengthDataBlocksBinary + missingZeroes; a &lt; lengthDataBlocksBinary + 11; a++){</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            dataBlocksBinary[a] = tempBinNumber.<a class="code" href="struct_binary_number.html#a2148ba2a1c2ce4b5905d3f85e85baa95">array</a>[b];</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            b++;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        lengthDataBlocksBinary += 11;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; i++){</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="model_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>[i] = data.<a class="code" href="struct_q_r_code.html#a82c93a863bdc058c45a9a7fc8708ed16">codificationId</a>[i];</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> += 4;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_binary_number.html">BinaryNumber</a> tmpBinNumber = <a class="code" href="binary_converter_8c.html#abab523f4ddcc5d2e3915eb0b76ff5bb1">decToBin</a>(data.<a class="code" href="struct_q_r_code.html#a1b7da027ac4f37dab2910b75f642fc13">lengthOfData</a>, 9);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++){</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="model_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>[i+<a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a>] = tmpBinNumber.<a class="code" href="struct_binary_number.html#a2148ba2a1c2ce4b5905d3f85e85baa95">array</a>[i];</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }  </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> += 9;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; (data.<a class="code" href="struct_q_r_code.html#a1b7da027ac4f37dab2910b75f642fc13">lengthOfData</a>/2)*11; i++){</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="model_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>[i+<a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a>] = dataBlocksBinary[i];</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> += (data.<a class="code" href="struct_q_r_code.html#a1b7da027ac4f37dab2910b75f642fc13">lengthOfData</a>/2)*11;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; i++){</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="model_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>[<a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> + i] = 0;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> += 4;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">while</span>(<a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> % 8 != 0){</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="model_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>[<a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> + 1] = 0;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a>++;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// We use the small version 1 Qr-Code so max bits are 72</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">int</span> specialBlock1[] = {1, 1, 1, 0, 1, 1, 0, 0};</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">int</span> specialBlock2[] = {0, 0, 0, 1, 0, 0, 0 ,1};</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">int</span> counter = 0;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// Fill up raw data with special blocks until max bits reached</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">while</span>(<a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> &lt; 72){</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">if</span>(counter % 2 == 0){</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 8; i++){</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <a class="code" href="model_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>[<a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> + i] = specialBlock1[i];</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        }<span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 8; i++){</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <a class="code" href="model_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>[<a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> + i] = specialBlock2[i];</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        counter++;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> += 8;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">int</span> decimalNumbers[9+17];</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a>; i+=8){</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordtype">int</span> tmp[8];</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> b = 0; b &lt; 8; b++){</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            tmp[b] = <a class="code" href="model_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>[i+b];</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        decimalNumbers[i/8] = <a class="code" href="binary_converter_8c.html#a6b8d1a144f5a531eabd991246910c667">binToDec</a>(tmp, 8);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    printf(<span class="stringliteral">&quot;Decimal Data: &quot;</span>);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++){</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        printf(<span class="stringliteral">&quot;%d, &quot;</span>, decimalNumbers[i]);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <a class="code" href="reed_solomon_8c.html#aa7ba0bb5965492bf9b0d30ce71fdebdc">createReedSolomon</a>(decimalNumbers);</div>
+<p class="definition">Definition at line <a class="el" href="_q_r_code_struct_to_raw_8c_source.html#l00099">99</a> of file <a class="el" href="_q_r_code_struct_to_raw_8c_source.html">QRCodeStructToRaw.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                             {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// Character Data of QRCode in binary (without id and length)</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">int</span> dataBlocksBinary[256];</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">int</span> lengthDataBlocksBinary = 0;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="_q_r_code_struct_to_raw_8c.html#a97f89640505fd1daf5cc6fcddf8fc0b6">integrityCheckDataArray</a>(data);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// Create copy of lengthOfData because that counts +1 if amount of chars in odd </span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">int</span> lengthCache = data.<a class="code" href="struct_q_r_code.html#a1b7da027ac4f37dab2910b75f642fc13">lengthOfData</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// Adjust length when using strings with odd length</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">if</span>(lengthCache % 2 == 1){</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        lengthCache++;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// Create Blocks of 2 Characters and calculate binary Number</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; lengthCache; i += 2){</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="comment">// Calculate Block Value</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordtype">int</span> blockDecValue = <a class="code" href="_q_r_code_struct_to_raw_8c.html#a1b53dd7a25fd53875257164f857223dc">getIndexInMapCharacters</a>((<span class="keywordtype">char</span>)data.<a class="code" href="struct_q_r_code.html#a08a79ce862772180f006356b7014b046">data</a>[i]) * 45;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        blockDecValue += (<a class="code" href="_q_r_code_struct_to_raw_8c.html#a1b53dd7a25fd53875257164f857223dc">getIndexInMapCharacters</a>((<span class="keywordtype">char</span>)data.<a class="code" href="struct_q_r_code.html#a08a79ce862772180f006356b7014b046">data</a>[i + 1]) == -1 ? 0 : <a class="code" href="_q_r_code_struct_to_raw_8c.html#a1b53dd7a25fd53875257164f857223dc">getIndexInMapCharacters</a>((<span class="keywordtype">char</span>)data.<a class="code" href="struct_q_r_code.html#a08a79ce862772180f006356b7014b046">data</a>[i + 1]));</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="comment">// Convert block value to binary number</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keyword">struct </span><a class="code" href="struct_binary_number.html">BinaryNumber</a> tempBinNumber = <a class="code" href="binary_converter_8c.html#abab523f4ddcc5d2e3915eb0b76ff5bb1">decToBin</a>(blockDecValue, 11);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="comment">// Extend binary number into length of 11 Bits (attach 0)</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordtype">int</span> missingZeroes = 11 - tempBinNumber.<a class="code" href="struct_binary_number.html#aa1f560e46e5c3a920a27cd11ffa23564">length</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> a = lengthDataBlocksBinary; a &lt; (lengthDataBlocksBinary + missingZeroes); a++){</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            dataBlocksBinary[a] = 0;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordtype">int</span> b = 0;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> a = lengthDataBlocksBinary + missingZeroes; a &lt; lengthDataBlocksBinary + 11; a++){</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            dataBlocksBinary[a] = tempBinNumber.<a class="code" href="struct_binary_number.html#a2148ba2a1c2ce4b5905d3f85e85baa95">array</a>[b];</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            b++;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        lengthDataBlocksBinary += 11;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">int</span> decimalCorrectionBlocks[] = {208, 147, 120, 235, 20, 36, 10, 42, 73, 162, 140, 142, 217, 162, 207, 0, 62};</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 17; i++){</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        decimalNumbers[9+i] = decimalCorrectionBlocks[i];</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    counter = 0;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 26; i++){</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keyword">struct </span><a class="code" href="struct_binary_number.html">BinaryNumber</a> number = <a class="code" href="binary_converter_8c.html#abab523f4ddcc5d2e3915eb0b76ff5bb1">decToBin</a>(decimalNumbers[i], 8);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> a = 0; a &lt; 8; a++){</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <a class="code" href="model_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>[counter] = number.<a class="code" href="struct_binary_number.html#a2148ba2a1c2ce4b5905d3f85e85baa95">array</a>[a];</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            counter++;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        }</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> = 26*8;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    printf(<span class="stringliteral">&quot;Binary Data: &quot;</span>);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a>; i++){</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        printf(<span class="stringliteral">&quot;%d&quot;</span>, <a class="code" href="model_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>[i]);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">// Write Type of Data (codification id)</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 4; i++){</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>[i] = data.<a class="code" href="struct_q_r_code.html#a877a84ac099d4c9ac053b78e955a18dc">modeIndicator</a>[i];</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> += 4;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="comment">// Write length of data</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_binary_number.html">BinaryNumber</a> tmpBinNumber = <a class="code" href="binary_converter_8c.html#abab523f4ddcc5d2e3915eb0b76ff5bb1">decToBin</a>(data.<a class="code" href="struct_q_r_code.html#a1b7da027ac4f37dab2910b75f642fc13">lengthOfData</a>, 9);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 9; i++){</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>[i + <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a>] = tmpBinNumber.<a class="code" href="struct_binary_number.html#a2148ba2a1c2ce4b5905d3f85e85baa95">array</a>[i];</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> += 9;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="comment">// Write processed payload to raw array</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (lengthCache / 2) * 11; i++){</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>[i + <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a>] = dataBlocksBinary[i];</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> += (lengthCache / 2) * 11;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">// Add terminator (4 zeroes)</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 4; i++){</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>[<a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> + i] = 0;</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    }</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> += 4;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="comment">// Create blocks of eight out of QRCodeRawData</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">// If zeroes are to add</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">while</span> (<a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> % 8 != 0){</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>[<a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> + 1] = 0;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a>++;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="comment">// We use the small version 1 Qr-Code so max bits are 72</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">int</span> specialBlock1[] = {1, 1, 1, 0, 1, 1, 0, 0};</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordtype">int</span> specialBlock2[] = {0, 0, 0, 1, 0, 0, 0, 1};</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">int</span> counter = 0;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="comment">// Fill up raw data with special blocks until max bits reached</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">while</span> (<a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> &lt; 72){</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">if</span> (counter % 2 == 0){</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 8; i++){</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>[<a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> + i] = specialBlock1[i];</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 8; i++){</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>[<a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> + i] = specialBlock2[i];</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            }</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        counter++;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a> += 8;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="_q_r_code_struct_to_raw_8c.html#a4ac6b101def99db6d8a10e8cb949e525">addErrorCorrectionBlocks</a>();</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="binary_converter_8h_source.html#l00007">BinaryNumber::array</a>, <a class="el" href="binary_converter_8c_source.html#l00033">binToDec()</a>, <a class="el" href="model_8h_source.html#l00013">QRCode::codificationId</a>, <a class="el" href="reed_solomon_8c_source.html#l00102">createReedSolomon()</a>, <a class="el" href="model_8h_source.html#l00020">QRCode::data</a>, <a class="el" href="binary_converter_8c_source.html#l00006">decToBin()</a>, <a class="el" href="_q_r_code_struct_to_raw_8c_source.html#l00013">getIndexInMapCharacters()</a>, <a class="el" href="_q_r_code_struct_to_raw_8c_source.html#l00023">isInMapCharacters()</a>, <a class="el" href="binary_converter_8h_source.html#l00009">BinaryNumber::length</a>, <a class="el" href="model_8h_source.html#l00016">QRCode::lengthOfData</a>, <a class="el" href="_q_r_code_struct_to_raw_8h_source.html#l00008">lengthRawData</a>, and <a class="el" href="model_8h_source.html#l00006">QRCodeRawData</a>.</p>
+<p class="reference">References <a class="el" href="_q_r_code_struct_to_raw_8c_source.html#l00057">addErrorCorrectionBlocks()</a>, <a class="el" href="binary_converter_8h_source.html#l00007">BinaryNumber::array</a>, <a class="el" href="model_8h_source.html#l00023">QRCode::data</a>, <a class="el" href="binary_converter_8c_source.html#l00006">decToBin()</a>, <a class="el" href="_q_r_code_struct_to_raw_8c_source.html#l00014">getIndexInMapCharacters()</a>, <a class="el" href="_q_r_code_struct_to_raw_8c_source.html#l00043">integrityCheckDataArray()</a>, <a class="el" href="binary_converter_8h_source.html#l00009">BinaryNumber::length</a>, <a class="el" href="model_8h_source.html#l00017">QRCode::lengthOfData</a>, <a class="el" href="_q_r_code_struct_to_raw_8h_source.html#l00009">lengthRawData</a>, <a class="el" href="model_8h_source.html#l00014">QRCode::modeIndicator</a>, and <a class="el" href="_q_r_code_struct_to_raw_8h_source.html#l00007">QRCodeRawData</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -301,15 +265,17 @@ Variables</h2></td></tr>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="_q_r_code_struct_to_raw_8h_afad62ee005c021c4e3547ea2286f5514_cgraph.png" border="0" usemap="#_q_r_code_struct_to_raw_8h_afad62ee005c021c4e3547ea2286f5514_cgraph" alt=""/></div>
 <map name="_q_r_code_struct_to_raw_8h_afad62ee005c021c4e3547ea2286f5514_cgraph" id="_q_r_code_struct_to_raw_8h_afad62ee005c021c4e3547ea2286f5514_cgraph">
-<area shape="rect" title="Converts struct with data to array with raw data." alt="" coords="5,107,160,133"/>
-<area shape="rect" href="binary_converter_8c.html#a6b8d1a144f5a531eabd991246910c667" title="Converts binary number in decimal number." alt="" coords="255,5,332,32"/>
-<area shape="rect" href="reed_solomon_8c.html#aa7ba0bb5965492bf9b0d30ce71fdebdc" title="Wrapper function that calles the other functions." alt="" coords="224,56,363,83"/>
-<area shape="rect" href="binary_converter_8c.html#abab523f4ddcc5d2e3915eb0b76ff5bb1" title="Converts a decimal Number into a struct with array and bits." alt="" coords="255,107,332,133"/>
+<area shape="rect" title="Converts struct with data to array with raw data." alt="" coords="5,132,160,159"/>
+<area shape="rect" href="_q_r_code_struct_to_raw_8c.html#a4ac6b101def99db6d8a10e8cb949e525" title="Adds Error Correction blocks from Reed solomon code to QRCodeRawData." alt="" coords="209,56,378,83"/>
+<area shape="rect" href="binary_converter_8c.html#abab523f4ddcc5d2e3915eb0b76ff5bb1" title="Converts a decimal Number into a struct with array and bits." alt="" coords="457,107,535,133"/>
 <area shape="rect" href="_q_r_code_struct_to_raw_8c.html#a1b53dd7a25fd53875257164f857223dc" title="Returns index of searched char in mapCharacters." alt="" coords="208,157,379,184"/>
-<area shape="rect" href="_q_r_code_struct_to_raw_8c.html#abc3900b7abbff25d0be86a0a13d1dfc8" title="Searches for character in alphanumeric characters, returns 0 if found, &#45;1 if not." alt="" coords="228,208,359,235"/>
-<area shape="rect" href="reed_solomon_8c.html#a67675cc73f1a027b716d6f4b1e392da3" title="Prepares Messagepolynom and Generatorpolynom." alt="" coords="427,56,549,83"/>
-<area shape="rect" href="reed_solomon_8c.html#a8f7407b719f86ba8eccdd1a655729d44" title="Multiplies generatorPolynom with lead of previous generatorPolynom." alt="" coords="597,56,713,83"/>
-<area shape="rect" href="reed_solomon_8c.html#a731e630efb38930ebe789e2a03da27bf" title="XORs generatorPolynom with previous generatorPolynom." alt="" coords="761,56,837,83"/>
+<area shape="rect" href="_q_r_code_struct_to_raw_8c.html#a97f89640505fd1daf5cc6fcddf8fc0b6" title="Checks if Array has only character present in alphanumericalCharacters." alt="" coords="213,208,374,235"/>
+<area shape="rect" href="binary_converter_8c.html#a841f73995274942717704226df26004d" title="Converts binary number in decimal number." alt="" coords="457,5,535,32"/>
+<area shape="rect" href="reed_solomon_8c.html#aa7ba0bb5965492bf9b0d30ce71fdebdc" title="Wrapper function that calles the other functions." alt="" coords="427,56,565,83"/>
+<area shape="rect" href="reed_solomon_8c.html#a67675cc73f1a027b716d6f4b1e392da3" title="Prepares Messagepolynom and Generatorpolynom." alt="" coords="613,56,736,83"/>
+<area shape="rect" href="reed_solomon_8c.html#a8f7407b719f86ba8eccdd1a655729d44" title="Multiplies generatorPolynom with lead of previous generatorPolynom." alt="" coords="784,56,900,83"/>
+<area shape="rect" href="reed_solomon_8c.html#a731e630efb38930ebe789e2a03da27bf" title="XORs generatorPolynom with previous generatorPolynom." alt="" coords="948,56,1024,83"/>
+<area shape="rect" href="_q_r_code_struct_to_raw_8c.html#abc3900b7abbff25d0be86a0a13d1dfc8" title="Searches for character in alphanumeric characters." alt="" coords="431,208,561,235"/>
 </map>
 </div>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -341,65 +307,46 @@ Variables</h2></td></tr>
 
 <p>Length of Raw data. </p>
 
-<p class="definition">Definition at line <a class="el" href="_q_r_code_struct_to_raw_8h_source.html#l00008">8</a> of file <a class="el" href="_q_r_code_struct_to_raw_8h_source.html">QRCodeStructToRaw.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_q_r_code_struct_to_raw_8h_source.html#l00009">9</a> of file <a class="el" href="_q_r_code_struct_to_raw_8h_source.html">QRCodeStructToRaw.h</a>.</p>
 
 </div>
 </div>
-<a id="a61b3fca04081436951a63ab47742269c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61b3fca04081436951a63ab47742269c">&#9670;&nbsp;</a></span>mapAlphanumericalCharacters</h2>
+<a id="ab806ba672c2bbd5ae4f24d2e35a02ef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab806ba672c2bbd5ae4f24d2e35a02ef7">&#9670;&nbsp;</a></span>QRCodeRawData</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char mapAlphanumericalCharacters[45]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Map characters to special numbers(not ascii! alphanumerical code) </p>
-
-<p class="definition">Definition at line <a class="el" href="_q_r_code_struct_to_raw_8h_source.html#l00011">11</a> of file <a class="el" href="_q_r_code_struct_to_raw_8h_source.html">QRCodeStructToRaw.h</a>.</p>
-
-</div>
-</div>
-<a id="a74dc663db1cbbd453c179836d7f9f454"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74dc663db1cbbd453c179836d7f9f454">&#9670;&nbsp;</a></span>QRCodeRawData</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int QRCodeRawData[]</td>
+          <td class="memname">int QRCodeRawData[2064]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Processed Raw data. </p>
 
-<p class="definition">Definition at line <a class="el" href="_q_r_code_struct_to_raw_8h_source.html#l00006">6</a> of file <a class="el" href="_q_r_code_struct_to_raw_8h_source.html">QRCodeStructToRaw.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_q_r_code_struct_to_raw_8h_source.html#l00007">7</a> of file <a class="el" href="_q_r_code_struct_to_raw_8h_source.html">QRCodeStructToRaw.h</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="areed_solomon_8c_html_aa7ba0bb5965492bf9b0d30ce71fdebdc"><div class="ttname"><a href="reed_solomon_8c.html#aa7ba0bb5965492bf9b0d30ce71fdebdc">createReedSolomon</a></div><div class="ttdeci">int * createReedSolomon(int messagePolynom[])</div><div class="ttdoc">Wrapper function that calles the other functions.</div><div class="ttdef"><b>Definition:</b> <a href="reed_solomon_8c_source.html#l00102">reedSolomon.c:102</a></div></div>
-<div class="ttc" id="abinary_converter_8c_html_a6b8d1a144f5a531eabd991246910c667"><div class="ttname"><a href="binary_converter_8c.html#a6b8d1a144f5a531eabd991246910c667">binToDec</a></div><div class="ttdeci">int binToDec(int binaryNumber[], int lenght)</div><div class="ttdoc">Converts binary number in decimal number.</div><div class="ttdef"><b>Definition:</b> <a href="binary_converter_8c_source.html#l00033">binaryConverter.c:33</a></div></div>
-<div class="ttc" id="astruct_q_r_code_html_a1b7da027ac4f37dab2910b75f642fc13"><div class="ttname"><a href="struct_q_r_code.html#a1b7da027ac4f37dab2910b75f642fc13">QRCode::lengthOfData</a></div><div class="ttdeci">int lengthOfData</div><div class="ttdoc">Gives length of Data(9 Bit)</div><div class="ttdef"><b>Definition:</b> <a href="model_8h_source.html#l00016">model.h:16</a></div></div>
-<div class="ttc" id="astruct_q_r_code_html_a82c93a863bdc058c45a9a7fc8708ed16"><div class="ttname"><a href="struct_q_r_code.html#a82c93a863bdc058c45a9a7fc8708ed16">QRCode::codificationId</a></div><div class="ttdeci">int codificationId[4]</div><div class="ttdoc">Identification Number is to set type of data (Characters, Numbers etc) (4 Bit).</div><div class="ttdef"><b>Definition:</b> <a href="model_8h_source.html#l00013">model.h:13</a></div></div>
-<div class="ttc" id="astruct_q_r_code_html_a08a79ce862772180f006356b7014b046"><div class="ttname"><a href="struct_q_r_code.html#a08a79ce862772180f006356b7014b046">QRCode::data</a></div><div class="ttdeci">char data[256]</div><div class="ttdoc">Maximum Character of QR-Code is 256.</div><div class="ttdef"><b>Definition:</b> <a href="model_8h_source.html#l00020">model.h:20</a></div></div>
-<div class="ttc" id="a_q_r_code_struct_to_raw_8c_html_a1b53dd7a25fd53875257164f857223dc"><div class="ttname"><a href="_q_r_code_struct_to_raw_8c.html#a1b53dd7a25fd53875257164f857223dc">getIndexInMapCharacters</a></div><div class="ttdeci">static int getIndexInMapCharacters(char query)</div><div class="ttdoc">Returns index of searched char in mapCharacters.</div><div class="ttdef"><b>Definition:</b> <a href="_q_r_code_struct_to_raw_8c_source.html#l00013">QRCodeStructToRaw.c:13</a></div></div>
+<div class="ttc" id="astruct_q_r_code_html_a1b7da027ac4f37dab2910b75f642fc13"><div class="ttname"><a href="struct_q_r_code.html#a1b7da027ac4f37dab2910b75f642fc13">QRCode::lengthOfData</a></div><div class="ttdeci">int lengthOfData</div><div class="ttdoc">Gives length of Data(9 Bit)</div><div class="ttdef"><b>Definition:</b> <a href="model_8h_source.html#l00017">model.h:17</a></div></div>
+<div class="ttc" id="astruct_q_r_code_html_a877a84ac099d4c9ac053b78e955a18dc"><div class="ttname"><a href="struct_q_r_code.html#a877a84ac099d4c9ac053b78e955a18dc">QRCode::modeIndicator</a></div><div class="ttdeci">int modeIndicator[4]</div><div class="ttdoc">Mode Number is to set type of data (Characters, Numbers etc) (4 Bit).</div><div class="ttdef"><b>Definition:</b> <a href="model_8h_source.html#l00014">model.h:14</a></div></div>
+<div class="ttc" id="astruct_q_r_code_html_a08a79ce862772180f006356b7014b046"><div class="ttname"><a href="struct_q_r_code.html#a08a79ce862772180f006356b7014b046">QRCode::data</a></div><div class="ttdeci">char data[256]</div><div class="ttdoc">Holds the data string we want to write into the qrcode.</div><div class="ttdef"><b>Definition:</b> <a href="model_8h_source.html#l00023">model.h:23</a></div></div>
+<div class="ttc" id="a_q_r_code_struct_to_raw_8c_html_a1b53dd7a25fd53875257164f857223dc"><div class="ttname"><a href="_q_r_code_struct_to_raw_8c.html#a1b53dd7a25fd53875257164f857223dc">getIndexInMapCharacters</a></div><div class="ttdeci">static int getIndexInMapCharacters(char query)</div><div class="ttdoc">Returns index of searched char in mapCharacters.</div><div class="ttdef"><b>Definition:</b> <a href="_q_r_code_struct_to_raw_8c_source.html#l00014">QRCodeStructToRaw.c:14</a></div></div>
 <div class="ttc" id="abinary_converter_8c_html_abab523f4ddcc5d2e3915eb0b76ff5bb1"><div class="ttname"><a href="binary_converter_8c.html#abab523f4ddcc5d2e3915eb0b76ff5bb1">decToBin</a></div><div class="ttdeci">struct BinaryNumber decToBin(int number, int length)</div><div class="ttdoc">Converts a decimal Number into a struct with array and bits.</div><div class="ttdef"><b>Definition:</b> <a href="binary_converter_8c_source.html#l00001">binaryConverter.c:6</a></div></div>
+<div class="ttc" id="a_q_r_code_struct_to_raw_8c_html_a4ac6b101def99db6d8a10e8cb949e525"><div class="ttname"><a href="_q_r_code_struct_to_raw_8c.html#a4ac6b101def99db6d8a10e8cb949e525">addErrorCorrectionBlocks</a></div><div class="ttdeci">static void addErrorCorrectionBlocks()</div><div class="ttdoc">Adds Error Correction blocks from Reed solomon code to QRCodeRawData.</div><div class="ttdef"><b>Definition:</b> <a href="_q_r_code_struct_to_raw_8c_source.html#l00057">QRCodeStructToRaw.c:57</a></div></div>
+<div class="ttc" id="a_q_r_code_struct_to_raw_8h_html_ab806ba672c2bbd5ae4f24d2e35a02ef7"><div class="ttname"><a href="_q_r_code_struct_to_raw_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a></div><div class="ttdeci">int QRCodeRawData[2064]</div><div class="ttdoc">Processed Raw data.</div><div class="ttdef"><b>Definition:</b> <a href="_q_r_code_struct_to_raw_8h_source.html#l00007">QRCodeStructToRaw.h:7</a></div></div>
 <div class="ttc" id="astruct_binary_number_html_a2148ba2a1c2ce4b5905d3f85e85baa95"><div class="ttname"><a href="struct_binary_number.html#a2148ba2a1c2ce4b5905d3f85e85baa95">BinaryNumber::array</a></div><div class="ttdeci">int array[11]</div><div class="ttdoc">Stores binary array.</div><div class="ttdef"><b>Definition:</b> <a href="binary_converter_8h_source.html#l00007">binaryConverter.h:7</a></div></div>
-<div class="ttc" id="a_q_r_code_struct_to_raw_8c_html_abc3900b7abbff25d0be86a0a13d1dfc8"><div class="ttname"><a href="_q_r_code_struct_to_raw_8c.html#abc3900b7abbff25d0be86a0a13d1dfc8">isInMapCharacters</a></div><div class="ttdeci">static int isInMapCharacters(char query)</div><div class="ttdoc">Searches for character in alphanumeric characters, returns 0 if found, -1 if not.</div><div class="ttdef"><b>Definition:</b> <a href="_q_r_code_struct_to_raw_8c_source.html#l00023">QRCodeStructToRaw.c:23</a></div></div>
 <div class="ttc" id="astruct_binary_number_html_aa1f560e46e5c3a920a27cd11ffa23564"><div class="ttname"><a href="struct_binary_number.html#aa1f560e46e5c3a920a27cd11ffa23564">BinaryNumber::length</a></div><div class="ttdeci">int length</div><div class="ttdoc">Stores length of array.</div><div class="ttdef"><b>Definition:</b> <a href="binary_converter_8h_source.html#l00009">binaryConverter.h:9</a></div></div>
-<div class="ttc" id="a_q_r_code_struct_to_raw_8h_html_ab85c400a0206d1e616da734bfbe2d774"><div class="ttname"><a href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a></div><div class="ttdeci">int lengthRawData</div><div class="ttdoc">Length of Raw data.</div><div class="ttdef"><b>Definition:</b> <a href="_q_r_code_struct_to_raw_8h_source.html#l00008">QRCodeStructToRaw.h:8</a></div></div>
+<div class="ttc" id="a_q_r_code_struct_to_raw_8h_html_ab85c400a0206d1e616da734bfbe2d774"><div class="ttname"><a href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a></div><div class="ttdeci">int lengthRawData</div><div class="ttdoc">Length of Raw data.</div><div class="ttdef"><b>Definition:</b> <a href="_q_r_code_struct_to_raw_8h_source.html#l00009">QRCodeStructToRaw.h:9</a></div></div>
 <div class="ttc" id="astruct_binary_number_html"><div class="ttname"><a href="struct_binary_number.html">BinaryNumber</a></div><div class="ttdoc">Struct to store Binary Number.</div><div class="ttdef"><b>Definition:</b> <a href="binary_converter_8h_source.html#l00005">binaryConverter.h:5</a></div></div>
-<div class="ttc" id="amodel_8h_html_ab806ba672c2bbd5ae4f24d2e35a02ef7"><div class="ttname"><a href="model_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a></div><div class="ttdeci">int QRCodeRawData[2064]</div><div class="ttdoc">Array that Stores data and all ids and markings in order.</div><div class="ttdef"><b>Definition:</b> <a href="model_8h_source.html#l00006">model.h:6</a></div></div>
+<div class="ttc" id="a_q_r_code_struct_to_raw_8c_html_a97f89640505fd1daf5cc6fcddf8fc0b6"><div class="ttname"><a href="_q_r_code_struct_to_raw_8c.html#a97f89640505fd1daf5cc6fcddf8fc0b6">integrityCheckDataArray</a></div><div class="ttdeci">static int integrityCheckDataArray(struct QRCode data)</div><div class="ttdoc">Checks if Array has only character present in alphanumericalCharacters.</div><div class="ttdef"><b>Definition:</b> <a href="_q_r_code_struct_to_raw_8c_source.html#l00043">QRCodeStructToRaw.c:43</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_af164aafd4e0b4f00da8b0cf803e6bb5.html">gabriel</a></li><li class="navelem"><a class="el" href="dir_89df99fc85d2f3ec4e1e369e3e31d746.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_70e37bf47c71ab64f98845b93b60771b.html">Project-QR-Code</a></li><li class="navelem"><a class="el" href="dir_3558dffe742480105c1aa2618dd2ac73.html">Write-QR-Code</a></li><li class="navelem"><a class="el" href="dir_31eb7557e6a224bc5bcdca0528f85cf6.html">lib</a></li><li class="navelem"><a class="el" href="dir_63a66a4f257bc8dc6cb216e398439502.html">QRCodeStructToRaw</a></li><li class="navelem"><a class="el" href="_q_r_code_struct_to_raw_8h.html">QRCodeStructToRaw.h</a></li>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_af164aafd4e0b4f00da8b0cf803e6bb5.html">gabriel</a></li><li class="navelem"><a class="el" href="dir_89df99fc85d2f3ec4e1e369e3e31d746.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_70e37bf47c71ab64f98845b93b60771b.html">Project-QR-Code</a></li><li class="navelem"><a class="el" href="dir_29266ab273be2d8e0bb86c3f32483b18.html">QR-Code</a></li><li class="navelem"><a class="el" href="dir_1bdcbed2a84a173228409da966164c85.html">lib</a></li><li class="navelem"><a class="el" href="dir_ab37d581d014ed275015fe467028e192.html">QRCodeStructToRaw</a></li><li class="navelem"><a class="el" href="_q_r_code_struct_to_raw_8h.html">QRCodeStructToRaw.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.19 </li>

@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['generatorpolynomexpoa_12',['generatorPolynomExpoA',['../reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8',1,'reedSolomon.h']]],
-  ['generatorpolynomexpoacopy_13',['generatorPolynomExpoACopy',['../reed_solomon_8h.html#ac376c9181b5b56942f52b71086936b80',1,'reedSolomon.h']]],
-  ['generatorpolynomexpoastartvalue_14',['generatorPolynomExpoAStartValue',['../reed_solomon_8c.html#ac60c240dc5ef2e53c3fd07e4c74040be',1,'reedSolomon.c']]],
-  ['generatorpolynomexpox_15',['generatorPolynomExpoX',['../reed_solomon_8h.html#a17801bdaa521d21ff4e88e608d6ddea1',1,'reedSolomon.h']]],
-  ['generatorpolynomexpoxcopy_16',['generatorPolynomExpoXCopy',['../reed_solomon_8h.html#a4de3890cec856b41d87c7b9a6663d957',1,'reedSolomon.h']]],
-  ['getindexinmapcharacters_17',['getIndexInMapCharacters',['../_q_r_code_struct_to_raw_8c.html#a1b53dd7a25fd53875257164f857223dc',1,'QRCodeStructToRaw.c']]]
+  ['extractmessagelength_15',['extractMessageLength',['../raw_to_qr_code_struct_8c.html#a24fefd64aae15562e7e6f9d5ed4c8180',1,'rawToQrCodeStruct.c']]],
+  ['extractmodeindicator_16',['extractModeIndicator',['../raw_to_qr_code_struct_8c.html#aa495384e7b0188ac1fbc9d3b110d8a50',1,'rawToQrCodeStruct.c']]]
 ];

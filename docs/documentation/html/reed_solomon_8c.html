@@ -101,6 +101,7 @@ $(document).ready(function(){initNavTree('reed_solomon_8c.html',''); initResizab
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="reed_solomon_8h_source.html">reedSolomon.h</a>&quot;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for reedSolomon.c:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -108,9 +109,10 @@ $(document).ready(function(){initNavTree('reed_solomon_8c.html',''); initResizab
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="reed_solomon_8c__incl.png" border="0" usemap="#reed_solomon_8c" alt=""/></div>
 <map name="reed_solomon_8c" id="reed_solomon_8c">
-<area shape="rect" title=" " alt="" coords="59,5,167,32"/>
+<area shape="rect" title=" " alt="" coords="113,5,221,32"/>
 <area shape="rect" href="reed_solomon_8h.html" title=" " alt="" coords="5,80,113,107"/>
 <area shape="rect" title=" " alt="" coords="137,80,197,107"/>
+<area shape="rect" title=" " alt="" coords="221,80,284,107"/>
 </map>
 </div>
 </div>
@@ -166,21 +168,15 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>finishedPolynom Processed generatorpolynom </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="reed_solomon_8c_source.html#l00102">102</a> of file <a class="el" href="reed_solomon_8c_source.html">reedSolomon.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                             {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="reed_solomon_8c.html#a67675cc73f1a027b716d6f4b1e392da3">preparePolynoms</a>(messagePolynom);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// Remove trailing 0</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        printf(<span class="stringliteral">&quot;%d, &quot;</span>, <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i]);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        printf(<span class="stringliteral">&quot;%d,  &quot;</span>, <a class="code" href="reed_solomon_8h.html#a17801bdaa521d21ff4e88e608d6ddea1">generatorPolynomExpoX</a>[i]);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="reed_solomon_8c_source.html#l00104">104</a> of file <a class="el" href="reed_solomon_8c_source.html">reedSolomon.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                             {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="reed_solomon_8c.html#a67675cc73f1a027b716d6f4b1e392da3">preparePolynoms</a>(messagePolynom);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">int</span> *finishedPolynom = malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>) * 17);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    finishedPolynom = <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">return</span> finishedPolynom;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reed_solomon_8h_source.html#l00010">generatorPolynomExpoA</a>, <a class="el" href="reed_solomon_8h_source.html#l00012">generatorPolynomExpoX</a>, and <a class="el" href="reed_solomon_8c_source.html#l00061">preparePolynoms()</a>.</p>
+<p class="reference">References <a class="el" href="reed_solomon_8h_source.html#l00010">generatorPolynomExpoA</a>, and <a class="el" href="reed_solomon_8c_source.html#l00063">preparePolynoms()</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -201,7 +197,8 @@ Variables</h2></td></tr>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="reed_solomon_8c_aa7ba0bb5965492bf9b0d30ce71fdebdc_icgraph.png" border="0" usemap="#reed_solomon_8c_aa7ba0bb5965492bf9b0d30ce71fdebdc_icgraph" alt=""/></div>
 <map name="reed_solomon_8c_aa7ba0bb5965492bf9b0d30ce71fdebdc_icgraph" id="reed_solomon_8c_aa7ba0bb5965492bf9b0d30ce71fdebdc_icgraph">
-<area shape="rect" title="Wrapper function that calles the other functions." alt="" coords="307,5,445,32"/>
+<area shape="rect" title="Wrapper function that calles the other functions." alt="" coords="524,5,663,32"/>
+<area shape="rect" href="_q_r_code_struct_to_raw_8c.html#a4ac6b101def99db6d8a10e8cb949e525" title="Adds Error Correction blocks from Reed solomon code to QRCodeRawData." alt="" coords="307,5,476,32"/>
 <area shape="rect" href="_q_r_code_struct_to_raw_8h.html#afad62ee005c021c4e3547ea2286f5514" title="Converts struct with data to array with raw data." alt="" coords="104,5,259,32"/>
 <area shape="rect" href="test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
 </map>
@@ -226,28 +223,28 @@ Variables</h2></td></tr>
 
 <p>Multiplies generatorPolynom with lead of previous generatorPolynom. </p>
 
-<p class="definition">Definition at line <a class="el" href="reed_solomon_8c_source.html#l00039">39</a> of file <a class="el" href="reed_solomon_8c_source.html">reedSolomon.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                      {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> alphaNumber = <a class="code" href="reed_solomon_8c.html#a62d4b44a5db284ad4b327974680b4516">convertToAlpha</a>[<a class="code" href="reed_solomon_8h.html#ac376c9181b5b56942f52b71086936b80">generatorPolynomExpoACopy</a>[0]];</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// Reset Generator to start value</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] = <a class="code" href="reed_solomon_8c.html#ac60c240dc5ef2e53c3fd07e4c74040be">generatorPolynomExpoAStartValue</a>[i];</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] += alphaNumber;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] &gt; 255){</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] %= 255;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] = <a class="code" href="reed_solomon_8c.html#a690da727e3e2951504425b7f0e9829e0">convertToInteger</a>[<a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i]];</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="reed_solomon_8c.html#a731e630efb38930ebe789e2a03da27bf">xorResult</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="reed_solomon_8c_source.html#l00041">41</a> of file <a class="el" href="reed_solomon_8c_source.html">reedSolomon.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                      {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">int</span> alphaNumber = <a class="code" href="reed_solomon_8c.html#a62d4b44a5db284ad4b327974680b4516">convertToAlpha</a>[<a class="code" href="reed_solomon_8h.html#ac376c9181b5b56942f52b71086936b80">generatorPolynomExpoACopy</a>[0]];</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// Reset Generator to start value</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] = <a class="code" href="reed_solomon_8c.html#ac60c240dc5ef2e53c3fd07e4c74040be">generatorPolynomExpoAStartValue</a>[i];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] += alphaNumber;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] &gt; 255){</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] %= 255;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] = <a class="code" href="reed_solomon_8c.html#a690da727e3e2951504425b7f0e9829e0">convertToInteger</a>[<a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i]];</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="reed_solomon_8c.html#a731e630efb38930ebe789e2a03da27bf">xorResult</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reed_solomon_8c_source.html#l00005">convertToAlpha</a>, <a class="el" href="reed_solomon_8c_source.html#l00004">convertToInteger</a>, <a class="el" href="reed_solomon_8h_source.html#l00010">generatorPolynomExpoA</a>, <a class="el" href="reed_solomon_8h_source.html#l00015">generatorPolynomExpoACopy</a>, <a class="el" href="reed_solomon_8c_source.html#l00006">generatorPolynomExpoAStartValue</a>, and <a class="el" href="reed_solomon_8c_source.html#l00009">xorResult()</a>.</p>
+<p class="reference">References <a class="el" href="reed_solomon_8c_source.html#l00007">convertToAlpha</a>, <a class="el" href="reed_solomon_8c_source.html#l00006">convertToInteger</a>, <a class="el" href="reed_solomon_8h_source.html#l00010">generatorPolynomExpoA</a>, <a class="el" href="reed_solomon_8h_source.html#l00015">generatorPolynomExpoACopy</a>, <a class="el" href="reed_solomon_8c_source.html#l00008">generatorPolynomExpoAStartValue</a>, and <a class="el" href="reed_solomon_8c_source.html#l00011">xorResult()</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -266,9 +263,10 @@ Variables</h2></td></tr>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="reed_solomon_8c_a8f7407b719f86ba8eccdd1a655729d44_icgraph.png" border="0" usemap="#reed_solomon_8c_a8f7407b719f86ba8eccdd1a655729d44_icgraph" alt=""/></div>
 <map name="reed_solomon_8c_a8f7407b719f86ba8eccdd1a655729d44_icgraph" id="reed_solomon_8c_a8f7407b719f86ba8eccdd1a655729d44_icgraph">
-<area shape="rect" title="Multiplies generatorPolynom with lead of previous generatorPolynom." alt="" coords="664,5,780,32"/>
-<area shape="rect" href="reed_solomon_8h.html#a67675cc73f1a027b716d6f4b1e392da3" title="Prepares Messagepolynom and Generatorpolynom." alt="" coords="493,5,616,32"/>
-<area shape="rect" href="reed_solomon_8h.html#aa7ba0bb5965492bf9b0d30ce71fdebdc" title="Wrapper function that calles the other functions." alt="" coords="307,5,445,32"/>
+<area shape="rect" title="Multiplies generatorPolynom with lead of previous generatorPolynom." alt="" coords="881,5,997,32"/>
+<area shape="rect" href="reed_solomon_8h.html#a67675cc73f1a027b716d6f4b1e392da3" title="Prepares Messagepolynom and Generatorpolynom." alt="" coords="711,5,833,32"/>
+<area shape="rect" href="reed_solomon_8h.html#aa7ba0bb5965492bf9b0d30ce71fdebdc" title="Wrapper function that calles the other functions." alt="" coords="524,5,663,32"/>
+<area shape="rect" href="_q_r_code_struct_to_raw_8c.html#a4ac6b101def99db6d8a10e8cb949e525" title="Adds Error Correction blocks from Reed solomon code to QRCodeRawData." alt="" coords="307,5,476,32"/>
 <area shape="rect" href="_q_r_code_struct_to_raw_8h.html#afad62ee005c021c4e3547ea2286f5514" title="Converts struct with data to array with raw data." alt="" coords="104,5,259,32"/>
 <area shape="rect" href="test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
 </map>
@@ -300,49 +298,49 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="reed_solomon_8c_source.html#l00061">61</a> of file <a class="el" href="reed_solomon_8c_source.html">reedSolomon.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                          {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// Write base of message Polynom in array</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++){</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="reed_solomon_8h.html#aa56a9ec28d47ce5bde381f15602226dd">messagePolynomBase</a>[i] = messagePolynom[i];</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// Fill rest with zeroes</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 9; i &lt; 19; i++){</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="reed_solomon_8h.html#aa56a9ec28d47ce5bde381f15602226dd">messagePolynomBase</a>[i] = 0;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// Write exponents of message polynom in array</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">int</span> counter = 25;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++){</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="reed_solomon_8h.html#a7a1bcc9fed245942686445bfeb76b495">messagePolynomExpo</a>[i] = counter;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        counter--;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    counter = 25;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="reed_solomon_8h.html#a17801bdaa521d21ff4e88e608d6ddea1">generatorPolynomExpoX</a>[i] = counter;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        counter--;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="reed_solomon_8h.html#ac376c9181b5b56942f52b71086936b80">generatorPolynomExpoACopy</a>[i] = <a class="code" href="reed_solomon_8h.html#aa56a9ec28d47ce5bde381f15602226dd">messagePolynomBase</a>[i];</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="reed_solomon_8h.html#a4de3890cec856b41d87c7b9a6663d957">generatorPolynomExpoXCopy</a>[i] = <a class="code" href="reed_solomon_8h.html#a7a1bcc9fed245942686445bfeb76b495">messagePolynomExpo</a>[i];</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] = <a class="code" href="reed_solomon_8c.html#ac60c240dc5ef2e53c3fd07e4c74040be">generatorPolynomExpoAStartValue</a>[i];</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] = <a class="code" href="reed_solomon_8c.html#a690da727e3e2951504425b7f0e9829e0">convertToInteger</a>[<a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i]];</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++){</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="reed_solomon_8c.html#a8f7407b719f86ba8eccdd1a655729d44">multiplyPolynom</a>();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="reed_solomon_8c_source.html#l00063">63</a> of file <a class="el" href="reed_solomon_8c_source.html">reedSolomon.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                          {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Write base of message Polynom in array</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++){</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="reed_solomon_8h.html#aa56a9ec28d47ce5bde381f15602226dd">messagePolynomBase</a>[i] = messagePolynom[i];</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Fill rest with zeroes</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 9; i &lt; 19; i++){</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="reed_solomon_8h.html#aa56a9ec28d47ce5bde381f15602226dd">messagePolynomBase</a>[i] = 0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// Write exponents of message polynom in array</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">int</span> counter = 25;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++){</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="reed_solomon_8h.html#a7a1bcc9fed245942686445bfeb76b495">messagePolynomExpo</a>[i] = counter;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        counter--;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    counter = 25;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="reed_solomon_8h.html#a17801bdaa521d21ff4e88e608d6ddea1">generatorPolynomExpoX</a>[i] = counter;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        counter--;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="reed_solomon_8h.html#ac376c9181b5b56942f52b71086936b80">generatorPolynomExpoACopy</a>[i] = <a class="code" href="reed_solomon_8h.html#aa56a9ec28d47ce5bde381f15602226dd">messagePolynomBase</a>[i];</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="reed_solomon_8h.html#a4de3890cec856b41d87c7b9a6663d957">generatorPolynomExpoXCopy</a>[i] = <a class="code" href="reed_solomon_8h.html#a7a1bcc9fed245942686445bfeb76b495">messagePolynomExpo</a>[i];</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] = <a class="code" href="reed_solomon_8c.html#ac60c240dc5ef2e53c3fd07e4c74040be">generatorPolynomExpoAStartValue</a>[i];</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] = <a class="code" href="reed_solomon_8c.html#a690da727e3e2951504425b7f0e9829e0">convertToInteger</a>[<a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i]];</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++){</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="reed_solomon_8c.html#a8f7407b719f86ba8eccdd1a655729d44">multiplyPolynom</a>();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reed_solomon_8c_source.html#l00004">convertToInteger</a>, <a class="el" href="reed_solomon_8h_source.html#l00010">generatorPolynomExpoA</a>, <a class="el" href="reed_solomon_8h_source.html#l00015">generatorPolynomExpoACopy</a>, <a class="el" href="reed_solomon_8c_source.html#l00006">generatorPolynomExpoAStartValue</a>, <a class="el" href="reed_solomon_8h_source.html#l00012">generatorPolynomExpoX</a>, <a class="el" href="reed_solomon_8h_source.html#l00017">generatorPolynomExpoXCopy</a>, <a class="el" href="reed_solomon_8h_source.html#l00005">messagePolynomBase</a>, <a class="el" href="reed_solomon_8h_source.html#l00007">messagePolynomExpo</a>, and <a class="el" href="reed_solomon_8c_source.html#l00039">multiplyPolynom()</a>.</p>
+<p class="reference">References <a class="el" href="reed_solomon_8c_source.html#l00006">convertToInteger</a>, <a class="el" href="reed_solomon_8h_source.html#l00010">generatorPolynomExpoA</a>, <a class="el" href="reed_solomon_8h_source.html#l00015">generatorPolynomExpoACopy</a>, <a class="el" href="reed_solomon_8c_source.html#l00008">generatorPolynomExpoAStartValue</a>, <a class="el" href="reed_solomon_8h_source.html#l00012">generatorPolynomExpoX</a>, <a class="el" href="reed_solomon_8h_source.html#l00017">generatorPolynomExpoXCopy</a>, <a class="el" href="reed_solomon_8h_source.html#l00005">messagePolynomBase</a>, <a class="el" href="reed_solomon_8h_source.html#l00007">messagePolynomExpo</a>, and <a class="el" href="reed_solomon_8c_source.html#l00041">multiplyPolynom()</a>.</p>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -362,8 +360,9 @@ Variables</h2></td></tr>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="reed_solomon_8c_a67675cc73f1a027b716d6f4b1e392da3_icgraph.png" border="0" usemap="#reed_solomon_8c_a67675cc73f1a027b716d6f4b1e392da3_icgraph" alt=""/></div>
 <map name="reed_solomon_8c_a67675cc73f1a027b716d6f4b1e392da3_icgraph" id="reed_solomon_8c_a67675cc73f1a027b716d6f4b1e392da3_icgraph">
-<area shape="rect" title="Prepares Messagepolynom and Generatorpolynom." alt="" coords="493,5,616,32"/>
-<area shape="rect" href="reed_solomon_8h.html#aa7ba0bb5965492bf9b0d30ce71fdebdc" title="Wrapper function that calles the other functions." alt="" coords="307,5,445,32"/>
+<area shape="rect" title="Prepares Messagepolynom and Generatorpolynom." alt="" coords="711,5,833,32"/>
+<area shape="rect" href="reed_solomon_8h.html#aa7ba0bb5965492bf9b0d30ce71fdebdc" title="Wrapper function that calles the other functions." alt="" coords="524,5,663,32"/>
+<area shape="rect" href="_q_r_code_struct_to_raw_8c.html#a4ac6b101def99db6d8a10e8cb949e525" title="Adds Error Correction blocks from Reed solomon code to QRCodeRawData." alt="" coords="307,5,476,32"/>
 <area shape="rect" href="_q_r_code_struct_to_raw_8h.html#afad62ee005c021c4e3547ea2286f5514" title="Converts struct with data to array with raw data." alt="" coords="104,5,259,32"/>
 <area shape="rect" href="test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
 </map>
@@ -388,35 +387,35 @@ Variables</h2></td></tr>
 
 <p>XORs generatorPolynom with previous generatorPolynom. </p>
 
-<p class="definition">Definition at line <a class="el" href="reed_solomon_8c_source.html#l00009">9</a> of file <a class="el" href="reed_solomon_8c_source.html">reedSolomon.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                 {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] = <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] ^ <a class="code" href="reed_solomon_8h.html#ac376c9181b5b56942f52b71086936b80">generatorPolynomExpoACopy</a>[i];</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    }</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[0] == 0){</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 1; i &lt; 18; i++){</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i-1] = <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i];</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <a class="code" href="reed_solomon_8h.html#a17801bdaa521d21ff4e88e608d6ddea1">generatorPolynomExpoX</a>[i-1] = <a class="code" href="reed_solomon_8h.html#a17801bdaa521d21ff4e88e608d6ddea1">generatorPolynomExpoX</a>[i];</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="comment">// Remove last duplicate</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] == <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i-1]){</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] = 0;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <a class="code" href="reed_solomon_8h.html#a17801bdaa521d21ff4e88e608d6ddea1">generatorPolynomExpoX</a>[i] = 0;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// Write to cache</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="reed_solomon_8h.html#ac376c9181b5b56942f52b71086936b80">generatorPolynomExpoACopy</a>[i] = <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i];</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="reed_solomon_8h.html#a4de3890cec856b41d87c7b9a6663d957">generatorPolynomExpoXCopy</a>[i] = <a class="code" href="reed_solomon_8h.html#a17801bdaa521d21ff4e88e608d6ddea1">generatorPolynomExpoX</a>[i];</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="reed_solomon_8c_source.html#l00011">11</a> of file <a class="el" href="reed_solomon_8c_source.html">reedSolomon.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                 {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] = <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] ^ <a class="code" href="reed_solomon_8h.html#ac376c9181b5b56942f52b71086936b80">generatorPolynomExpoACopy</a>[i];</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[0] == 0){</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 1; i &lt; 18; i++){</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i-1] = <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i];</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <a class="code" href="reed_solomon_8h.html#a17801bdaa521d21ff4e88e608d6ddea1">generatorPolynomExpoX</a>[i-1] = <a class="code" href="reed_solomon_8h.html#a17801bdaa521d21ff4e88e608d6ddea1">generatorPolynomExpoX</a>[i];</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="comment">// Remove last duplicate</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] == <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i-1]){</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i] = 0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <a class="code" href="reed_solomon_8h.html#a17801bdaa521d21ff4e88e608d6ddea1">generatorPolynomExpoX</a>[i] = 0;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// Write to cache</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 18; i++){</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="reed_solomon_8h.html#ac376c9181b5b56942f52b71086936b80">generatorPolynomExpoACopy</a>[i] = <a class="code" href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a>[i];</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="reed_solomon_8h.html#a4de3890cec856b41d87c7b9a6663d957">generatorPolynomExpoXCopy</a>[i] = <a class="code" href="reed_solomon_8h.html#a17801bdaa521d21ff4e88e608d6ddea1">generatorPolynomExpoX</a>[i];</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="reed_solomon_8h_source.html#l00010">generatorPolynomExpoA</a>, <a class="el" href="reed_solomon_8h_source.html#l00015">generatorPolynomExpoACopy</a>, <a class="el" href="reed_solomon_8h_source.html#l00012">generatorPolynomExpoX</a>, and <a class="el" href="reed_solomon_8h_source.html#l00017">generatorPolynomExpoXCopy</a>.</p>
 <div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -426,10 +425,11 @@ Variables</h2></td></tr>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="reed_solomon_8c_a731e630efb38930ebe789e2a03da27bf_icgraph.png" border="0" usemap="#reed_solomon_8c_a731e630efb38930ebe789e2a03da27bf_icgraph" alt=""/></div>
 <map name="reed_solomon_8c_a731e630efb38930ebe789e2a03da27bf_icgraph" id="reed_solomon_8c_a731e630efb38930ebe789e2a03da27bf_icgraph">
-<area shape="rect" title="XORs generatorPolynom with previous generatorPolynom." alt="" coords="828,5,904,32"/>
-<area shape="rect" href="reed_solomon_8h.html#a8f7407b719f86ba8eccdd1a655729d44" title="Multiplies generatorPolynom with lead of previous generatorPolynom." alt="" coords="664,5,780,32"/>
-<area shape="rect" href="reed_solomon_8h.html#a67675cc73f1a027b716d6f4b1e392da3" title="Prepares Messagepolynom and Generatorpolynom." alt="" coords="493,5,616,32"/>
-<area shape="rect" href="reed_solomon_8h.html#aa7ba0bb5965492bf9b0d30ce71fdebdc" title="Wrapper function that calles the other functions." alt="" coords="307,5,445,32"/>
+<area shape="rect" title="XORs generatorPolynom with previous generatorPolynom." alt="" coords="1045,5,1121,32"/>
+<area shape="rect" href="reed_solomon_8h.html#a8f7407b719f86ba8eccdd1a655729d44" title="Multiplies generatorPolynom with lead of previous generatorPolynom." alt="" coords="881,5,997,32"/>
+<area shape="rect" href="reed_solomon_8h.html#a67675cc73f1a027b716d6f4b1e392da3" title="Prepares Messagepolynom and Generatorpolynom." alt="" coords="711,5,833,32"/>
+<area shape="rect" href="reed_solomon_8h.html#aa7ba0bb5965492bf9b0d30ce71fdebdc" title="Wrapper function that calles the other functions." alt="" coords="524,5,663,32"/>
+<area shape="rect" href="_q_r_code_struct_to_raw_8c.html#a4ac6b101def99db6d8a10e8cb949e525" title="Adds Error Correction blocks from Reed solomon code to QRCodeRawData." alt="" coords="307,5,476,32"/>
 <area shape="rect" href="_q_r_code_struct_to_raw_8h.html#afad62ee005c021c4e3547ea2286f5514" title="Converts struct with data to array with raw data." alt="" coords="104,5,259,32"/>
 <area shape="rect" href="test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
 </map>
@@ -458,7 +458,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="reed_solomon_8c_source.html#l00005">5</a> of file <a class="el" href="reed_solomon_8c_source.html">reedSolomon.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reed_solomon_8c_source.html#l00007">7</a> of file <a class="el" href="reed_solomon_8c_source.html">reedSolomon.c</a>.</p>
 
 </div>
 </div>
@@ -482,7 +482,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="reed_solomon_8c_source.html#l00004">4</a> of file <a class="el" href="reed_solomon_8c_source.html">reedSolomon.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reed_solomon_8c_source.html#l00006">6</a> of file <a class="el" href="reed_solomon_8c_source.html">reedSolomon.c</a>.</p>
 
 </div>
 </div>
@@ -498,7 +498,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="reed_solomon_8c_source.html#l00006">6</a> of file <a class="el" href="reed_solomon_8c_source.html">reedSolomon.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reed_solomon_8c_source.html#l00008">8</a> of file <a class="el" href="reed_solomon_8c_source.html">reedSolomon.c</a>.</p>
 
 </div>
 </div>
@@ -506,20 +506,20 @@ Variables</h2></td></tr>
 </div><!-- doc-content -->
 <div class="ttc" id="areed_solomon_8h_html_a17801bdaa521d21ff4e88e608d6ddea1"><div class="ttname"><a href="reed_solomon_8h.html#a17801bdaa521d21ff4e88e608d6ddea1">generatorPolynomExpoX</a></div><div class="ttdeci">int generatorPolynomExpoX[256]</div><div class="ttdoc">GeneratorPolynom Exponents of x.</div><div class="ttdef"><b>Definition:</b> <a href="reed_solomon_8h_source.html#l00012">reedSolomon.h:12</a></div></div>
 <div class="ttc" id="areed_solomon_8h_html_aa56a9ec28d47ce5bde381f15602226dd"><div class="ttname"><a href="reed_solomon_8h.html#aa56a9ec28d47ce5bde381f15602226dd">messagePolynomBase</a></div><div class="ttdeci">int messagePolynomBase[256]</div><div class="ttdoc">Base of MessagePolynom gets provided.</div><div class="ttdef"><b>Definition:</b> <a href="reed_solomon_8h_source.html#l00005">reedSolomon.h:5</a></div></div>
-<div class="ttc" id="areed_solomon_8c_html_a62d4b44a5db284ad4b327974680b4516"><div class="ttname"><a href="reed_solomon_8c.html#a62d4b44a5db284ad4b327974680b4516">convertToAlpha</a></div><div class="ttdeci">static const int convertToAlpha[256]</div><div class="ttdef"><b>Definition:</b> <a href="reed_solomon_8c_source.html#l00005">reedSolomon.c:5</a></div></div>
-<div class="ttc" id="areed_solomon_8c_html_a67675cc73f1a027b716d6f4b1e392da3"><div class="ttname"><a href="reed_solomon_8c.html#a67675cc73f1a027b716d6f4b1e392da3">preparePolynoms</a></div><div class="ttdeci">void preparePolynoms(int messagePolynom[])</div><div class="ttdoc">Prepares Messagepolynom and Generatorpolynom.</div><div class="ttdef"><b>Definition:</b> <a href="reed_solomon_8c_source.html#l00061">reedSolomon.c:61</a></div></div>
+<div class="ttc" id="areed_solomon_8c_html_a62d4b44a5db284ad4b327974680b4516"><div class="ttname"><a href="reed_solomon_8c.html#a62d4b44a5db284ad4b327974680b4516">convertToAlpha</a></div><div class="ttdeci">static const int convertToAlpha[256]</div><div class="ttdef"><b>Definition:</b> <a href="reed_solomon_8c_source.html#l00007">reedSolomon.c:7</a></div></div>
+<div class="ttc" id="areed_solomon_8c_html_a67675cc73f1a027b716d6f4b1e392da3"><div class="ttname"><a href="reed_solomon_8c.html#a67675cc73f1a027b716d6f4b1e392da3">preparePolynoms</a></div><div class="ttdeci">void preparePolynoms(int messagePolynom[])</div><div class="ttdoc">Prepares Messagepolynom and Generatorpolynom.</div><div class="ttdef"><b>Definition:</b> <a href="reed_solomon_8c_source.html#l00063">reedSolomon.c:63</a></div></div>
 <div class="ttc" id="areed_solomon_8h_html_ac15336d48553d7d66dbe44cd7549c4f8"><div class="ttname"><a href="reed_solomon_8h.html#ac15336d48553d7d66dbe44cd7549c4f8">generatorPolynomExpoA</a></div><div class="ttdeci">int generatorPolynomExpoA[256]</div><div class="ttdoc">GeneratorPolynom Exponents of alpha.</div><div class="ttdef"><b>Definition:</b> <a href="reed_solomon_8h_source.html#l00010">reedSolomon.h:10</a></div></div>
 <div class="ttc" id="areed_solomon_8h_html_a7a1bcc9fed245942686445bfeb76b495"><div class="ttname"><a href="reed_solomon_8h.html#a7a1bcc9fed245942686445bfeb76b495">messagePolynomExpo</a></div><div class="ttdeci">int messagePolynomExpo[256]</div><div class="ttdoc">Exponents of MessagePolynom get generated.</div><div class="ttdef"><b>Definition:</b> <a href="reed_solomon_8h_source.html#l00007">reedSolomon.h:7</a></div></div>
-<div class="ttc" id="areed_solomon_8c_html_a8f7407b719f86ba8eccdd1a655729d44"><div class="ttname"><a href="reed_solomon_8c.html#a8f7407b719f86ba8eccdd1a655729d44">multiplyPolynom</a></div><div class="ttdeci">void multiplyPolynom()</div><div class="ttdoc">Multiplies generatorPolynom with lead of previous generatorPolynom.</div><div class="ttdef"><b>Definition:</b> <a href="reed_solomon_8c_source.html#l00039">reedSolomon.c:39</a></div></div>
-<div class="ttc" id="areed_solomon_8c_html_a731e630efb38930ebe789e2a03da27bf"><div class="ttname"><a href="reed_solomon_8c.html#a731e630efb38930ebe789e2a03da27bf">xorResult</a></div><div class="ttdeci">void xorResult()</div><div class="ttdoc">XORs generatorPolynom with previous generatorPolynom.</div><div class="ttdef"><b>Definition:</b> <a href="reed_solomon_8c_source.html#l00009">reedSolomon.c:9</a></div></div>
+<div class="ttc" id="areed_solomon_8c_html_a8f7407b719f86ba8eccdd1a655729d44"><div class="ttname"><a href="reed_solomon_8c.html#a8f7407b719f86ba8eccdd1a655729d44">multiplyPolynom</a></div><div class="ttdeci">void multiplyPolynom()</div><div class="ttdoc">Multiplies generatorPolynom with lead of previous generatorPolynom.</div><div class="ttdef"><b>Definition:</b> <a href="reed_solomon_8c_source.html#l00041">reedSolomon.c:41</a></div></div>
+<div class="ttc" id="areed_solomon_8c_html_a731e630efb38930ebe789e2a03da27bf"><div class="ttname"><a href="reed_solomon_8c.html#a731e630efb38930ebe789e2a03da27bf">xorResult</a></div><div class="ttdeci">void xorResult()</div><div class="ttdoc">XORs generatorPolynom with previous generatorPolynom.</div><div class="ttdef"><b>Definition:</b> <a href="reed_solomon_8c_source.html#l00011">reedSolomon.c:11</a></div></div>
 <div class="ttc" id="areed_solomon_8h_html_ac376c9181b5b56942f52b71086936b80"><div class="ttname"><a href="reed_solomon_8h.html#ac376c9181b5b56942f52b71086936b80">generatorPolynomExpoACopy</a></div><div class="ttdeci">int generatorPolynomExpoACopy[256]</div><div class="ttdoc">Copy of GeneratorPolynom Exponents of alpha.</div><div class="ttdef"><b>Definition:</b> <a href="reed_solomon_8h_source.html#l00015">reedSolomon.h:15</a></div></div>
-<div class="ttc" id="areed_solomon_8c_html_a690da727e3e2951504425b7f0e9829e0"><div class="ttname"><a href="reed_solomon_8c.html#a690da727e3e2951504425b7f0e9829e0">convertToInteger</a></div><div class="ttdeci">static const int convertToInteger[256]</div><div class="ttdef"><b>Definition:</b> <a href="reed_solomon_8c_source.html#l00004">reedSolomon.c:4</a></div></div>
-<div class="ttc" id="areed_solomon_8c_html_ac60c240dc5ef2e53c3fd07e4c74040be"><div class="ttname"><a href="reed_solomon_8c.html#ac60c240dc5ef2e53c3fd07e4c74040be">generatorPolynomExpoAStartValue</a></div><div class="ttdeci">int generatorPolynomExpoAStartValue[256]</div><div class="ttdef"><b>Definition:</b> <a href="reed_solomon_8c_source.html#l00006">reedSolomon.c:6</a></div></div>
+<div class="ttc" id="areed_solomon_8c_html_a690da727e3e2951504425b7f0e9829e0"><div class="ttname"><a href="reed_solomon_8c.html#a690da727e3e2951504425b7f0e9829e0">convertToInteger</a></div><div class="ttdeci">static const int convertToInteger[256]</div><div class="ttdef"><b>Definition:</b> <a href="reed_solomon_8c_source.html#l00006">reedSolomon.c:6</a></div></div>
+<div class="ttc" id="areed_solomon_8c_html_ac60c240dc5ef2e53c3fd07e4c74040be"><div class="ttname"><a href="reed_solomon_8c.html#ac60c240dc5ef2e53c3fd07e4c74040be">generatorPolynomExpoAStartValue</a></div><div class="ttdeci">int generatorPolynomExpoAStartValue[256]</div><div class="ttdef"><b>Definition:</b> <a href="reed_solomon_8c_source.html#l00008">reedSolomon.c:8</a></div></div>
 <div class="ttc" id="areed_solomon_8h_html_a4de3890cec856b41d87c7b9a6663d957"><div class="ttname"><a href="reed_solomon_8h.html#a4de3890cec856b41d87c7b9a6663d957">generatorPolynomExpoXCopy</a></div><div class="ttdeci">int generatorPolynomExpoXCopy[256]</div><div class="ttdoc">Copy of GeneratorPolynom Exponents of x.</div><div class="ttdef"><b>Definition:</b> <a href="reed_solomon_8h_source.html#l00017">reedSolomon.h:17</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_af164aafd4e0b4f00da8b0cf803e6bb5.html">gabriel</a></li><li class="navelem"><a class="el" href="dir_89df99fc85d2f3ec4e1e369e3e31d746.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_70e37bf47c71ab64f98845b93b60771b.html">Project-QR-Code</a></li><li class="navelem"><a class="el" href="dir_3558dffe742480105c1aa2618dd2ac73.html">Write-QR-Code</a></li><li class="navelem"><a class="el" href="dir_31eb7557e6a224bc5bcdca0528f85cf6.html">lib</a></li><li class="navelem"><a class="el" href="dir_ab85d1a491ca076a4b805d9524503dcf.html">reedSolomon</a></li><li class="navelem"><a class="el" href="reed_solomon_8c.html">reedSolomon.c</a></li>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_af164aafd4e0b4f00da8b0cf803e6bb5.html">gabriel</a></li><li class="navelem"><a class="el" href="dir_89df99fc85d2f3ec4e1e369e3e31d746.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_70e37bf47c71ab64f98845b93b60771b.html">Project-QR-Code</a></li><li class="navelem"><a class="el" href="dir_29266ab273be2d8e0bb86c3f32483b18.html">QR-Code</a></li><li class="navelem"><a class="el" href="dir_1bdcbed2a84a173228409da966164c85.html">lib</a></li><li class="navelem"><a class="el" href="dir_6fc699492b91606a7a69164682f56842.html">reedSolomon</a></li><li class="navelem"><a class="el" href="reed_solomon_8c.html">reedSolomon.c</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.19 </li>

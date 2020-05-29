@@ -106,9 +106,10 @@ $(document).ready(function(){initNavTree('binary_converter_8h.html',''); initRes
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="binary_converter_8h__dep__incl.png" border="0" usemap="#binary_converter_8hdep" alt=""/></div>
 <map name="binary_converter_8hdep" id="binary_converter_8hdep">
-<area shape="rect" title=" " alt="" coords="87,5,209,32"/>
+<area shape="rect" title=" " alt="" coords="169,5,292,32"/>
 <area shape="rect" href="binary_converter_8c.html" title=" " alt="" coords="5,80,128,107"/>
 <area shape="rect" href="_q_r_code_struct_to_raw_8c.html" title=" " alt="" coords="152,80,309,107"/>
+<area shape="rect" href="raw_to_qr_code_struct_8c.html" title=" " alt="" coords="333,80,480,107"/>
 </map>
 </div>
 </div>
@@ -125,13 +126,13 @@ Functions</h2></td></tr>
 <tr class="memitem:abab523f4ddcc5d2e3915eb0b76ff5bb1"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_binary_number.html">BinaryNumber</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="binary_converter_8h.html#abab523f4ddcc5d2e3915eb0b76ff5bb1">decToBin</a> (int number, int length)</td></tr>
 <tr class="memdesc:abab523f4ddcc5d2e3915eb0b76ff5bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a decimal Number into a <a class="el" href="struct_binary_number.html" title="Struct to store Binary Number.">BinaryNumber</a> struct.  <a href="binary_converter_8h.html#abab523f4ddcc5d2e3915eb0b76ff5bb1">More...</a><br /></td></tr>
 <tr class="separator:abab523f4ddcc5d2e3915eb0b76ff5bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b8d1a144f5a531eabd991246910c667"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="binary_converter_8h.html#a6b8d1a144f5a531eabd991246910c667">binToDec</a> (int binaryNumber[], int lenght)</td></tr>
-<tr class="memdesc:a6b8d1a144f5a531eabd991246910c667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts binary number in decimal number.  <a href="binary_converter_8h.html#a6b8d1a144f5a531eabd991246910c667">More...</a><br /></td></tr>
-<tr class="separator:a6b8d1a144f5a531eabd991246910c667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a841f73995274942717704226df26004d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="binary_converter_8h.html#a841f73995274942717704226df26004d">binToDec</a> (int binaryNumber[], int length)</td></tr>
+<tr class="memdesc:a841f73995274942717704226df26004d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts binary number in decimal number.  <a href="binary_converter_8h.html#a841f73995274942717704226df26004d">More...</a><br /></td></tr>
+<tr class="separator:a841f73995274942717704226df26004d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a6b8d1a144f5a531eabd991246910c667"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b8d1a144f5a531eabd991246910c667">&#9670;&nbsp;</a></span>binToDec()</h2>
+<a id="a841f73995274942717704226df26004d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a841f73995274942717704226df26004d">&#9670;&nbsp;</a></span>binToDec()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,7 +147,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>lenght</em>&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -173,19 +174,19 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">int</span> number = 0;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// Test if number is correct</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; lenght; i++){</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="struct_binary_number.html#aa1f560e46e5c3a920a27cd11ffa23564">length</a>; i++){</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">if</span>(binaryNumber[i] != 1 &amp;&amp; binaryNumber[i] != 0){</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            fprintf(stderr, <span class="stringliteral">&quot;Number is not a binary Number!\n&quot;</span>);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = lenght-1; i &gt;= 0; i--){</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = <a class="code" href="struct_binary_number.html#aa1f560e46e5c3a920a27cd11ffa23564">length</a>-1; i &gt;= 0; i--){</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span>(binaryNumber[i] == 1){</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            number += indexValue;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span>(i == lenght){</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span>(i == <a class="code" href="struct_binary_number.html#aa1f560e46e5c3a920a27cd11ffa23564">length</a>){</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            indexValue++;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }<span class="keywordflow">else</span>{</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            indexValue *= 2;</div>
@@ -193,14 +194,19 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> number;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-</div><!-- fragment --><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="binary_converter_8h_source.html#l00009">BinaryNumber::length</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="binary_converter_8h_a6b8d1a144f5a531eabd991246910c667_icgraph.png" border="0" usemap="#binary_converter_8h_a6b8d1a144f5a531eabd991246910c667_icgraph" alt=""/></div>
-<map name="binary_converter_8h_a6b8d1a144f5a531eabd991246910c667_icgraph" id="binary_converter_8h_a6b8d1a144f5a531eabd991246910c667_icgraph">
-<area shape="rect" title="Converts binary number in decimal number." alt="" coords="307,5,384,32"/>
+<div class="center"><img src="binary_converter_8h_a841f73995274942717704226df26004d_icgraph.png" border="0" usemap="#binary_converter_8h_a841f73995274942717704226df26004d_icgraph" alt=""/></div>
+<map name="binary_converter_8h_a841f73995274942717704226df26004d_icgraph" id="binary_converter_8h_a841f73995274942717704226df26004d_icgraph">
+<area shape="rect" title="Converts binary number in decimal number." alt="" coords="524,56,601,83"/>
+<area shape="rect" href="_q_r_code_struct_to_raw_8c.html#a4ac6b101def99db6d8a10e8cb949e525" title="Adds Error Correction blocks from Reed solomon code to QRCodeRawData." alt="" coords="307,5,476,32"/>
+<area shape="rect" href="raw_to_qr_code_struct_8c.html#ac43d095ec68923bba7de412d8cadc580" title="Gets two chars out of 11 Bit number." alt="" coords="335,56,448,83"/>
+<area shape="rect" href="raw_to_qr_code_struct_8c.html#a24fefd64aae15562e7e6f9d5ed4c8180" title="Get message Length from rawData." alt="" coords="314,107,469,133"/>
 <area shape="rect" href="_q_r_code_struct_to_raw_8h.html#afad62ee005c021c4e3547ea2286f5514" title="Converts struct with data to array with raw data." alt="" coords="104,5,259,32"/>
 <area shape="rect" href="test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
 </map>
@@ -280,9 +286,10 @@ Functions</h2></td></tr>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="binary_converter_8h_abab523f4ddcc5d2e3915eb0b76ff5bb1_icgraph.png" border="0" usemap="#binary_converter_8h_abab523f4ddcc5d2e3915eb0b76ff5bb1_icgraph" alt=""/></div>
 <map name="binary_converter_8h_abab523f4ddcc5d2e3915eb0b76ff5bb1_icgraph" id="binary_converter_8h_abab523f4ddcc5d2e3915eb0b76ff5bb1_icgraph">
-<area shape="rect" title="Converts a decimal Number into a BinaryNumber struct." alt="" coords="307,5,384,32"/>
-<area shape="rect" href="_q_r_code_struct_to_raw_8h.html#afad62ee005c021c4e3547ea2286f5514" title="Converts struct with data to array with raw data." alt="" coords="104,5,259,32"/>
-<area shape="rect" href="test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" title="Converts a decimal Number into a BinaryNumber struct." alt="" coords="524,31,601,57"/>
+<area shape="rect" href="_q_r_code_struct_to_raw_8c.html#a4ac6b101def99db6d8a10e8cb949e525" title="Adds Error Correction blocks from Reed solomon code to QRCodeRawData." alt="" coords="307,5,476,32"/>
+<area shape="rect" href="_q_r_code_struct_to_raw_8h.html#afad62ee005c021c4e3547ea2286f5514" title="Converts struct with data to array with raw data." alt="" coords="104,31,259,57"/>
+<area shape="rect" href="test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,56,57"/>
 </map>
 </div>
 
@@ -295,7 +302,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_af164aafd4e0b4f00da8b0cf803e6bb5.html">gabriel</a></li><li class="navelem"><a class="el" href="dir_89df99fc85d2f3ec4e1e369e3e31d746.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_70e37bf47c71ab64f98845b93b60771b.html">Project-QR-Code</a></li><li class="navelem"><a class="el" href="dir_3558dffe742480105c1aa2618dd2ac73.html">Write-QR-Code</a></li><li class="navelem"><a class="el" href="dir_31eb7557e6a224bc5bcdca0528f85cf6.html">lib</a></li><li class="navelem"><a class="el" href="dir_797f3ac126254d35461bb1e432c4c51e.html">binaryConverter</a></li><li class="navelem"><a class="el" href="binary_converter_8h.html">binaryConverter.h</a></li>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_af164aafd4e0b4f00da8b0cf803e6bb5.html">gabriel</a></li><li class="navelem"><a class="el" href="dir_89df99fc85d2f3ec4e1e369e3e31d746.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_70e37bf47c71ab64f98845b93b60771b.html">Project-QR-Code</a></li><li class="navelem"><a class="el" href="dir_29266ab273be2d8e0bb86c3f32483b18.html">QR-Code</a></li><li class="navelem"><a class="el" href="dir_1bdcbed2a84a173228409da966164c85.html">lib</a></li><li class="navelem"><a class="el" href="dir_6f99c91067607b0528bddc0437ba146a.html">binaryConverter</a></li><li class="navelem"><a class="el" href="binary_converter_8h.html">binaryConverter.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.19 </li>

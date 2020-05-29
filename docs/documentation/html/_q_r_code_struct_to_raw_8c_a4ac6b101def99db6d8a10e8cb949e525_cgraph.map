@@ -1,0 +1,9 @@
+<map id="addErrorCorrectionBlocks" name="addErrorCorrectionBlocks">
+<area shape="rect" id="node1" title="Adds Error Correction blocks from Reed solomon code to QRCodeRawData." alt="" coords="5,56,175,83"/>
+<area shape="rect" id="node2" href="$binary_converter_8c.html#a841f73995274942717704226df26004d" title="Converts binary number in decimal number." alt="" coords="253,5,331,32"/>
+<area shape="rect" id="node3" href="$reed_solomon_8c.html#aa7ba0bb5965492bf9b0d30ce71fdebdc" title="Wrapper function that calles the other functions." alt="" coords="223,56,361,83"/>
+<area shape="rect" id="node7" href="$binary_converter_8c.html#abab523f4ddcc5d2e3915eb0b76ff5bb1" title="Converts a decimal Number into a struct with array and bits." alt="" coords="253,107,331,133"/>
+<area shape="rect" id="node4" href="$reed_solomon_8c.html#a67675cc73f1a027b716d6f4b1e392da3" title="Prepares Messagepolynom and Generatorpolynom." alt="" coords="409,56,532,83"/>
+<area shape="rect" id="node5" href="$reed_solomon_8c.html#a8f7407b719f86ba8eccdd1a655729d44" title="Multiplies generatorPolynom with lead of previous generatorPolynom." alt="" coords="580,56,696,83"/>
+<area shape="rect" id="node6" href="$reed_solomon_8c.html#a731e630efb38930ebe789e2a03da27bf" title="XORs generatorPolynom with previous generatorPolynom." alt="" coords="744,56,820,83"/>
+</map>

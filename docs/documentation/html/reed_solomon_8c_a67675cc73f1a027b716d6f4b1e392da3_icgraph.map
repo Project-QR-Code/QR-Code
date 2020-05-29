@@ -1,6 +1,7 @@
 <map id="preparePolynoms" name="preparePolynoms">
-<area shape="rect" id="node1" title="Prepares Messagepolynom and Generatorpolynom." alt="" coords="493,5,616,32"/>
-<area shape="rect" id="node2" href="$reed_solomon_8h.html#aa7ba0bb5965492bf9b0d30ce71fdebdc" title="Wrapper function that calles the other functions." alt="" coords="307,5,445,32"/>
-<area shape="rect" id="node3" href="$_q_r_code_struct_to_raw_8h.html#afad62ee005c021c4e3547ea2286f5514" title="Converts struct with data to array with raw data." alt="" coords="104,5,259,32"/>
-<area shape="rect" id="node4" href="$test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" id="node1" title="Prepares Messagepolynom and Generatorpolynom." alt="" coords="711,5,833,32"/>
+<area shape="rect" id="node2" href="$reed_solomon_8h.html#aa7ba0bb5965492bf9b0d30ce71fdebdc" title="Wrapper function that calles the other functions." alt="" coords="524,5,663,32"/>
+<area shape="rect" id="node3" href="$_q_r_code_struct_to_raw_8c.html#a4ac6b101def99db6d8a10e8cb949e525" title="Adds Error Correction blocks from Reed solomon code to QRCodeRawData." alt="" coords="307,5,476,32"/>
+<area shape="rect" id="node4" href="$_q_r_code_struct_to_raw_8h.html#afad62ee005c021c4e3547ea2286f5514" title="Converts struct with data to array with raw data." alt="" coords="104,5,259,32"/>
+<area shape="rect" id="node5" href="$test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
 </map>

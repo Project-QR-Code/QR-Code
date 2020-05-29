@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['convertqrstructtoraw_53',['convertQrStructToRaw',['../_q_r_code_struct_to_raw_8c.html#afad62ee005c021c4e3547ea2286f5514',1,'convertQrStructToRaw(struct QRCode data):&#160;QRCodeStructToRaw.c'],['../_q_r_code_struct_to_raw_8h.html#afad62ee005c021c4e3547ea2286f5514',1,'convertQrStructToRaw(struct QRCode data):&#160;QRCodeStructToRaw.c']]],
-  ['createreedsolomon_54',['createReedSolomon',['../reed_solomon_8c.html#aa7ba0bb5965492bf9b0d30ce71fdebdc',1,'createReedSolomon(int messagePolynom[]):&#160;reedSolomon.c'],['../reed_solomon_8h.html#aa7ba0bb5965492bf9b0d30ce71fdebdc',1,'createReedSolomon(int messagePolynom[]):&#160;reedSolomon.c']]]
+  ['bintodec_67',['binToDec',['../binary_converter_8c.html#a841f73995274942717704226df26004d',1,'binToDec(int binaryNumber[], int length):&#160;binaryConverter.c'],['../binary_converter_8h.html#a841f73995274942717704226df26004d',1,'binToDec(int binaryNumber[], int length):&#160;binaryConverter.c']]]
 ];

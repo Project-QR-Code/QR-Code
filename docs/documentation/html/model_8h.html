@@ -106,10 +106,13 @@ $(document).ready(function(){initNavTree('model_8h.html',''); initResizable(); }
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="model_8h__dep__incl.png" border="0" usemap="#model_8hdep" alt=""/></div>
 <map name="model_8hdep" id="model_8hdep">
-<area shape="rect" title=" " alt="" coords="184,5,251,32"/>
+<area shape="rect" title=" " alt="" coords="332,5,399,32"/>
 <area shape="rect" href="_q_r_code_struct_to_raw_8c.html" title=" " alt="" coords="5,80,163,107"/>
-<area shape="rect" href="main_8c.html" title=" " alt="" coords="187,80,247,107"/>
-<area shape="rect" href="test_8c.html" title=" " alt="" coords="271,80,326,107"/>
+<area shape="rect" href="raw_to_qr_code_struct_8c.html" title=" " alt="" coords="175,155,321,181"/>
+<area shape="rect" href="raw_to_qr_code_struct_8h.html" title=" " alt="" coords="237,80,384,107"/>
+<area shape="rect" href="test_8c.html" title=" " alt="" coords="370,155,425,181"/>
+<area shape="rect" href="read_8c.html" title=" " alt="" coords="459,80,517,107"/>
+<area shape="rect" href="write_8c.html" title=" " alt="" coords="541,80,601,107"/>
 </map>
 </div>
 </div>
@@ -123,27 +126,26 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ab806ba672c2bbd5ae4f24d2e35a02ef7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="model_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a> [2064]</td></tr>
-<tr class="memdesc:ab806ba672c2bbd5ae4f24d2e35a02ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array that Stores data and all ids and markings in order.  <a href="model_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">More...</a><br /></td></tr>
-<tr class="separator:ab806ba672c2bbd5ae4f24d2e35a02ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61b3fca04081436951a63ab47742269c"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="model_8h.html#a61b3fca04081436951a63ab47742269c">mapAlphanumericalCharacters</a> [45]</td></tr>
+<tr class="memdesc:a61b3fca04081436951a63ab47742269c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map characters to special numbers(not ascii! alphanumerical code)  <a href="model_8h.html#a61b3fca04081436951a63ab47742269c">More...</a><br /></td></tr>
+<tr class="separator:a61b3fca04081436951a63ab47742269c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="ab806ba672c2bbd5ae4f24d2e35a02ef7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab806ba672c2bbd5ae4f24d2e35a02ef7">&#9670;&nbsp;</a></span>QRCodeRawData</h2>
+<a id="a61b3fca04081436951a63ab47742269c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61b3fca04081436951a63ab47742269c">&#9670;&nbsp;</a></span>mapAlphanumericalCharacters</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int QRCodeRawData[2064]</td>
+          <td class="memname">const char mapAlphanumericalCharacters[45]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Array that Stores data and all ids and markings in order. </p>
-<p>Max Number is calculated with basic data(redundance not included!) </p>
+<p>Map characters to special numbers(not ascii! alphanumerical code) </p>
 
-<p class="definition">Definition at line <a class="el" href="model_8h_source.html#l00006">6</a> of file <a class="el" href="model_8h_source.html">model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_q_r_code_struct_to_raw_8c_source.html#l00008">8</a> of file <a class="el" href="_q_r_code_struct_to_raw_8c_source.html">QRCodeStructToRaw.c</a>.</p>
 
 </div>
 </div>
@@ -152,7 +154,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_af164aafd4e0b4f00da8b0cf803e6bb5.html">gabriel</a></li><li class="navelem"><a class="el" href="dir_89df99fc85d2f3ec4e1e369e3e31d746.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_70e37bf47c71ab64f98845b93b60771b.html">Project-QR-Code</a></li><li class="navelem"><a class="el" href="dir_3558dffe742480105c1aa2618dd2ac73.html">Write-QR-Code</a></li><li class="navelem"><a class="el" href="dir_31eb7557e6a224bc5bcdca0528f85cf6.html">lib</a></li><li class="navelem"><a class="el" href="dir_a36d57746f6891e502193920bf31621c.html">QRCode</a></li><li class="navelem"><a class="el" href="model_8h.html">model.h</a></li>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_af164aafd4e0b4f00da8b0cf803e6bb5.html">gabriel</a></li><li class="navelem"><a class="el" href="dir_89df99fc85d2f3ec4e1e369e3e31d746.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_70e37bf47c71ab64f98845b93b60771b.html">Project-QR-Code</a></li><li class="navelem"><a class="el" href="dir_29266ab273be2d8e0bb86c3f32483b18.html">QR-Code</a></li><li class="navelem"><a class="el" href="dir_1bdcbed2a84a173228409da966164c85.html">lib</a></li><li class="navelem"><a class="el" href="dir_f2237fb737f42b68b35ce7e555700945.html">QRCode</a></li><li class="navelem"><a class="el" href="model_8h.html">model.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.19 </li>
