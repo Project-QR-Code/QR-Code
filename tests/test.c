@@ -23,7 +23,23 @@ int main(){
         printf("%d", QRCodeRawData[i]);
     }
     printf("\n");
+
+    // Decode Array read from QRCode
     struct QRCode finishedCode;
     finishedCode = decodeRawData(QRCodeRawData, lengthRawData);
+    
+    // Print decoded Struct
+    printf("Mode Indicator: ");
+    for(int i = 0; i < 4; i++){
+        printf("%d", finishedCode.modeIndicator[i]);
+    }
+    printf("\n");
 
+    printf("Length: %d\n", finishedCode.lengthOfData);
+
+    printf("Data: ");
+    for (int i = 0; i < finishedCode.lengthOfData; i++){
+        printf("%c", finishedCode.data[i]);
+    }
+    printf("\n");
 }

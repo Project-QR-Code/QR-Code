@@ -23,7 +23,7 @@ static int lengthQRCodeRawData;
  * @return binaryMode Returns the mode (alphanumeric, kanji ...) of the raw data
  */ 
 static int* extractModeIndicator() {
-    int binaryMode[4];
+    int *binaryMode = malloc(4 * sizeof(int));
     // First 4 Bits in the Raw Data are the mode indicator
     for(int i = 0; i < 4; i++) {
         binaryMode[i] = QRCodeRawData[i];
@@ -95,22 +95,15 @@ struct QRCode decodeRawData(int *rawData, int lenghtRawData){
     // Call extract Mode Function and write result to struct
     int *modeIndicator = extractModeIndicator();
     for(int i = 0; i < 4; i++){
-        decodedRawData.modeIndicator[i] = modeIndicator;
+        decodedRawData.modeIndicator[i] = modeIndicator[i];
     }
     free(modeIndicator);
 
     // Copy length to return struct
     decodedRawData.lengthOfData = extractMessageLength();
 
-    printf("Length: %d\n", decodedRawData.lengthOfData);
     // Copy only the data and not the ECC Blocks in the struct data
     strncpy(decodedRawData.data, decodeToString(), decodedRawData.lengthOfData);
-
-    printf("String: ");
-    for (int i = 0; i < decodedRawData.lengthOfData; i++){
-        printf("%c", decodedRawData.data[i]);
-    }
-    printf("\n");
     
     
     return decodedRawData;

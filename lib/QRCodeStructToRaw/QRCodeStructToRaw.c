@@ -122,11 +122,6 @@ void convertQrStructToRaw(struct QRCode data){
         // Convert block value to binary number
         struct BinaryNumber tempBinNumber = decToBin(blockDecValue, 11);
         
-        printf("Binary numbers: ");
-        for(int a = 0; a < tempBinNumber.length; a++){
-            printf("%d", tempBinNumber.array[a]);
-        }
-        printf("\n");
 
         // Extend binary number into length of 11 Bits (attach 0)
 
