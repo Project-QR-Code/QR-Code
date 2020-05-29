@@ -102,8 +102,9 @@ struct QRCode decodeRawData(int *rawData, int lenghtRawData){
     // Copy length to return struct
     decodedRawData.lengthOfData = extractMessageLength();
 
+    printf("Length: %d\n", decodedRawData.lengthOfData);
     // Copy only the data and not the ECC Blocks in the struct data
-    strncpy(decodedRawData.data, decodeToString(), 9);
+    strncpy(decodedRawData.data, decodeToString(), decodedRawData.lengthOfData);
 
     printf("String: ");
     for (int i = 0; i < decodedRawData.lengthOfData; i++){

@@ -103,14 +103,31 @@ void convertQrStructToRaw(struct QRCode data){
 
     integrityCheckDataArray(data);
 
+    // Create copy of lengthOfData because that counts +1 if amount of chars in odd 
+    int lengthCache = data.lengthOfData;
+
+    // Adjust length when using strings with odd length
+    if(lengthCache % 2 == 1){
+        lengthCache++;
+    }
+    
+    
     // Create Blocks of 2 Characters and calculate binary Number
-    for (int i = 0; i < data.lengthOfData; i += 2){
+    for (int i = 0; i < lengthCache; i += 2){
 
         // Calculate Block Value
         int blockDecValue = getIndexInMapCharacters((char)data.data[i]) * 45;
-        blockDecValue += getIndexInMapCharacters((char)data.data[i + 1]);
+        blockDecValue += (getIndexInMapCharacters((char)data.data[i + 1]) == -1 ? 0 : getIndexInMapCharacters((char)data.data[i + 1]));
+        
         // Convert block value to binary number
         struct BinaryNumber tempBinNumber = decToBin(blockDecValue, 11);
+        
+        printf("Binary numbers: ");
+        for(int a = 0; a < tempBinNumber.length; a++){
+            printf("%d", tempBinNumber.array[a]);
+        }
+        printf("\n");
+
         // Extend binary number into length of 11 Bits (attach 0)
 
         int missingZeroes = 11 - tempBinNumber.length;
@@ -124,6 +141,7 @@ void convertQrStructToRaw(struct QRCode data){
         }
         lengthDataBlocksBinary += 11;
     }
+
 
     // Write Type of Data (codification id)
     for (int i = 0; i < 4; i++){
@@ -139,10 +157,10 @@ void convertQrStructToRaw(struct QRCode data){
     lengthRawData += 9;
 
     // Write processed payload to raw array
-    for (int i = 0; i < (data.lengthOfData / 2) * 11; i++){
+    for (int i = 0; i < (lengthCache / 2) * 11; i++){
         QRCodeRawData[i + lengthRawData] = dataBlocksBinary[i];
     }
-    lengthRawData += (data.lengthOfData / 2) * 11;
+    lengthRawData += (lengthCache / 2) * 11;
 
 
     // Add terminator (4 zeroes)
