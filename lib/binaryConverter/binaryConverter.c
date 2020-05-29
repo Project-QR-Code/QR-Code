@@ -30,12 +30,12 @@ struct BinaryNumber decToBin(int number, int length){
 }
 
 /// Converts binary number in decimal number
-int binToDec(int binaryNumber[], int lenght){
+int binToDec(int binaryNumber[], int length){
     int indexValue = 1;
     int number = 0;
 
     // Test if number is correct
-    for(int i = 0; i < lenght; i++){
+    for(int i = 0; i < length; i++){
         if(binaryNumber[i] != 1 && binaryNumber[i] != 0){
             fprintf(stderr, "Number is not a binary Number!\n");
             return -1;
@@ -43,12 +43,12 @@ int binToDec(int binaryNumber[], int lenght){
     }
 
     /// Calculate decimal Number
-    for(int i = lenght-1; i >= 0; i--){
+    for(int i = length-1; i >= 0; i--){
         if(binaryNumber[i] == 1){
             number += indexValue;
         }
 
-        if(i == lenght){
+        if(i == length){
             indexValue++;
         }else{
             indexValue *= 2;

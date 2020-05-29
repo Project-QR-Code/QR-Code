@@ -10,13 +10,13 @@
 int main(){
     // TESTING!
     struct QRCode test;
-    test.codificationId[0] = 0;
-    test.codificationId[1] = 0;
-    test.codificationId[2] = 1;
-    test.codificationId[3] = 0;
-    test.lengthOfData = 4;
-    char *test_string = "TEST";
-    strcpy(test.data, test_string);
+    test.modeIndicator[0] = 0;
+    test.modeIndicator[1] = 0;
+    test.modeIndicator[2] = 1;
+    test.modeIndicator[3] = 0;
+    test.lengthOfData = 5;
+    char *test_string = "HELLO";
+    strncpy(test.data, test_string, test.lengthOfData);
     convertQrStructToRaw(test);
     printf("Binary Data: ");
     for (int i = 0; i < lengthRawData; i++){
@@ -24,6 +24,6 @@ int main(){
     }
     printf("\n");
     struct QRCode finishedCode;
-    finishedCode = decodedRawData(QRCodeRawData, lengthRawData);
+    finishedCode = decodeRawData(QRCodeRawData, lengthRawData);
 
 }

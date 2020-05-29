@@ -2,13 +2,12 @@
 #define _QRCODESTRUCTTORAW_H_
 
 
+
 /// Processed Raw data
-int QRCodeRawData[];
+int QRCodeRawData[2064];
 /// Length of Raw data
 int lengthRawData;
 
-/// Map characters to special numbers(not ascii! alphanumerical code)
-const char mapAlphanumericalCharacters[45];
 
 /** Converts struct with data to array with raw data.
   * Adds correction codes to data
