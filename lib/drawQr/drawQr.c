@@ -1,8 +1,33 @@
-#include "./drawQr.h"
+//#include "./drawQr.h"
 #include <stdio.h>
+#define LENGHT 21
+
+
+int insertData(int array[]);
+void prepareRectangle();
+void drawRectangle(int data);
 int rectangle[LENGHT][LENGHT]={4};     
 
-int insertdata(int array[]){
+int main(){
+	int data[]={};
+	insertData(data);
+	for(int i=0;i<LENGHT;i++){
+		for(int j=0;j<LENGHT;j++){
+			if(rectangle[i][j]==4)
+				printf("- ");
+			else if (rectangle[i][j]==5)
+				printf("# ");
+			else if(rectangle[i][j]==1)
+				printf("# ");
+			else
+				printf("- ");
+			
+		}
+		printf("\n");
+	}
+	return 0;
+}
+int insertData(int array[]){
     
     prepareRectangle();
 
