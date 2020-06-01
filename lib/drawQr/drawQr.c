@@ -39,7 +39,7 @@ int insertData(int array[]){
 void prepareRectangle(){
 	//Typinformation für unseres QR-Code LVL-H Mask 0 :  001011010001001
 	int typeinformation[15]={4,4,5,4,5,5,4,5,4,4,4,5,4,4,5};
-	int backwardscounter=14;
+	int backwardscounter=0;
 	
     for(int j=0;j<3;j++){
 		int sizey,sizex;
@@ -127,13 +127,15 @@ void prepareRectangle(){
 	rectangle[11][6]=4;
 	
 	rectangle[13][8]=5;			//punkt links unten
+	for(int y=LENGHT-1;y>=0;y--){		//vertikal  typinformation eingeben... 
+		if(y==8||(rectangle[y][8]==0&&(rectangle[y][7]==4||rectangle[y+1][8]==4))){
+			rectangle[y][8]=typeinformation[backwardscounter];
+			backwardscounter++;
+		}
 
-	for(int y=0;y<15;y++){		//vertikal  typinformation eingeben... Noch nicht fertig
-			if(rectangle[y][8]==0&&rectangle[y][7]==4){
-				rectangle[y][8]=typeinformation[backwardscounter];
-				backwardscounter--;
-			}else
-				rectangle[8][8]=5;
+	}
+	for(int y=0;y<15;y++){
+		//if(rectangle[])
 	}
 }
 void drawRectangle(int data){
