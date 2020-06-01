@@ -5,22 +5,23 @@
 
 int insertData(int array[]);
 void prepareRectangle();
-void drawRectangle(int data);
-int rectangle[LENGHT][LENGHT]={4};     
+void drawRectangle();
+int rectangle[LENGHT][LENGHT]={4};    
+int data[]={0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,1,0,0,1,1,1,1,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,1,1,1,0,1,1,0,0,0,0,0,1,0,0,0,1,1,1,1,0,1,1,0,0,0,0,0,1,0,0,0,1,1,1,0,1,0,0,0,0,1,0,0,1,0,0,1,1,0,1,1,1,1,0,0,0,1,1,1,0,1,0,1,1,0,0,0,1,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,1,0,1,0,1,0,0,1,0,0,1,0,0,1,1,0,1,0,0,0,1,0,1,0,0,0,1,1,0,0,1,0,0,0,1,1,1,0,1,1,0,1,1,0,0,1,1,0,1,0,0,0,1,0,1,1,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0};
+	 
 
 int main(){
-	int data[]={};
 	insertData(data);
 	for(int i=0;i<LENGHT;i++){
 		for(int j=0;j<LENGHT;j++){
 			if(rectangle[i][j]==4)
-				printf("- ");
+				printf("-4");
 			else if (rectangle[i][j]==5)
-				printf("# ");
+				printf("#5");
 			else if(rectangle[i][j]==1)
-				printf("# ");
+				printf("#1");
 			else
-				printf("- ");
+				printf("-0");
 			
 		}
 		printf("\n");
@@ -30,7 +31,7 @@ int main(){
 int insertData(int array[]){
     
     prepareRectangle();
-
+	drawRectangle();
     //drawRectangle(array[]);
 
 
@@ -144,6 +145,20 @@ void prepareRectangle(){
 	}
 	
 }
-void drawRectangle(int data){
-    
+void drawRectangle(){
+	// Input-Mask == (x+y)%2 , wenn gerade ändere Bit ,sonst nicht.
+
+	/*int datacounter=0;
+	for(int x=LENGHT-1;x>=0;){
+		if((rectangle[y][x]!=4)&&(rectangle[y][x]!=5)){
+			if((y+x)%2==0){
+				rectangle[y][x]=data[datacounter];
+			}else{
+				if(data[datacounter]==1)
+					rectangle[y][x]=0;
+				else
+					rectangle[y][x]=1
+			}
+		}
+	}*/
 }
