@@ -134,9 +134,15 @@ void prepareRectangle(){
 		}
 
 	}
-	for(int y=0;y<15;y++){
-		//if(rectangle[])
+	backwardscounter=(sizeof(typeinformation)/4)-1;
+	for(int y=LENGHT-1;y>=0;y--){		//vertikal  typinformation eingeben... 
+		if((rectangle[8][y]==0&&(rectangle[7][y]==4||rectangle[8][y+1]==4))){
+			rectangle[8][y]=typeinformation[backwardscounter];
+			backwardscounter--;
+		}
+
 	}
+	
 }
 void drawRectangle(int data){
     
