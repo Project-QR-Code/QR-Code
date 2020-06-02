@@ -5,10 +5,12 @@
 
 int insertData(int array[]);
 void prepareRectangle();
-void drawRectangle();
+int fromEndtoStart(int start);
+int fromStarttoEnd(int start);
+int drawRectangle();
 int rectangle[LENGHT][LENGHT]={4};    
 int data[]={0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,1,0,0,1,1,1,1,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,1,1,1,0,1,1,0,0,0,0,0,1,0,0,0,1,1,1,1,0,1,1,0,0,0,0,0,1,0,0,0,1,1,1,0,1,0,0,0,0,1,0,0,1,0,0,1,1,0,1,1,1,1,0,0,0,1,1,1,0,1,0,1,1,0,0,0,1,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,1,0,1,0,1,0,0,1,0,0,1,0,0,1,1,0,1,0,0,0,1,0,1,0,0,0,1,1,0,0,1,0,0,0,1,1,1,0,1,1,0,1,1,0,0,1,1,0,1,0,0,0,1,0,1,1,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0};
-	 
+int datacounter=0;
 
 int main(){
 	insertData(data);
@@ -33,7 +35,6 @@ int insertData(int array[]){
     prepareRectangle();
 	drawRectangle();
     //drawRectangle(array[]);
-
 
 
 }
@@ -145,20 +146,32 @@ void prepareRectangle(){
 	}
 	
 }
-void drawRectangle(){
+int drawRectangle(){
 	// Input-Mask == (x+y)%2 , wenn gerade ändere Bit ,sonst nicht.
+	int alt=0;
+	int x=LENGHT-1;
+	int lendata=sizeof(data)/4;
+	int revy=0;
+	datacounter=0;
+	printf("SizeData: %d",lendata);
 
-	/*int datacounter=0;
-	for(int x=LENGHT-1;x>=0;){
-		if((rectangle[y][x]!=4)&&(rectangle[y][x]!=5)){
-			if((y+x)%2==0){
+	for(int i=0;i<2;i++){
+		for(int y=LENGHT-1;y>=0;y--){
+			revy++;
+			if(rectangle[y][x]==0){
+				if(((x-1)+revy)%2==0){
+					if(data[datacounter]==0){
+						rectangle[y][x]=1;
+					}else
+						rectangle[y][x]=0;
+				}else{
 				rectangle[y][x]=data[datacounter];
-			}else{
-				if(data[datacounter]==1)
-					rectangle[y][x]=0;
-				else
-					rectangle[y][x]=1
+				}
+				datacounter+=2;
 			}
+
 		}
-	}*/
+	}
+
+	return 0;
 }
