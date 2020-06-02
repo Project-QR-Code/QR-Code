@@ -2,6 +2,7 @@
 #include "../lib/QRCodeStructToRaw/QRCodeStructToRaw.h"
 #include "../lib/reedSolomon/reedSolomon.h"
 #include "../lib/drawQr/drawQr.h"
+#include "../lib/drawQr/createPBMImage.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -19,5 +20,6 @@ int main(){
     strcpy(test.data, test_string);
     convertQrStructToRaw(test);
     printf("\n");
-    insertData(QRCodeRawData);
+    //insertData(QRCodeRawData);
+    createPBMImage();
 }

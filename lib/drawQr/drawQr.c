@@ -9,10 +9,18 @@ int fromStarttoEnd(int start);
 int drawRectangle();
 int rectangle[LENGHT][LENGHT] = {4};
 int data[] = {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0};
+
 int datacounter = 0;
 
-int main()
+int insertData(int array[])
 {
+
+	prepareRectangle();
+	drawRectangle();
+	//drawRectangle(array[]);
+}
+
+int test(){
 	insertData(data);
 	for (int i = 0; i < LENGHT; i++)
 	{
@@ -31,13 +39,7 @@ int main()
 	}
 	return 0;
 }
-int insertData(int array[])
-{
 
-	prepareRectangle();
-	drawRectangle();
-	//drawRectangle(array[]);
-}
 void prepareRectangle()
 {
 	//Typinformation für unseres QR-Code LVL-H Mask 0 :  001011010001001
@@ -90,7 +92,7 @@ void prepareRectangle()
 			else if (alternate == 4)
 				alternate++;
 			else
-				printf("Error");
+				perror("Error");
 
 			sizex--;
 			sizey--;
