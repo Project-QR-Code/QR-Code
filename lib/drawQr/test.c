@@ -1,5 +1,6 @@
 //#include "./drawQr.h"
 #include <stdio.h>
+#include "./createPBMImage.h"
 #define LENGHT 21
 
 int insertData(int array[]);
@@ -29,6 +30,8 @@ int main()
         }
         printf("\n");
     }
+    createPBMImage(rectangle);
+
     return 0;
 }
 int insertData(int array[])

@@ -1,5 +1,6 @@
 //#include "./drawQr.h"
 #include <stdio.h>
+#include "./createPBMImage.h"
 #define LENGHT 21
 
 int insertData(int array[]);
@@ -29,6 +30,8 @@ int main()
         }
         printf("\n");
     }
+    createPBMImage(rectangle);
+
     return 0;
 }
 int insertData(int array[])
@@ -168,453 +171,100 @@ int drawRectangle()
 {
     // Input-Mask == (x+y)%2 , wenn gerade ändere Bit ,sonst nicht.
     int alt = 0;
-    int x = LENGHT - 1;
     int lendata = sizeof(data) / 4;
     int revy = 0;
     int savedatacounter = 0;
     datacounter = 0;
-    for (int y = LENGHT - 1; y >= 0; y--)
+    for (int x = LENGHT - 1; x >= 2;)
     {
-        revy++;
-        if (rectangle[y][x] == 0)
+        for (int y = LENGHT - 1; y >= 0; y--)
         {
-            if ((((x - 1) - 0) + revy) % 2 == 0)
+            revy++;
+            if (rectangle[y][x] == 0)
             {
-                if (data[datacounter] == 0)
+                if ((((x - 1) - 0) + revy) % 2 == 0)
                 {
-                    rectangle[y][x] = 1;
+                    if (data[datacounter] == 0)
+                    {
+                        rectangle[y][x] = 1;
+                    }
+                    else
+                        rectangle[y][x] = 0;
                 }
                 else
-                    rectangle[y][x] = 0;
-            }
-            else
-            {
-                rectangle[y][x] = data[datacounter];
-            }
-
-            datacounter += 1;
-        }
-        if (rectangle[y][x - 1] == 0)
-        {
-            if ((((x - 1) - 1) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
                 {
-                    rectangle[y][x - 1] = 1;
+                    rectangle[y][x] = data[datacounter];
+                }
+
+                datacounter++;
+            }
+            if (rectangle[y][x - 1] == 0)
+            {
+                if ((((x - 1) - 1) + revy) % 2 == 0)
+                {
+                    if (data[datacounter] == 0)
+                        rectangle[y][x - 1] = 1;
+                    else
+                        rectangle[y][x - 1] = 0;
                 }
                 else
-                    rectangle[y][x - 1] = 0;
-            }
-            else
-            {
-                rectangle[y][x - 1] = data[datacounter];
-            }
+                {
+                    rectangle[y][x - 1] = data[datacounter];
+                }
 
-            datacounter++;
+                datacounter++;
+            }
         }
+        x -= 2;
+        revy = LENGHT - 1;
+        for (int y = 0; y < LENGHT; y++)
+        {
+            revy--;
+            if (rectangle[y][x] == 0)
+            {
+                if ((((x - 1)) + revy) % 2 == 0)
+                {
+                    if (data[datacounter] == 0)
+                    {
+                        rectangle[y][x] = 1;
+                    }
+                    else
+                        rectangle[y][x] = 0;
+                }
+                else
+                {
+                    rectangle[y][x] = data[datacounter];
+                }
+
+                datacounter++;
+            }
+            if (x != 0)
+            {
+                if (rectangle[y][x - 1] == 0)
+                {
+                    if ((((x - 1) - 1) + revy) % 2 == 0)
+                    {
+                        if (data[datacounter] == 0)
+                        {
+                            rectangle[y][x - 1] = 1;
+                        }
+                        else
+                            rectangle[y][x - 1] = 0;
+                    }
+                    else
+                    {
+                        rectangle[y][x - 1] = data[datacounter];
+                    }
+
+                    datacounter++;
+                }
+            }
+        }
+
+        x -= 2;
+
+        revy = 0;
     }
-    x -= 2;
-    revy = LENGHT - 1;
-    for (int y = 0; y < LENGHT; y++)
-    {
-        revy--;
-        if (rectangle[y][x] == 0)
-        {
-            if ((((x - 1)) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
-                {
-                    rectangle[y][x] = 1;
-                }
-                else
-                    rectangle[y][x] = 0;
-            }
-            else
-            {
-                rectangle[y][x] = data[datacounter];
-            }
 
-            datacounter++;
-        }
-        if (rectangle[y][x - 1] == 0)
-        {
-            if ((((x - 1) - 1) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
-                {
-                    rectangle[y][x - 1] = 1;
-                }
-                else
-                    rectangle[y][x - 1] = 0;
-            }
-            else
-            {
-                rectangle[y][x - 1] = data[datacounter];
-            }
-
-            datacounter++;
-        }
-    }
-    x = 16;
-    revy = 0;
-    for (int y = LENGHT - 1; y >= 0; y--)
-    {
-        revy++;
-        if (rectangle[y][x] == 0)
-        {
-            if ((((x - 1) - 0) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
-                {
-                    rectangle[y][x] = 1;
-                }
-                else
-                    rectangle[y][x] = 0;
-            }
-            else
-            {
-                rectangle[y][x] = data[datacounter];
-            }
-
-            datacounter++;
-        }
-        if (rectangle[y][x - 1] == 0)
-        {
-            if ((((x - 1) - 1) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
-                {
-                    rectangle[y][x - 1] = 1;
-                }
-                else
-                    rectangle[y][x - 1] = 0;
-            }
-            else
-            {
-                rectangle[y][x - 1] = data[datacounter];
-            }
-
-            datacounter++;
-        }
-    }
-    x = 14;
-    revy = LENGHT - 1;
-    for (int y = 0; y < LENGHT; y++)
-    {
-        revy--;
-        if (rectangle[y][x] == 0)
-        {
-            if ((((x - 1)) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
-                {
-                    rectangle[y][x] = 1;
-                }
-                else
-                    rectangle[y][x] = 0;
-            }
-            else
-            {
-                rectangle[y][x] = data[datacounter];
-            }
-
-            datacounter++;
-        }
-        if (rectangle[y][x - 1] == 0)
-        {
-            if ((((x - 1) - 1) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
-                {
-                    rectangle[y][x - 1] = 1;
-                }
-                else
-                    rectangle[y][x - 1] = 0;
-            }
-            else
-            {
-                rectangle[y][x - 1] = data[datacounter];
-            }
-
-            datacounter++;
-        }
-    }
-    x = 12;
-    revy = 0;
-    for (int y = LENGHT - 1; y >= 0; y--)
-    {
-        revy++;
-        if (rectangle[y][x] == 0)
-        {
-            if ((((x - 1) - 0) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
-                {
-                    rectangle[y][x] = 1;
-                }
-                else
-                    rectangle[y][x] = 0;
-            }
-            else
-            {
-                rectangle[y][x] = data[datacounter];
-            }
-
-            datacounter += 1;
-        }
-        if (rectangle[y][x - 1] == 0)
-        {
-            if ((((x - 1) - 1) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
-                {
-                    rectangle[y][x - 1] = 1;
-                }
-                else
-                    rectangle[y][x - 1] = 0;
-            }
-            else
-            {
-                rectangle[y][x - 1] = data[datacounter];
-            }
-
-            datacounter++;
-        }
-    }
-    x -= 2;
-    revy = LENGHT - 1;
-    for (int y = 0; y < LENGHT; y++)
-    {
-        revy--;
-        if (rectangle[y][x] == 0)
-        {
-            if ((((x - 1)) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
-                {
-                    rectangle[y][x] = 1;
-                }
-                else
-                    rectangle[y][x] = 0;
-            }
-            else
-            {
-                rectangle[y][x] = data[datacounter];
-            }
-
-            datacounter++;
-        }
-        if (rectangle[y][x - 1] == 0)
-        {
-            if ((((x - 1) - 1) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
-                {
-                    rectangle[y][x - 1] = 1;
-                }
-                else
-                    rectangle[y][x - 1] = 0;
-            }
-            else
-            {
-                rectangle[y][x - 1] = data[datacounter];
-            }
-
-            datacounter++;
-        }
-    }
-    x = 8;
-    revy = 0;
-    for (int y = LENGHT - 1; y >= 0; y--)
-    {
-        revy++;
-        if (rectangle[y][x] == 0)
-        {
-            if ((((x - 1) - 0) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
-                {
-                    rectangle[y][x] = 1;
-                }
-                else
-                    rectangle[y][x] = 0;
-            }
-            else
-            {
-                rectangle[y][x] = data[datacounter];
-            }
-
-            datacounter += 1;
-        }
-        if (rectangle[y][x - 1] == 0)
-        {
-            if ((((x - 1) - 1) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
-                {
-                    rectangle[y][x - 1] = 1;
-                }
-                else
-                    rectangle[y][x - 1] = 0;
-            }
-            else
-            {
-                rectangle[y][x - 1] = data[datacounter];
-            }
-
-            datacounter++;
-        }
-    }
-    x -= 2;
-    revy = LENGHT - 1;
-    for (int y = 0; y < LENGHT; y++)
-    {
-        revy--;
-        if (rectangle[y][x] == 0)
-        {
-            if ((((x - 1)) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
-                {
-                    rectangle[y][x] = 1;
-                }
-                else
-                    rectangle[y][x] = 0;
-            }
-            else
-            {
-                rectangle[y][x] = data[datacounter];
-            }
-
-            datacounter++;
-        }
-        if (rectangle[y][x - 1] == 0)
-        {
-            if ((((x - 1) - 1) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
-                {
-                    rectangle[y][x - 1] = 1;
-                }
-                else
-                    rectangle[y][x - 1] = 0;
-            }
-            else
-            {
-                rectangle[y][x - 1] = data[datacounter];
-            }
-
-            datacounter++;
-        }
-    }
-    x = 4;
-    revy = 0;
-    for (int y = LENGHT - 1; y >= 0; y--)
-    {
-        revy++;
-        if (rectangle[y][x] == 0)
-        {
-            if ((((x - 1) - 0) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
-                {
-                    rectangle[y][x] = 1;
-                }
-                else
-                    rectangle[y][x] = 0;
-            }
-            else
-            {
-                rectangle[y][x] = data[datacounter];
-            }
-
-            datacounter += 1;
-        }
-        if (rectangle[y][x - 1] == 0)
-        {
-            if ((((x - 1) - 1) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
-                {
-                    rectangle[y][x - 1] = 1;
-                }
-                else
-                    rectangle[y][x - 1] = 0;
-            }
-            else
-            {
-                rectangle[y][x - 1] = data[datacounter];
-            }
-
-            datacounter++;
-        }
-    }
-    x -= 2;
-	printf("%d",x);
-    revy = LENGHT - 1;
-    for (int y = 0; y < LENGHT; y++)
-    {
-        revy--;
-        if (rectangle[y][x] == 0)
-        {
-            if ((((x - 1)) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
-                {
-                    rectangle[y][x] = 1;
-                }
-                else
-                    rectangle[y][x] = 0;
-            }
-            else
-            {
-                rectangle[y][x] = data[datacounter];
-            }
-
-            datacounter++;
-        }
-        if (rectangle[y][x - 1] == 0)
-        {
-            if ((((x - 1) - 1) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
-                {
-                    rectangle[y][x - 1] = 1;
-                }
-                else
-                    rectangle[y][x - 1] = 0;
-            }
-            else
-            {
-                rectangle[y][x - 1] = data[datacounter];
-            }
-
-            datacounter++;
-        }
-    }
-    x -=2;
-    revy = 0;
-    for (int y = LENGHT - 1; y >= 0; y--)
-    {
-        revy++;
-        if (rectangle[y][x] == 0)
-        {
-            if ((((x - 1) - 0) + revy) % 2 == 0)
-            {
-                if (data[datacounter] == 0)
-                {
-                    rectangle[y][x] = 1;
-                }
-                else
-                    rectangle[y][x] = 0;
-            }
-            else
-            {
-                rectangle[y][x] = data[datacounter];
-            }
-
-            datacounter++;
-        }
-    }
     return 0;
 }
