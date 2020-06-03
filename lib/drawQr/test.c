@@ -172,7 +172,7 @@ int drawRectangle()
     int revy = 0;
     int savedatacounter = 0;
     datacounter = 0;
-    for (int x = LENGHT - 1; x >= -2;)
+    for (int x = LENGHT - 1; x >= 2;)
     {
         for (int y = LENGHT - 1; y >= 0; y--)
         {
@@ -200,9 +200,7 @@ int drawRectangle()
                 if ((((x - 1) - 1) + revy) % 2 == 0)
                 {
                     if (data[datacounter] == 0)
-                    {
                         rectangle[y][x - 1] = 1;
-                    }
                     else
                         rectangle[y][x - 1] = 0;
                 }
@@ -216,7 +214,6 @@ int drawRectangle()
         }
         x -= 2;
         revy = LENGHT - 1;
-        if(x==0) break;
         for (int y = 0; y < LENGHT; y++)
         {
             revy--;
@@ -238,28 +235,31 @@ int drawRectangle()
 
                 datacounter++;
             }
-            if (rectangle[y][x - 1] == 0)
+            if (x != 0)
             {
-                if ((((x - 1) - 1) + revy) % 2 == 0)
+                if (rectangle[y][x - 1] == 0)
                 {
-                    if (data[datacounter] == 0)
+                    if ((((x - 1) - 1) + revy) % 2 == 0)
                     {
-                        rectangle[y][x - 1] = 1;
+                        if (data[datacounter] == 0)
+                        {
+                            rectangle[y][x - 1] = 1;
+                        }
+                        else
+                            rectangle[y][x - 1] = 0;
                     }
                     else
-                        rectangle[y][x - 1] = 0;
-                }
-                else
-                {
-                    rectangle[y][x - 1] = data[datacounter];
-                }
+                    {
+                        rectangle[y][x - 1] = data[datacounter];
+                    }
 
-                datacounter++;
+                    datacounter++;
+                }
             }
         }
-        
+
         x -= 2;
-        
+
         revy = 0;
     }
 
