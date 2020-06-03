@@ -9,10 +9,9 @@ int fromStarttoEnd(int start);
 int drawRectangle();
 int rectangle[LENGHT][LENGHT] = {4};
 int data[] = {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0};
-
 int datacounter = 0;
 
-int insertData(int array[])
+int main()
 {
     insertData(data);
     for (int i = 0; i < LENGHT; i++)
@@ -32,6 +31,8 @@ int insertData(int array[])
     }
     return 0;
 }
+int insertData(int array[])
+{
 
     prepareRectangle();
     drawRectangle();
@@ -549,6 +550,7 @@ int drawRectangle()
         }
     }
     x -= 2;
+	printf("%d",x);
     revy = LENGHT - 1;
     for (int y = 0; y < LENGHT; y++)
     {
@@ -590,7 +592,7 @@ int drawRectangle()
             datacounter++;
         }
     }
-    x = 0;
+    x -=2;
     revy = 0;
     for (int y = LENGHT - 1; y >= 0; y--)
     {
@@ -611,9 +613,8 @@ int drawRectangle()
                 rectangle[y][x] = data[datacounter];
             }
 
-            datacounter += 1;
+            datacounter++;
         }
     }
-
     return 0;
 }
