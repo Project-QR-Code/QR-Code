@@ -21,5 +21,4 @@ int main(){
     convertQrStructToRaw(test);
     printf("\n");
     //insertData(QRCodeRawData);
-    createPBMImage();
 }
