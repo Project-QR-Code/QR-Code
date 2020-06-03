@@ -147,7 +147,7 @@ int drawRectangle(int *data){
 		for (int y = LENGHT - 1; y >= 0; y--){
 			revy++;
 			if (rectangle[y][x] == 0){
-				if ((((x - 1) - 0) + revy) % 2 == 0){
+				if ((((x - 1) - 0)) % 3 == 0){
 					if (data[datacounter] == 0){
 						rectangle[y][x] = 1;
 					}else
@@ -159,7 +159,7 @@ int drawRectangle(int *data){
 				datacounter++;
 			}
 			if (rectangle[y][x - 1] == 0){
-				if ((((x - 1) - 1) + revy) % 2 == 0){
+				if ((((x - 1) - 1)) % 3 == 0){
 					if (data[datacounter] == 0)
 						rectangle[y][x - 1] = 1;
 					else
@@ -176,7 +176,7 @@ int drawRectangle(int *data){
 		for (int y = 0; y < LENGHT; y++){
 			revy--;
 			if (rectangle[y][x] == 0){
-				if ((((x - 1)) + revy) % 2 == 0){
+				if ((((x - 1))) % 3 == 0){
 					if (data[datacounter] == 0){
 						rectangle[y][x] = 1;
 					}
@@ -190,7 +190,7 @@ int drawRectangle(int *data){
 			}
 			if (x != 0){
 				if (rectangle[y][x - 1] == 0){
-					if ((((x - 1) - 1) + revy) % 2 == 0){
+					if ((((x - 1) - 1)) % 3 == 0){
 						if (data[datacounter] == 0){
 							rectangle[y][x - 1] = 1;
 						}else
@@ -208,6 +208,6 @@ int drawRectangle(int *data){
 
 		revy = 0;
 	}
-
+	
 	return 0;
 }
