@@ -38,7 +38,12 @@ static void writeMetadata(){
 }
 
 static void writeArray(int rectangle[21][21]){
-
+    for (int i = 0; i < 21; i++){
+        for(int j = 0; j < 21; j++){
+            fprintf(fileptr, "%d ", rectangle[i][j]);
+        }
+        fprintf(fileptr, "\n");
+    }
 }
 
 
@@ -54,6 +59,8 @@ void createPBMImage(int rectangle[21][21]){
     }
 
     writeMetadata();
+
+    writeArray(rectangle);
 
     closeFileHandler();
 }
