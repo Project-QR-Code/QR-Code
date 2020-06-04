@@ -15,7 +15,7 @@ int main(){
     test.codificationId[2] = 1;
     test.codificationId[3] = 0;
     test.lengthOfData = 4;
-    char *test_string = "TEST";
+    char *test_string = "HELL";
     strcpy(test.data, test_string);
     convertQrStructToRaw(test);
     printf("\n");

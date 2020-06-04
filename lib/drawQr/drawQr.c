@@ -140,6 +140,85 @@ void prepareRectangle(){
 
 int drawRectangle(int *data){
 	// Input-Mask == (x+y)%2 , wenn gerade ändere Bit ,sonst nicht.
+	/*
+	rectangle[20][20] = 1;
+	rectangle[20][19] = 0;
+	rectangle[19][20] = 1;
+	rectangle[19][19] = 1;
+	*/
+	
+	int counter = 0;
+	int currHeightEnd = 12;
+	int currHeightStart = 1;
+	int changeDirectionFlag = 0;
+	for(int columns = 21; columns > 0; columns-=2){
+		if(changeDirectionFlag == 0){
+			for(int rows = currHeightStart; rows <= currHeightEnd; rows++){
+				// Skip info line in top middle
+				if(currHeightEnd == 21 && rows == 15){
+					rows++;
+				}
+
+				int cache = data[counter];
+				
+				// Apply mask 0
+				if(( columns + rows ) % 2 == 0){
+					cache = 1 - cache;
+				}
+				rectangle[21-rows][columns-1] = cache;
+				
+				counter++;
+				cache = data[counter];
+				if(( (columns-1) + rows ) % 2 == 0){
+					cache = 1 - cache;
+				}
+				rectangle[21-rows][columns-2] = cache;
+				counter++;
+			}
+		}else{
+			int testCounter = 0;
+			for(int rows = currHeightEnd; rows >= currHeightStart; rows--){
+				// Skip info line in top middle
+				if(currHeightEnd == 21 && rows == 15){
+					rows--;
+				}
+				testCounter++;
+				printf("testCounter: %d\n", testCounter);
+				
+				int cache = data[counter];
+				// Apply mask 0
+				if(( columns + rows ) % 2 == 0){
+					cache = 1 - cache;
+				}
+				rectangle[21-rows][columns-1] = cache;
+				
+				counter++;
+				cache = data[counter];
+				if(( (columns-1) + rows ) % 2 == 0){
+					cache = 1 - cache;
+				}
+				rectangle[21-rows][columns-2] = cache;
+				counter++;
+			}
+		}
+		if(columns == 15 || columns == 14){
+			currHeightEnd = 21;
+		}
+		if(columns == 10 || columns == 11){
+			currHeightEnd = 12;
+			currHeightStart = 9;
+		}
+
+		if(columns == 8 || columns+1 == 8){
+			columns += 1;
+		}
+
+		changeDirectionFlag = 1 - changeDirectionFlag;
+	}
+	
+	
+	
+	/*
 	int revy = 0;
 	int savedatacounter = 0;
 	datacounter = 0;
@@ -208,6 +287,6 @@ int drawRectangle(int *data){
 
 		revy = 0;
 	}
-	
+	*/
 	return 0;
 }
