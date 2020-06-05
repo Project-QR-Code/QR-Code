@@ -176,14 +176,11 @@ int drawRectangle(int *data){
 				counter++;
 			}
 		}else{
-			int testCounter = 0;
 			for(int rows = currHeightEnd; rows >= currHeightStart; rows--){
 				// Skip info line in top middle
 				if(currHeightEnd == 21 && rows == 15){
 					rows--;
 				}
-				testCounter++;
-				printf("testCounter: %d\n", testCounter);
 				
 				int cache = data[counter];
 				// Apply mask 0
@@ -201,17 +198,19 @@ int drawRectangle(int *data){
 				counter++;
 			}
 		}
-		if(columns == 15 || columns == 14){
+		if(columns == 15){
 			currHeightEnd = 21;
 		}
-		if(columns == 10 || columns == 11){
+		if(columns == 11){
 			currHeightEnd = 12;
 			currHeightStart = 9;
 		}
 
-		if(columns == 8 || columns+1 == 8){
-			columns += 1;
+		
+		if(columns == 9){
+			columns -= 1;
 		}
+		printf("%d \n", columns);
 
 		changeDirectionFlag = 1 - changeDirectionFlag;
 	}
