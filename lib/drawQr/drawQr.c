@@ -3,7 +3,6 @@
 #include "./createPBMImage.h"
 
 int rectangle[LENGHT][LENGHT] = {4};
-int datacounter = 0;
 
 void drawQr(int *data){
 	insertData(data);
@@ -24,7 +23,7 @@ void drawQr(int *data){
 	return 0;
 }
 
-int insertData(int *data){
+void insertData(int *data){
 	prepareRectangle();
 	drawRectangle(data);
 }
@@ -138,19 +137,15 @@ void prepareRectangle(){
 }
 
 
-int drawRectangle(int *data){
-	// Input-Mask == (x+y)%2 , wenn gerade ändere Bit ,sonst nicht.
-	/*
-	rectangle[20][20] = 1;
-	rectangle[20][19] = 0;
-	rectangle[19][20] = 1;
-	rectangle[19][19] = 1;
-	*/
+void drawRectangle(int *data){
+	// Input-Mask == (x+y)%2 , if result is zero, bit gets flipped
+
 	
 	int counter = 0;
 	int currHeightEnd = 12;
 	int currHeightStart = 1;
 	int changeDirectionFlag = 0;
+	// columns and rows are here the coordinates according to the qr-code, not the 2d array
 	for(int columns = 21; columns > 0; columns-=2){
 		if(changeDirectionFlag == 0){
 			for(int rows = currHeightStart; rows <= currHeightEnd; rows++){
@@ -210,82 +205,7 @@ int drawRectangle(int *data){
 		if(columns == 9){
 			columns -= 1;
 		}
-		printf("%d \n", columns);
 
 		changeDirectionFlag = 1 - changeDirectionFlag;
 	}
-	
-	
-	
-	/*
-	int revy = 0;
-	int savedatacounter = 0;
-	datacounter = 0;
-	for (int x = LENGHT - 1; x >= 2;){
-		for (int y = LENGHT - 1; y >= 0; y--){
-			revy++;
-			if (rectangle[y][x] == 0){
-				if ((((x - 1) - 0)) % 3 == 0){
-					if (data[datacounter] == 0){
-						rectangle[y][x] = 1;
-					}else
-						rectangle[y][x] = 0;
-				}else{
-					rectangle[y][x] = data[datacounter];
-				}
-
-				datacounter++;
-			}
-			if (rectangle[y][x - 1] == 0){
-				if ((((x - 1) - 1)) % 3 == 0){
-					if (data[datacounter] == 0)
-						rectangle[y][x - 1] = 1;
-					else
-						rectangle[y][x - 1] = 0;
-				}else{
-					rectangle[y][x - 1] = data[datacounter];
-				}
-
-				datacounter++;
-			}
-		}
-		x -= 2;
-		revy = LENGHT - 1;
-		for (int y = 0; y < LENGHT; y++){
-			revy--;
-			if (rectangle[y][x] == 0){
-				if ((((x - 1))) % 3 == 0){
-					if (data[datacounter] == 0){
-						rectangle[y][x] = 1;
-					}
-					else
-						rectangle[y][x] = 0;
-				}else{
-					rectangle[y][x] = data[datacounter];
-				}
-
-				datacounter++;
-			}
-			if (x != 0){
-				if (rectangle[y][x - 1] == 0){
-					if ((((x - 1) - 1)) % 3 == 0){
-						if (data[datacounter] == 0){
-							rectangle[y][x - 1] = 1;
-						}else
-							rectangle[y][x - 1] = 0;
-					}else{
-						rectangle[y][x - 1] = data[datacounter];
-					}
-
-					datacounter++;
-				}
-			}
-		}
-
-		x -= 2;
-
-		revy = 0;
-	}
-	*/
-	return 0;
 }

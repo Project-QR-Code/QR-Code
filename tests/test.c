@@ -15,8 +15,8 @@ int main(){
     test.modeIndicator[1] = 0;
     test.modeIndicator[2] = 1;
     test.modeIndicator[3] = 0;
-    test.lengthOfData = 5;
-    char *test_string = "HOILA";
+    test.lengthOfData = 4;
+    char *test_string = "TEST";
     strncpy(test.data, test_string, test.lengthOfData);
     convertQrStructToRaw(test);
     printf("Binary Data: ");

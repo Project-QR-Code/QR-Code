@@ -33,5 +33,5 @@ clean:
 	rm -f write
 	rm -f *.out
 	rm -f *.exe
-
+	rm -f output.pbm
 

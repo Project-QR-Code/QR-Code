@@ -102,6 +102,8 @@ $(document).ready(function(){initNavTree('test_8c.html',''); initResizable(); })
 <code>#include &quot;<a class="el" href="_q_r_code_struct_to_raw_8h_source.html">../lib/QRCodeStructToRaw/QRCodeStructToRaw.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="raw_to_qr_code_struct_8h_source.html">../lib/rawToQrCodeStruct/rawToQrCodeStruct.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="reed_solomon_8h_source.html">../lib/reedSolomon/reedSolomon.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="draw_qr_8h_source.html">../lib/drawQr/drawQr.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="create_p_b_m_image_8h_source.html">../lib/drawQr/createPBMImage.h</a>&quot;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
@@ -112,14 +114,16 @@ $(document).ready(function(){initNavTree('test_8c.html',''); initResizable(); })
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="test_8c__incl.png" border="0" usemap="#test_8c" alt=""/></div>
 <map name="test_8c" id="test_8c">
-<area shape="rect" title=" " alt="" coords="449,5,504,32"/>
-<area shape="rect" href="model_8h.html" title=" " alt="" coords="74,169,220,196"/>
-<area shape="rect" href="_q_r_code_struct_to_raw_8h.html" title=" " alt="" coords="26,80,201,121"/>
+<area shape="rect" title=" " alt="" coords="609,5,664,32"/>
+<area shape="rect" href="model_8h.html" title=" " alt="" coords="74,169,221,196"/>
+<area shape="rect" href="_q_r_code_struct_to_raw_8h.html" title=" " alt="" coords="27,80,201,121"/>
 <area shape="rect" href="raw_to_qr_code_struct_8h.html" title=" " alt="" coords="225,80,389,121"/>
 <area shape="rect" href="reed_solomon_8h.html" title=" " alt="" coords="414,80,539,121"/>
-<area shape="rect" title=" " alt="" coords="564,87,626,114"/>
-<area shape="rect" title=" " alt="" coords="650,87,710,114"/>
-<area shape="rect" title=" " alt="" coords="735,87,799,114"/>
+<area shape="rect" href="draw_qr_8h.html" title=" " alt="" coords="563,87,710,114"/>
+<area shape="rect" href="create_p_b_m_image_8h.html" title=" " alt="" coords="735,87,941,114"/>
+<area shape="rect" title=" " alt="" coords="965,87,1028,114"/>
+<area shape="rect" title=" " alt="" coords="1052,87,1112,114"/>
+<area shape="rect" title=" " alt="" coords="1137,87,1201,114"/>
 </map>
 </div>
 </div>
@@ -146,45 +150,46 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test_8c_source.html#l00010">10</a> of file <a class="el" href="test_8c_source.html">test.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;          {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">// TESTING!</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_q_r_code.html">QRCode</a> test;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    test.<a class="code" href="struct_q_r_code.html#a877a84ac099d4c9ac053b78e955a18dc">modeIndicator</a>[0] = 0;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    test.modeIndicator[1] = 0;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    test.modeIndicator[2] = 1;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    test.modeIndicator[3] = 0;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    test.lengthOfData = 5;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">char</span> *test_string = <span class="stringliteral">&quot;HELLO&quot;</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    strncpy(test.data, test_string, test.lengthOfData);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="_q_r_code_struct_to_raw_8c.html#afad62ee005c021c4e3547ea2286f5514">convertQrStructToRaw</a>(test);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    printf(<span class="stringliteral">&quot;Binary Data: &quot;</span>);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a>; i++){</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        printf(<span class="stringliteral">&quot;%d&quot;</span>, <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>[i]);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Decode Array read from QRCode</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_q_r_code.html">QRCode</a> finishedCode;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    finishedCode = <a class="code" href="raw_to_qr_code_struct_8c.html#a2cd6b9ec354c439aefe9a1c0c3c1055f">decodeRawData</a>(<a class="code" href="_q_r_code_struct_to_raw_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>, <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a>);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// Print decoded Struct</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    printf(<span class="stringliteral">&quot;Mode Indicator: &quot;</span>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; i++){</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        printf(<span class="stringliteral">&quot;%d&quot;</span>, finishedCode.modeIndicator[i]);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    printf(<span class="stringliteral">&quot;Length: %d\n&quot;</span>, finishedCode.lengthOfData);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    printf(<span class="stringliteral">&quot;Data: &quot;</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; finishedCode.lengthOfData; i++){</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        printf(<span class="stringliteral">&quot;%c&quot;</span>, finishedCode.data[i]);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="test_8c_source.html#l00011">11</a> of file <a class="el" href="test_8c_source.html">test.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;          {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">// TESTING!</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_q_r_code.html">QRCode</a> test;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    test.<a class="code" href="struct_q_r_code.html#a877a84ac099d4c9ac053b78e955a18dc">modeIndicator</a>[0] = 0;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    test.modeIndicator[1] = 0;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    test.modeIndicator[2] = 1;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    test.modeIndicator[3] = 0;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    test.lengthOfData = 4;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">char</span> *test_string = <span class="stringliteral">&quot;TEST&quot;</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    strncpy(test.data, test_string, test.lengthOfData);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="_q_r_code_struct_to_raw_8c.html#afad62ee005c021c4e3547ea2286f5514">convertQrStructToRaw</a>(test);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    printf(<span class="stringliteral">&quot;Binary Data: &quot;</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a>; i++){</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        printf(<span class="stringliteral">&quot;%d&quot;</span>, <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>[i]);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// Decode Array read from QRCode</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_q_r_code.html">QRCode</a> finishedCode;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    finishedCode = <a class="code" href="raw_to_qr_code_struct_8c.html#a2cd6b9ec354c439aefe9a1c0c3c1055f">decodeRawData</a>(<a class="code" href="_q_r_code_struct_to_raw_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>, <a class="code" href="_q_r_code_struct_to_raw_8h.html#ab85c400a0206d1e616da734bfbe2d774">lengthRawData</a>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// Print decoded Struct</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    printf(<span class="stringliteral">&quot;Mode Indicator: &quot;</span>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; i++){</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        printf(<span class="stringliteral">&quot;%d&quot;</span>, finishedCode.modeIndicator[i]);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    printf(<span class="stringliteral">&quot;Length: %d\n&quot;</span>, finishedCode.lengthOfData);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    printf(<span class="stringliteral">&quot;Data: &quot;</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; finishedCode.lengthOfData; i++){</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        printf(<span class="stringliteral">&quot;%c&quot;</span>, finishedCode.data[i]);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="draw_qr_8c.html#a42ad0dc5abe4b329bddf2efcdf02157b">drawQr</a>(<a class="code" href="_q_r_code_struct_to_raw_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_q_r_code_struct_to_raw_8c_source.html#l00099">convertQrStructToRaw()</a>, <a class="el" href="model_8h_source.html#l00023">QRCode::data</a>, <a class="el" href="raw_to_qr_code_struct_8c_source.html#l00087">decodeRawData()</a>, <a class="el" href="model_8h_source.html#l00017">QRCode::lengthOfData</a>, <a class="el" href="_q_r_code_struct_to_raw_8h_source.html#l00009">lengthRawData</a>, <a class="el" href="model_8h_source.html#l00014">QRCode::modeIndicator</a>, and <a class="el" href="_q_r_code_struct_to_raw_8h_source.html#l00007">QRCodeRawData</a>.</p>
+<p class="reference">References <a class="el" href="_q_r_code_struct_to_raw_8c_source.html#l00099">convertQrStructToRaw()</a>, <a class="el" href="model_8h_source.html#l00023">QRCode::data</a>, <a class="el" href="raw_to_qr_code_struct_8c_source.html#l00087">decodeRawData()</a>, <a class="el" href="draw_qr_8c_source.html#l00007">drawQr()</a>, <a class="el" href="model_8h_source.html#l00017">QRCode::lengthOfData</a>, <a class="el" href="_q_r_code_struct_to_raw_8h_source.html#l00009">lengthRawData</a>, <a class="el" href="model_8h_source.html#l00014">QRCode::modeIndicator</a>, and <a class="el" href="_q_r_code_struct_to_raw_8h_source.html#l00007">QRCodeRawData</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -192,9 +197,10 @@ Functions</h2></td></tr>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="test_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#test_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
 <map name="test_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="test_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
-<area shape="rect" title=" " alt="" coords="5,157,56,184"/>
-<area shape="rect" href="_q_r_code_struct_to_raw_8c.html#afad62ee005c021c4e3547ea2286f5514" title="Converts struct with data to array with raw data." alt="" coords="104,132,259,159"/>
-<area shape="rect" href="raw_to_qr_code_struct_8c.html#a2cd6b9ec354c439aefe9a1c0c3c1055f" title="Wrapper for above functions." alt="" coords="123,183,240,209"/>
+<area shape="rect" title=" " alt="" coords="5,233,56,260"/>
+<area shape="rect" href="_q_r_code_struct_to_raw_8c.html#afad62ee005c021c4e3547ea2286f5514" title="Converts struct with data to array with raw data." alt="" coords="104,157,259,184"/>
+<area shape="rect" href="raw_to_qr_code_struct_8c.html#a2cd6b9ec354c439aefe9a1c0c3c1055f" title="Wrapper for above functions." alt="" coords="123,233,240,260"/>
+<area shape="rect" href="draw_qr_8c.html#a42ad0dc5abe4b329bddf2efcdf02157b" title="Wrapper function around all above." alt="" coords="149,323,213,349"/>
 <area shape="rect" href="_q_r_code_struct_to_raw_8c.html#a4ac6b101def99db6d8a10e8cb949e525" title="Adds Error Correction blocks from Reed solomon code to QRCodeRawData." alt="" coords="307,56,477,83"/>
 <area shape="rect" href="binary_converter_8c.html#abab523f4ddcc5d2e3915eb0b76ff5bb1" title="Converts a decimal Number into a struct with array and bits." alt="" coords="556,107,633,133"/>
 <area shape="rect" href="_q_r_code_struct_to_raw_8c.html#a1b53dd7a25fd53875257164f857223dc" title="Returns index of searched char in mapCharacters." alt="" coords="307,157,477,184"/>
@@ -204,7 +210,15 @@ Functions</h2></td></tr>
 <area shape="rect" href="reed_solomon_8c.html#a67675cc73f1a027b716d6f4b1e392da3" title="Prepares Messagepolynom and Generatorpolynom." alt="" coords="712,56,835,83"/>
 <area shape="rect" href="reed_solomon_8c.html#a8f7407b719f86ba8eccdd1a655729d44" title="Multiplies generatorPolynom with lead of previous generatorPolynom." alt="" coords="883,56,999,83"/>
 <area shape="rect" href="reed_solomon_8c.html#a731e630efb38930ebe789e2a03da27bf" title="XORs generatorPolynom with previous generatorPolynom." alt="" coords="1047,56,1123,83"/>
-<area shape="rect" href="_q_r_code_struct_to_raw_8c.html#abc3900b7abbff25d0be86a0a13d1dfc8" title="Searches for character in alphanumeric characters." alt="" coords="529,208,660,235"/>
+<area shape="rect" href="_q_r_code_struct_to_raw_8c.html#abc3900b7abbff25d0be86a0a13d1dfc8" title="Searches for character in alphanumeric characters." alt="" coords="529,183,660,209"/>
+<area shape="rect" href="create_p_b_m_image_8c.html#ae051d848a2127d3b15103982174b7691" title=" " alt="" coords="331,323,453,349"/>
+<area shape="rect" href="draw_qr_8c.html#acea3d46a21d14374867eb8fca881d786" title="Wrapper function around prepareRectangle and drawRectangle." alt="" coords="351,436,433,463"/>
+<area shape="rect" href="create_p_b_m_image_8c.html#a2d39bc4daeb6cef24b71fd8f27362256" title=" " alt="" coords="535,233,654,260"/>
+<area shape="rect" href="create_p_b_m_image_8c.html#adc7596c3aa5d01700466945c6d5a822f" title=" " alt="" coords="532,284,657,311"/>
+<area shape="rect" href="create_p_b_m_image_8c.html#ac10fd8b276931359332046307f039273" title=" " alt="" coords="555,335,635,361"/>
+<area shape="rect" href="create_p_b_m_image_8c.html#a15ea2b834bf5c63f0bbf29947ec3d138" title=" " alt="" coords="543,385,647,412"/>
+<area shape="rect" href="draw_qr_8c.html#add67d62e8939421ce5730e6e856c4924" title="Writes actual data in 2d array." alt="" coords="541,436,649,463"/>
+<area shape="rect" href="draw_qr_8c.html#ae5d57442e04a5a285d5e74a9900a1789" title="Draws Information and position detection fields about QrCode in 2d array." alt="" coords="533,487,656,513"/>
 </map>
 </div>
 
@@ -213,6 +227,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="araw_to_qr_code_struct_8c_html_a2cd6b9ec354c439aefe9a1c0c3c1055f"><div class="ttname"><a href="raw_to_qr_code_struct_8c.html#a2cd6b9ec354c439aefe9a1c0c3c1055f">decodeRawData</a></div><div class="ttdeci">struct QRCode decodeRawData(int *rawData, int lenghtRawData)</div><div class="ttdoc">Wrapper for above functions.</div><div class="ttdef"><b>Definition:</b> <a href="raw_to_qr_code_struct_8c_source.html#l00058">rawToQrCodeStruct.c:87</a></div></div>
+<div class="ttc" id="adraw_qr_8c_html_a42ad0dc5abe4b329bddf2efcdf02157b"><div class="ttname"><a href="draw_qr_8c.html#a42ad0dc5abe4b329bddf2efcdf02157b">drawQr</a></div><div class="ttdeci">void drawQr(int *data)</div><div class="ttdoc">Wrapper function around all above.</div><div class="ttdef"><b>Definition:</b> <a href="draw_qr_8c_source.html#l00007">drawQr.c:7</a></div></div>
 <div class="ttc" id="astruct_q_r_code_html_a877a84ac099d4c9ac053b78e955a18dc"><div class="ttname"><a href="struct_q_r_code.html#a877a84ac099d4c9ac053b78e955a18dc">QRCode::modeIndicator</a></div><div class="ttdeci">int modeIndicator[4]</div><div class="ttdoc">Mode Number is to set type of data (Characters, Numbers etc) (4 Bit).</div><div class="ttdef"><b>Definition:</b> <a href="model_8h_source.html#l00014">model.h:14</a></div></div>
 <div class="ttc" id="a_q_r_code_struct_to_raw_8c_html_afad62ee005c021c4e3547ea2286f5514"><div class="ttname"><a href="_q_r_code_struct_to_raw_8c.html#afad62ee005c021c4e3547ea2286f5514">convertQrStructToRaw</a></div><div class="ttdeci">void convertQrStructToRaw(struct QRCode data)</div><div class="ttdoc">Converts struct with data to array with raw data.</div><div class="ttdef"><b>Definition:</b> <a href="_q_r_code_struct_to_raw_8c_source.html#l00099">QRCodeStructToRaw.c:99</a></div></div>
 <div class="ttc" id="a_q_r_code_struct_to_raw_8h_html_ab806ba672c2bbd5ae4f24d2e35a02ef7"><div class="ttname"><a href="_q_r_code_struct_to_raw_8h.html#ab806ba672c2bbd5ae4f24d2e35a02ef7">QRCodeRawData</a></div><div class="ttdeci">int QRCodeRawData[2064]</div><div class="ttdoc">Processed Raw data.</div><div class="ttdef"><b>Definition:</b> <a href="_q_r_code_struct_to_raw_8h_source.html#l00007">QRCodeStructToRaw.h:7</a></div></div>

@@ -1,0 +1,6 @@
+<map id="prepareRectangle" name="prepareRectangle">
+<area shape="rect" id="node1" title="Draws Information and position detection fields about QrCode in 2d array." alt="" coords="345,5,468,32"/>
+<area shape="rect" id="node2" href="$draw_qr_8h.html#acea3d46a21d14374867eb8fca881d786" title="Wrapper function around prepareRectangle and drawRectangle." alt="" coords="216,5,297,32"/>
+<area shape="rect" id="node3" href="$draw_qr_8h.html#a42ad0dc5abe4b329bddf2efcdf02157b" title="Wrapper function around all above." alt="" coords="104,5,168,32"/>
+<area shape="rect" id="node4" href="$test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>

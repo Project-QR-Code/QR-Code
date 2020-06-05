@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['rawtoqrcodestruct_2ec_42',['rawToQrCodeStruct.c',['../raw_to_qr_code_struct_8c.html',1,'']]],
-  ['rawtoqrcodestruct_2eh_43',['rawToQrCodeStruct.h',['../raw_to_qr_code_struct_8h.html',1,'']]],
-  ['read_2ec_44',['read.c',['../read_8c.html',1,'']]],
-  ['readme_2emd_45',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['reedsolomon_2ec_46',['reedSolomon.c',['../reed_solomon_8c.html',1,'']]],
-  ['reedsolomon_2eh_47',['reedSolomon.h',['../reed_solomon_8h.html',1,'']]]
+  ['pbmimagemetadata_51',['PBMImageMetadata',['../struct_p_b_m_image_metadata.html',1,'']]],
+  ['preparepolynoms_52',['preparePolynoms',['../reed_solomon_8c.html#a67675cc73f1a027b716d6f4b1e392da3',1,'preparePolynoms(int messagePolynom[]):&#160;reedSolomon.c'],['../reed_solomon_8h.html#a67675cc73f1a027b716d6f4b1e392da3',1,'preparePolynoms(int messagePolynom[]):&#160;reedSolomon.c']]],
+  ['preparerectangle_53',['prepareRectangle',['../draw_qr_8c.html#ae5d57442e04a5a285d5e74a9900a1789',1,'prepareRectangle():&#160;drawQr.c'],['../draw_qr_8h.html#ae5d57442e04a5a285d5e74a9900a1789',1,'prepareRectangle():&#160;drawQr.c']]]
 ];

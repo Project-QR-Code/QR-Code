@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['qrcodestructtoraw_2ec_56',['QRCodeStructToRaw.c',['../_q_r_code_struct_to_raw_8c.html',1,'']]],
-  ['qrcodestructtoraw_2eh_57',['QRCodeStructToRaw.h',['../_q_r_code_struct_to_raw_8h.html',1,'']]]
+  ['drawqr_2ec_79',['drawQr.c',['../draw_qr_8c.html',1,'']]],
+  ['drawqr_2eh_80',['drawQr.h',['../draw_qr_8h.html',1,'']]]
 ];
