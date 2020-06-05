@@ -24,11 +24,12 @@
 */
 var NAVTREE =
 [
-  [ "Write-QR-Code", "index.html", [
-    [ "QR-Code", "index.html", [
-      [ "How-To", "index.html#autotoc_md1", null ],
-      [ "Project Structure", "index.html#autotoc_md2", null ]
+  [ "QR-Code", "index.html", [
+    [ "How-To", "index.html#autotoc_md1", [
+      [ "Steps to run", "index.html#autotoc_md2", null ]
     ] ],
+    [ "Software used", "index.html#autotoc_md3", null ],
+    [ "Project Structure", "index.html#autotoc_md4", null ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Fields", "functions.html", [

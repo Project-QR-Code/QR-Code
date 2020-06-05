@@ -3,7 +3,39 @@
 
 
 ## How-To
-Execute `make test` in the main directory to compile test.c file in tests folder, the executable is in the main folder. This file is used to test individual functions. Execute `make` to compile read.c and write.c in src, these are the main files which are used in production. Before pushing to GitHub execute `make clean`, this removes all executables and cleans the project.
+### Steps to run
+
+1. Run `make` (linux terminal) in the root folder of the project
+2. Execute `write` executable in the root folder to create QR-Code
+3. Execute `read` executable in the root folder to read QR-Code
+
+Execute `make test` in the main directory to compile test.c file in tests folder, the executable is in the main folder. This file is used to test individual functions. Before pushing to GitHub execute `make clean`, this removes all executables and cleans the project.
+
+## Software used
+
+- Documentation: Doxygen
+- CI/CD: Github Actions
+
 ## Project Structure
-In the folder `/test` there is one main file where you can put the code to test individual functions. You can also add more files to that folder. In the `/src` folder there are two files, `read.c`, to read the QR-Code and `write.c`, to create the QR-Code. The `/lib` folder is here to store all the libraries that we need, also small utility functions belong there. You should make a new folder for every library and create a .h and .c file.
+
+Folders of the Project explained:
+
+| Folder name  | Explanation                                                  |
+| ------------ | --------------------- |
+| **`/docs`** | Holds doxygen config file and documentation |
+| **`/lib`**   | All the libraries and header files  (no external library used) (Libraries explained in table below) |
+| **`/src`**   | Holds the main function, read and write files |
+| **`/tests`** | Holds one test file with main function to test functions |
+
+
+Library Functions in `/lib`:
+| Folder name              | Explanation                                                  |
+| ------------------------ | ------------------------------------------------------------ |
+| **`/binaryConverter`**   | Utility functions to convert binary and decimal numbers      |
+| **`/drawQr`**            | Functions to create a 2d matrix with QR-Code and bitmap image |
+| **`/QRCode`**            | Holds struct of QR-Code model with data and information      |
+| **`/QRCodeStructToRaw`** | Converts QR-Code model to raw array with ECC (Error Correction Codes) |
+| **`/rawToQrCodeStruct`** | Converts the raw array back to a QR-Code model with the message in ascii |
+| **`/readQr`**            | Reads raw data array out of bitmap image                     |
+| **`/reedSolomon`**       | Implementation for the reed solomon code (implemented ourselfes) |
 
