@@ -3,6 +3,7 @@
 #include "./QRCodeStructToRaw.h"
 #include "../reedSolomon/reedSolomon.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 
 const char mapAlphanumericalCharacters[45] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', \
@@ -136,12 +137,9 @@ void convertQrStructToRaw(struct QRCode data){
     }
     printf("\n");
 
-    createReedSolomon(decimalNumbers);
+    int *decimalCorrectionBlocks = malloc(17 * sizeof(int)); 
+    decimalCorrectionBlocks = createReedSolomon(decimalNumbers);
 
-    /// Input decimalNumbers in this Website https://www.thonky.com/qr-code-tutorial/show-division-steps
-    /// ECC Blocks is 17
-    /// Scroll down to result and copy in here
-    int decimalCorrectionBlocks[] = {208, 147, 120, 235, 20, 36, 10, 42, 73, 162, 140, 142, 217, 162, 207, 0, 62};
     /// Add correction Blocks to decimal Numbers
     for(int i = 0; i < 17; i++){
         decimalNumbers[9+i] = decimalCorrectionBlocks[i];
