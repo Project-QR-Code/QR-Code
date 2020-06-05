@@ -178,12 +178,12 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="create_p_b_m_image_8c.html#ae051d848a2127d3b15103982174b7691">createPBMImage</a>(<a class="code" href="draw_qr_8c.html#ac0d51639c02ae7ac06cd204e26e6e720">rectangle</a>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="create_p_b_m_image_8c.html#ac9917ee15e9a9ad0fb1106a2cacfcfb9">createPBMImage</a>(<a class="code" href="draw_qr_8c.html#ac0d51639c02ae7ac06cd204e26e6e720">rectangle</a>);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="create_p_b_m_image_8c_source.html#l00050">createPBMImage()</a>, <a class="el" href="draw_qr_8c_source.html#l00026">insertData()</a>, <a class="el" href="draw_qr_8h_source.html#l00004">LENGHT</a>, and <a class="el" href="draw_qr_8c_source.html#l00005">rectangle</a>.</p>
+<p class="reference">References <a class="el" href="create_p_b_m_image_8c_source.html#l00064">createPBMImage()</a>, <a class="el" href="draw_qr_8c_source.html#l00026">insertData()</a>, <a class="el" href="draw_qr_8h_source.html#l00004">LENGHT</a>, and <a class="el" href="draw_qr_8c_source.html#l00005">rectangle</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -192,12 +192,12 @@ Variables</h2></td></tr>
 <div class="center"><img src="draw_qr_8c_a42ad0dc5abe4b329bddf2efcdf02157b_cgraph.png" border="0" usemap="#draw_qr_8c_a42ad0dc5abe4b329bddf2efcdf02157b_cgraph" alt=""/></div>
 <map name="draw_qr_8c_a42ad0dc5abe4b329bddf2efcdf02157b_cgraph" id="draw_qr_8c_a42ad0dc5abe4b329bddf2efcdf02157b_cgraph">
 <area shape="rect" title="Wrapper function around all above." alt="" coords="5,157,69,184"/>
-<area shape="rect" href="create_p_b_m_image_8c.html#ae051d848a2127d3b15103982174b7691" title=" " alt="" coords="117,107,240,133"/>
+<area shape="rect" href="create_p_b_m_image_8c.html#ac9917ee15e9a9ad0fb1106a2cacfcfb9" title="Wrapper function, creates .pbm image from 2d array with data." alt="" coords="117,107,240,133"/>
 <area shape="rect" href="draw_qr_8c.html#acea3d46a21d14374867eb8fca881d786" title="Wrapper function around prepareRectangle and drawRectangle." alt="" coords="138,208,219,235"/>
-<area shape="rect" href="create_p_b_m_image_8c.html#a2d39bc4daeb6cef24b71fd8f27362256" title=" " alt="" coords="291,5,410,32"/>
-<area shape="rect" href="create_p_b_m_image_8c.html#adc7596c3aa5d01700466945c6d5a822f" title=" " alt="" coords="288,56,413,83"/>
-<area shape="rect" href="create_p_b_m_image_8c.html#ac10fd8b276931359332046307f039273" title=" " alt="" coords="311,107,391,133"/>
-<area shape="rect" href="create_p_b_m_image_8c.html#a15ea2b834bf5c63f0bbf29947ec3d138" title=" " alt="" coords="299,157,403,184"/>
+<area shape="rect" href="create_p_b_m_image_8c.html#a2d39bc4daeb6cef24b71fd8f27362256" title="Closes file handler." alt="" coords="291,5,410,32"/>
+<area shape="rect" href="create_p_b_m_image_8c.html#adc7596c3aa5d01700466945c6d5a822f" title="Opens file handler stored in a global pointer." alt="" coords="288,56,413,83"/>
+<area shape="rect" href="create_p_b_m_image_8c.html#ac10fd8b276931359332046307f039273" title="Writes 2d Array in .pbm file." alt="" coords="311,107,391,133"/>
+<area shape="rect" href="create_p_b_m_image_8c.html#a15ea2b834bf5c63f0bbf29947ec3d138" title="Writes Metadata to bitmap image." alt="" coords="299,157,403,184"/>
 <area shape="rect" href="draw_qr_8c.html#add67d62e8939421ce5730e6e856c4924" title="Writes actual data in 2d array." alt="" coords="297,208,405,235"/>
 <area shape="rect" href="draw_qr_8c.html#ae5d57442e04a5a285d5e74a9900a1789" title="Draws Information and position detection fields about QrCode in 2d array." alt="" coords="289,259,412,285"/>
 </map>
@@ -555,7 +555,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="adraw_qr_8h_html_ab68a043f5709f794adb0daafc33dbcf1"><div class="ttname"><a href="draw_qr_8h.html#ab68a043f5709f794adb0daafc33dbcf1">LENGHT</a></div><div class="ttdeci">#define LENGHT</div><div class="ttdef"><b>Definition:</b> <a href="draw_qr_8h_source.html#l00005">drawQr.h:4</a></div></div>
 <div class="ttc" id="adraw_qr_8c_html_ae5d57442e04a5a285d5e74a9900a1789"><div class="ttname"><a href="draw_qr_8c.html#ae5d57442e04a5a285d5e74a9900a1789">prepareRectangle</a></div><div class="ttdeci">void prepareRectangle()</div><div class="ttdoc">Draws Information and position detection fields about QrCode in 2d array.</div><div class="ttdef"><b>Definition:</b> <a href="draw_qr_8c_source.html#l00031">drawQr.c:31</a></div></div>
 <div class="ttc" id="adraw_qr_8c_html_acea3d46a21d14374867eb8fca881d786"><div class="ttname"><a href="draw_qr_8c.html#acea3d46a21d14374867eb8fca881d786">insertData</a></div><div class="ttdeci">void insertData(int *data)</div><div class="ttdoc">Wrapper function around prepareRectangle and drawRectangle.</div><div class="ttdef"><b>Definition:</b> <a href="draw_qr_8c_source.html#l00026">drawQr.c:26</a></div></div>
-<div class="ttc" id="acreate_p_b_m_image_8c_html_ae051d848a2127d3b15103982174b7691"><div class="ttname"><a href="create_p_b_m_image_8c.html#ae051d848a2127d3b15103982174b7691">createPBMImage</a></div><div class="ttdeci">void createPBMImage(int rectangle[21][21])</div><div class="ttdef"><b>Definition:</b> <a href="create_p_b_m_image_8c_source.html#l00050">createPBMImage.c:50</a></div></div>
+<div class="ttc" id="acreate_p_b_m_image_8c_html_ac9917ee15e9a9ad0fb1106a2cacfcfb9"><div class="ttname"><a href="create_p_b_m_image_8c.html#ac9917ee15e9a9ad0fb1106a2cacfcfb9">createPBMImage</a></div><div class="ttdeci">int createPBMImage(int rectangle[21][21])</div><div class="ttdoc">Wrapper function, creates .pbm image from 2d array with data.</div><div class="ttdef"><b>Definition:</b> <a href="create_p_b_m_image_8c_source.html#l00064">createPBMImage.c:64</a></div></div>
 <div class="ttc" id="adraw_qr_8c_html_add67d62e8939421ce5730e6e856c4924"><div class="ttname"><a href="draw_qr_8c.html#add67d62e8939421ce5730e6e856c4924">drawRectangle</a></div><div class="ttdeci">void drawRectangle(int *data)</div><div class="ttdoc">Writes actual data in 2d array.</div><div class="ttdef"><b>Definition:</b> <a href="draw_qr_8c_source.html#l00140">drawQr.c:140</a></div></div>
 <div class="ttc" id="adraw_qr_8c_html_ac0d51639c02ae7ac06cd204e26e6e720"><div class="ttname"><a href="draw_qr_8c.html#ac0d51639c02ae7ac06cd204e26e6e720">rectangle</a></div><div class="ttdeci">int rectangle[LENGHT][LENGHT]</div><div class="ttdef"><b>Definition:</b> <a href="draw_qr_8c_source.html#l00005">drawQr.c:5</a></div></div>
 <!-- start footer part -->

@@ -116,18 +116,19 @@ $(document).ready(function(){initNavTree('create_p_b_m_image_8h.html',''); initR
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae051d848a2127d3b15103982174b7691"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create_p_b_m_image_8h.html#ae051d848a2127d3b15103982174b7691">createPBMImage</a> (int <a class="el" href="draw_qr_8c.html#ac0d51639c02ae7ac06cd204e26e6e720">rectangle</a>[21][21])</td></tr>
-<tr class="separator:ae051d848a2127d3b15103982174b7691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9917ee15e9a9ad0fb1106a2cacfcfb9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="create_p_b_m_image_8h.html#ac9917ee15e9a9ad0fb1106a2cacfcfb9">createPBMImage</a> (int <a class="el" href="draw_qr_8c.html#ac0d51639c02ae7ac06cd204e26e6e720">rectangle</a>[21][21])</td></tr>
+<tr class="memdesc:ac9917ee15e9a9ad0fb1106a2cacfcfb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper function, creates .pbm image from 2d array with data.  <a href="create_p_b_m_image_8h.html#ac9917ee15e9a9ad0fb1106a2cacfcfb9">More...</a><br /></td></tr>
+<tr class="separator:ac9917ee15e9a9ad0fb1106a2cacfcfb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ae051d848a2127d3b15103982174b7691"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae051d848a2127d3b15103982174b7691">&#9670;&nbsp;</a></span>createPBMImage()</h2>
+<a id="ac9917ee15e9a9ad0fb1106a2cacfcfb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9917ee15e9a9ad0fb1106a2cacfcfb9">&#9670;&nbsp;</a></span>createPBMImage()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void createPBMImage </td>
+          <td class="memname">int createPBMImage </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>rectangle</em>[21][21]</td><td>)</td>
@@ -136,38 +137,51 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="create_p_b_m_image_8c_source.html#l00050">50</a> of file <a class="el" href="create_p_b_m_image_8c_source.html">createPBMImage.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                          {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Fill image metadata</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    strncpy(<a class="code" href="create_p_b_m_image_8c.html#a71a3d6ad18768b3c22dce6dc2d82a2b3">image</a>.<a class="code" href="struct_p_b_m_image_metadata.html#af7d6c8f70feb748ee26363c257bbacd3">magicNumber</a>, <span class="stringliteral">&quot;P1&quot;</span>, 2);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="create_p_b_m_image_8c.html#a71a3d6ad18768b3c22dce6dc2d82a2b3">image</a>.<a class="code" href="struct_p_b_m_image_metadata.html#a9e09857f87901a7a8c71f02f88801c25">height</a> = 21;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="create_p_b_m_image_8c.html#a71a3d6ad18768b3c22dce6dc2d82a2b3">image</a>.<a class="code" href="struct_p_b_m_image_metadata.html#a977562b86341d76c87ea487a6eac632d">width</a> = 21;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="create_p_b_m_image_8c.html#adc7596c3aa5d01700466945c6d5a822f">initialeFileHandler</a>() == -1){</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        perror(<span class="stringliteral">&quot;File could not be opened!\n&quot;</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="create_p_b_m_image_8c.html#a15ea2b834bf5c63f0bbf29947ec3d138">writeMetadata</a>();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="create_p_b_m_image_8c.html#ac10fd8b276931359332046307f039273">writeArray</a>(<a class="code" href="draw_qr_8c.html#ac0d51639c02ae7ac06cd204e26e6e720">rectangle</a>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="create_p_b_m_image_8c.html#a2d39bc4daeb6cef24b71fd8f27362256">closeFileHandler</a>();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<p>Wrapper function, creates .pbm image from 2d array with data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">rectangle[][]</td><td>2d array with data to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status Returns status (-1)=something is wrong </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="create_p_b_m_image_8c_source.html#l00064">64</a> of file <a class="el" href="create_p_b_m_image_8c_source.html">createPBMImage.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                         {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// Fill image metadata</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    strncpy(<a class="code" href="create_p_b_m_image_8c.html#a71a3d6ad18768b3c22dce6dc2d82a2b3">image</a>.<a class="code" href="struct_p_b_m_image_metadata.html#af7d6c8f70feb748ee26363c257bbacd3">magicNumber</a>, <span class="stringliteral">&quot;P1&quot;</span>, 2);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="create_p_b_m_image_8c.html#a71a3d6ad18768b3c22dce6dc2d82a2b3">image</a>.<a class="code" href="struct_p_b_m_image_metadata.html#a9e09857f87901a7a8c71f02f88801c25">height</a> = 21;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="create_p_b_m_image_8c.html#a71a3d6ad18768b3c22dce6dc2d82a2b3">image</a>.<a class="code" href="struct_p_b_m_image_metadata.html#a977562b86341d76c87ea487a6eac632d">width</a> = 21;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Create File handler, return -1 if something is wrong</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="create_p_b_m_image_8c.html#adc7596c3aa5d01700466945c6d5a822f">initialeFileHandler</a>() == -1){</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        perror(<span class="stringliteral">&quot;File could not be opened!\n&quot;</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// Write metadata to file</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="create_p_b_m_image_8c.html#a15ea2b834bf5c63f0bbf29947ec3d138">writeMetadata</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// Writes array rectangle to file</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="create_p_b_m_image_8c.html#ac10fd8b276931359332046307f039273">writeArray</a>(<a class="code" href="draw_qr_8c.html#ac0d51639c02ae7ac06cd204e26e6e720">rectangle</a>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// Closes File Handler</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="create_p_b_m_image_8c.html#a2d39bc4daeb6cef24b71fd8f27362256">closeFileHandler</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="create_p_b_m_image_8c_source.html#l00031">closeFileHandler()</a>, <a class="el" href="create_p_b_m_image_8c_source.html#l00012">PBMImageMetadata::height</a>, <a class="el" href="create_p_b_m_image_8c_source.html#l00019">image</a>, <a class="el" href="create_p_b_m_image_8c_source.html#l00024">initialeFileHandler()</a>, <a class="el" href="create_p_b_m_image_8c_source.html#l00010">PBMImageMetadata::magicNumber</a>, <a class="el" href="draw_qr_8c_source.html#l00005">rectangle</a>, <a class="el" href="create_p_b_m_image_8c_source.html#l00014">PBMImageMetadata::width</a>, <a class="el" href="create_p_b_m_image_8c_source.html#l00040">writeArray()</a>, and <a class="el" href="create_p_b_m_image_8c_source.html#l00035">writeMetadata()</a>.</p>
+<p class="reference">References <a class="el" href="create_p_b_m_image_8c_source.html#l00038">closeFileHandler()</a>, <a class="el" href="create_p_b_m_image_8c_source.html#l00012">PBMImageMetadata::height</a>, <a class="el" href="create_p_b_m_image_8c_source.html#l00019">image</a>, <a class="el" href="create_p_b_m_image_8c_source.html#l00028">initialeFileHandler()</a>, <a class="el" href="create_p_b_m_image_8c_source.html#l00010">PBMImageMetadata::magicNumber</a>, <a class="el" href="draw_qr_8c_source.html#l00005">rectangle</a>, <a class="el" href="create_p_b_m_image_8c_source.html#l00014">PBMImageMetadata::width</a>, <a class="el" href="create_p_b_m_image_8c_source.html#l00054">writeArray()</a>, and <a class="el" href="create_p_b_m_image_8c_source.html#l00046">writeMetadata()</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="create_p_b_m_image_8h_ae051d848a2127d3b15103982174b7691_cgraph.png" border="0" usemap="#create_p_b_m_image_8h_ae051d848a2127d3b15103982174b7691_cgraph" alt=""/></div>
-<map name="create_p_b_m_image_8h_ae051d848a2127d3b15103982174b7691_cgraph" id="create_p_b_m_image_8h_ae051d848a2127d3b15103982174b7691_cgraph">
-<area shape="rect" title=" " alt="" coords="5,81,128,108"/>
-<area shape="rect" href="create_p_b_m_image_8c.html#a2d39bc4daeb6cef24b71fd8f27362256" title=" " alt="" coords="179,5,298,32"/>
-<area shape="rect" href="create_p_b_m_image_8c.html#adc7596c3aa5d01700466945c6d5a822f" title=" " alt="" coords="176,56,301,83"/>
-<area shape="rect" href="create_p_b_m_image_8c.html#ac10fd8b276931359332046307f039273" title=" " alt="" coords="199,107,279,133"/>
-<area shape="rect" href="create_p_b_m_image_8c.html#a15ea2b834bf5c63f0bbf29947ec3d138" title=" " alt="" coords="187,157,291,184"/>
+<div class="center"><img src="create_p_b_m_image_8h_ac9917ee15e9a9ad0fb1106a2cacfcfb9_cgraph.png" border="0" usemap="#create_p_b_m_image_8h_ac9917ee15e9a9ad0fb1106a2cacfcfb9_cgraph" alt=""/></div>
+<map name="create_p_b_m_image_8h_ac9917ee15e9a9ad0fb1106a2cacfcfb9_cgraph" id="create_p_b_m_image_8h_ac9917ee15e9a9ad0fb1106a2cacfcfb9_cgraph">
+<area shape="rect" title="Wrapper function, creates .pbm image from 2d array with data." alt="" coords="5,81,128,108"/>
+<area shape="rect" href="create_p_b_m_image_8c.html#a2d39bc4daeb6cef24b71fd8f27362256" title="Closes file handler." alt="" coords="179,5,298,32"/>
+<area shape="rect" href="create_p_b_m_image_8c.html#adc7596c3aa5d01700466945c6d5a822f" title="Opens file handler stored in a global pointer." alt="" coords="176,56,301,83"/>
+<area shape="rect" href="create_p_b_m_image_8c.html#ac10fd8b276931359332046307f039273" title="Writes 2d Array in .pbm file." alt="" coords="199,107,279,133"/>
+<area shape="rect" href="create_p_b_m_image_8c.html#a15ea2b834bf5c63f0bbf29947ec3d138" title="Writes Metadata to bitmap image." alt="" coords="187,157,291,184"/>
 </map>
 </div>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -175,9 +189,9 @@ Functions</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="create_p_b_m_image_8h_ae051d848a2127d3b15103982174b7691_icgraph.png" border="0" usemap="#create_p_b_m_image_8h_ae051d848a2127d3b15103982174b7691_icgraph" alt=""/></div>
-<map name="create_p_b_m_image_8h_ae051d848a2127d3b15103982174b7691_icgraph" id="create_p_b_m_image_8h_ae051d848a2127d3b15103982174b7691_icgraph">
-<area shape="rect" title=" " alt="" coords="216,5,339,32"/>
+<div class="center"><img src="create_p_b_m_image_8h_ac9917ee15e9a9ad0fb1106a2cacfcfb9_icgraph.png" border="0" usemap="#create_p_b_m_image_8h_ac9917ee15e9a9ad0fb1106a2cacfcfb9_icgraph" alt=""/></div>
+<map name="create_p_b_m_image_8h_ac9917ee15e9a9ad0fb1106a2cacfcfb9_icgraph" id="create_p_b_m_image_8h_ac9917ee15e9a9ad0fb1106a2cacfcfb9_icgraph">
+<area shape="rect" title="Wrapper function, creates .pbm image from 2d array with data." alt="" coords="216,5,339,32"/>
 <area shape="rect" href="draw_qr_8h.html#a42ad0dc5abe4b329bddf2efcdf02157b" title="Wrapper function around all above." alt="" coords="104,5,168,32"/>
 <area shape="rect" href="test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
 </map>
@@ -190,12 +204,12 @@ Functions</h2></td></tr>
 <div class="ttc" id="acreate_p_b_m_image_8c_html_a71a3d6ad18768b3c22dce6dc2d82a2b3"><div class="ttname"><a href="create_p_b_m_image_8c.html#a71a3d6ad18768b3c22dce6dc2d82a2b3">image</a></div><div class="ttdeci">struct PBMImageMetadata image</div><div class="ttdoc">Create Image struct.</div><div class="ttdef"><b>Definition:</b> <a href="create_p_b_m_image_8c_source.html#l00001">createPBMImage.c:19</a></div></div>
 <div class="ttc" id="astruct_p_b_m_image_metadata_html_af7d6c8f70feb748ee26363c257bbacd3"><div class="ttname"><a href="struct_p_b_m_image_metadata.html#af7d6c8f70feb748ee26363c257bbacd3">PBMImageMetadata::magicNumber</a></div><div class="ttdeci">char magicNumber[2]</div><div class="ttdoc">Magic Number: P1, P2 etc. defines type of image (black&amp;white, colors ...)</div><div class="ttdef"><b>Definition:</b> <a href="create_p_b_m_image_8c_source.html#l00010">createPBMImage.c:10</a></div></div>
 <div class="ttc" id="astruct_p_b_m_image_metadata_html_a977562b86341d76c87ea487a6eac632d"><div class="ttname"><a href="struct_p_b_m_image_metadata.html#a977562b86341d76c87ea487a6eac632d">PBMImageMetadata::width</a></div><div class="ttdeci">int width</div><div class="ttdoc">Width of image.</div><div class="ttdef"><b>Definition:</b> <a href="create_p_b_m_image_8c_source.html#l00014">createPBMImage.c:14</a></div></div>
-<div class="ttc" id="acreate_p_b_m_image_8c_html_ac10fd8b276931359332046307f039273"><div class="ttname"><a href="create_p_b_m_image_8c.html#ac10fd8b276931359332046307f039273">writeArray</a></div><div class="ttdeci">static void writeArray(int rectangle[21][21])</div><div class="ttdef"><b>Definition:</b> <a href="create_p_b_m_image_8c_source.html#l00040">createPBMImage.c:40</a></div></div>
-<div class="ttc" id="acreate_p_b_m_image_8c_html_adc7596c3aa5d01700466945c6d5a822f"><div class="ttname"><a href="create_p_b_m_image_8c.html#adc7596c3aa5d01700466945c6d5a822f">initialeFileHandler</a></div><div class="ttdeci">static int initialeFileHandler()</div><div class="ttdef"><b>Definition:</b> <a href="create_p_b_m_image_8c_source.html#l00024">createPBMImage.c:24</a></div></div>
-<div class="ttc" id="acreate_p_b_m_image_8c_html_a2d39bc4daeb6cef24b71fd8f27362256"><div class="ttname"><a href="create_p_b_m_image_8c.html#a2d39bc4daeb6cef24b71fd8f27362256">closeFileHandler</a></div><div class="ttdeci">static void closeFileHandler()</div><div class="ttdef"><b>Definition:</b> <a href="create_p_b_m_image_8c_source.html#l00031">createPBMImage.c:31</a></div></div>
+<div class="ttc" id="acreate_p_b_m_image_8c_html_ac10fd8b276931359332046307f039273"><div class="ttname"><a href="create_p_b_m_image_8c.html#ac10fd8b276931359332046307f039273">writeArray</a></div><div class="ttdeci">static void writeArray(int rectangle[21][21])</div><div class="ttdoc">Writes 2d Array in .pbm file.</div><div class="ttdef"><b>Definition:</b> <a href="create_p_b_m_image_8c_source.html#l00054">createPBMImage.c:54</a></div></div>
+<div class="ttc" id="acreate_p_b_m_image_8c_html_adc7596c3aa5d01700466945c6d5a822f"><div class="ttname"><a href="create_p_b_m_image_8c.html#adc7596c3aa5d01700466945c6d5a822f">initialeFileHandler</a></div><div class="ttdeci">static int initialeFileHandler()</div><div class="ttdoc">Opens file handler stored in a global pointer.</div><div class="ttdef"><b>Definition:</b> <a href="create_p_b_m_image_8c_source.html#l00028">createPBMImage.c:28</a></div></div>
+<div class="ttc" id="acreate_p_b_m_image_8c_html_a2d39bc4daeb6cef24b71fd8f27362256"><div class="ttname"><a href="create_p_b_m_image_8c.html#a2d39bc4daeb6cef24b71fd8f27362256">closeFileHandler</a></div><div class="ttdeci">static void closeFileHandler()</div><div class="ttdoc">Closes file handler.</div><div class="ttdef"><b>Definition:</b> <a href="create_p_b_m_image_8c_source.html#l00038">createPBMImage.c:38</a></div></div>
 <div class="ttc" id="astruct_p_b_m_image_metadata_html_a9e09857f87901a7a8c71f02f88801c25"><div class="ttname"><a href="struct_p_b_m_image_metadata.html#a9e09857f87901a7a8c71f02f88801c25">PBMImageMetadata::height</a></div><div class="ttdeci">int height</div><div class="ttdoc">Height of image.</div><div class="ttdef"><b>Definition:</b> <a href="create_p_b_m_image_8c_source.html#l00012">createPBMImage.c:12</a></div></div>
 <div class="ttc" id="adraw_qr_8c_html_ac0d51639c02ae7ac06cd204e26e6e720"><div class="ttname"><a href="draw_qr_8c.html#ac0d51639c02ae7ac06cd204e26e6e720">rectangle</a></div><div class="ttdeci">int rectangle[LENGHT][LENGHT]</div><div class="ttdef"><b>Definition:</b> <a href="draw_qr_8c_source.html#l00005">drawQr.c:5</a></div></div>
-<div class="ttc" id="acreate_p_b_m_image_8c_html_a15ea2b834bf5c63f0bbf29947ec3d138"><div class="ttname"><a href="create_p_b_m_image_8c.html#a15ea2b834bf5c63f0bbf29947ec3d138">writeMetadata</a></div><div class="ttdeci">static void writeMetadata()</div><div class="ttdef"><b>Definition:</b> <a href="create_p_b_m_image_8c_source.html#l00035">createPBMImage.c:35</a></div></div>
+<div class="ttc" id="acreate_p_b_m_image_8c_html_a15ea2b834bf5c63f0bbf29947ec3d138"><div class="ttname"><a href="create_p_b_m_image_8c.html#a15ea2b834bf5c63f0bbf29947ec3d138">writeMetadata</a></div><div class="ttdeci">static void writeMetadata()</div><div class="ttdoc">Writes Metadata to bitmap image.</div><div class="ttdef"><b>Definition:</b> <a href="create_p_b_m_image_8c_source.html#l00046">createPBMImage.c:46</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
