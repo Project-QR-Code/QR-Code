@@ -190,50 +190,5 @@ void convertQrStructToRaw(struct QRCode data){
         lengthRawData += 8;
     }
 
-<<<<<<< HEAD
     addErrorCorrectionBlocks();
-=======
-    /// Convert Blocks into decimal data
-    /// 9 For the data and then 17 for the correction blocks
-    int decimalNumbers[9+17];
-
-    for(int i = 0; i < lengthRawData; i+=8){
-        int tmp[8];
-        for(int b = 0; b < 8; b++){
-            tmp[b] = QRCodeRawData[i+b];
-        }
-        decimalNumbers[i/8] = binToDec(tmp, 8);
-    }
-
-    printf("Decimal Data: ");
-    for(int i = 0; i < 9; i++){
-        printf("%d, ", decimalNumbers[i]);
-    }
-    printf("\n");
-
-    int *decimalCorrectionBlocks = malloc(17 * sizeof(int)); 
-    decimalCorrectionBlocks = createReedSolomon(decimalNumbers);
-
-    /// Add correction Blocks to decimal Numbers
-    for(int i = 0; i < 17; i++){
-        decimalNumbers[9+i] = decimalCorrectionBlocks[i];
-    }
-
-    /// COnvert Decimal Numbers with correction back to binary
-    counter = 0;
-    for(int i = 0; i < 26; i++){
-        struct BinaryNumber number = decToBin(decimalNumbers[i], 8);
-        for(int a = 0; a < 8; a++){
-            QRCodeRawData[counter] = number.array[a];
-            counter++;
-        }
-    }
-    /// Adjust Lenght variable to new length
-    lengthRawData = 26*8;
-    printf("Binary Data: ");
-    for(int i = 0; i < lengthRawData; i++){
-        printf("%d", QRCodeRawData[i]);
-    }
-    printf("\n");
->>>>>>> drawQr
 }
