@@ -2,10 +2,11 @@
 #include "../lib/QRCodeStructToRaw/QRCodeStructToRaw.h"
 #include "../lib/rawToQrCodeStruct/rawToQrCodeStruct.h"
 #include "../lib/reedSolomon/reedSolomon.h"
+#include "../lib/drawQr/drawQr.h"
+#include "../lib/drawQr/createPBMImage.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-
 
 int main(){
     // TESTING!
@@ -42,4 +43,5 @@ int main(){
         printf("%c", finishedCode.data[i]);
     }
     printf("\n");
+    drawQr(QRCodeRawData);
 }

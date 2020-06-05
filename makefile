@@ -2,8 +2,9 @@ QRCodeStructToRaw = $(wildcard lib/QRCodeStructToRaw/*.c)
 binaryConverter = $(wildcard lib/binaryConverter/*.c)
 reedSolomon = $(wildcard lib/reedSolomon/*.c)
 rawToQrCodeStruct = $(wildcard lib/rawToQrCodeStruct/*.c)
+drawQr = $(wildcard lib/drawQr/*.c)
 
-libs = $(QRCodeStructToRaw) $(binaryConverter) $(reedSolomon) $(rawToQrCodeStruct)
+libs = $(QRCodeStructToRaw) $(binaryConverter) $(reedSolomon) $(rawToQrCodeStruct) $(drawQr)
 
 main_write = src/write.c
 main_read = src/read.c
