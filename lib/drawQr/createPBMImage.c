@@ -52,9 +52,9 @@ static void writeMetadata(){
 /**
  * Writes 2d Array in .pbm file.
  */ 
-static void writeArray(int rectangle[21][21]){
-    for (int i = 0; i < 21; i++){
-        for(int j = 0; j < 21; j++){
+static void writeArray(int rectangle[21*2][21*2]){
+    for (int i = 0; i < 21*2; i++){
+        for(int j = 0; j < 21*2; j++){
             fprintf(fileptr, "%d ", rectangle[i][j]);
         }
         fprintf(fileptr, "\n");
@@ -62,11 +62,11 @@ static void writeArray(int rectangle[21][21]){
 }
 
 
-int createPBMImage(int rectangle[21][21]){
+int createPBMImage(int rectangle[21*2][21*2]){
     // Fill image metadata
     strcpy(image.magicNumber, "P1");
-    image.height = 21;
-    image.width = 21;
+    image.height = 21*2;
+    image.width = 21*2;
 
     // Create File handler, return -1 if something is wrong
     if(initialeFileHandler() == -1){

@@ -7,6 +7,6 @@
  * @param[in] rectangle[][] 2d array with data to write
  * @return status Returns status (-1)=something is wrong
  */ 
-int createPBMImage(int rectangle[21][21]);
+int createPBMImage(int rectangle[21*2][21*2]);
 
 #endif

@@ -6,12 +6,41 @@ int rectangle[LENGHT][LENGHT] = {{4}};
 
 void drawQr(int *data){
 	insertData(data);
-	createPBMImage(rectangle);
+	
+	//Scale .pbm image
+	int rectangleScaled[LENGHT*2][LENGHT*2] = {0};
+	int counteri = 0;
+	int counterx = 0;
+	for(int i = 0; i < LENGHT*2; i+=2){
+		for(int x = 0; x < LENGHT*2; x+=2){
+			int cache = rectangle[counteri][counterx];
+			rectangleScaled[i][x] = cache;
+			rectangleScaled[i+1][x] = cache;
+			rectangleScaled[i+1][x+1] = cache;
+			rectangleScaled[i][x+1] = cache;
+			counterx++;
+		}
+		counteri++;
+		counterx = 0;
+	}
+
+	createPBMImage(rectangleScaled);
 }
 
 void insertData(int *data){
 	prepareRectangle();
 	drawRectangle(data);
+	
+	// Convert 4 and 5s of position detecting field to 1 and 0
+	for(int i = 0; i < LENGHT; i++){
+		for(int x = 0; x < LENGHT; x++){
+			if(rectangle[i][x] == 5){
+				rectangle[i][x] = 1;
+			}else if (rectangle[i][x] == 4){
+				rectangle[i][x] = 0;
+			}
+		}
+	}
 }
 
 void prepareRectangle(){
