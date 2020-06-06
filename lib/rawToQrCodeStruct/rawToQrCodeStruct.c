@@ -39,7 +39,7 @@ static int* extractModeIndicator() {
  * @return decimalLength Returns length of string as a decimal 
  */ 
 static int extractMessageLength() {
-    // Length is 11 bits long and directly after mode
+    // Length is 9 bits long and directly after mode
     int binaryLength[9];
     for(int i = 0; i < 9; i++){
         binaryLength[i] = QRCodeRawData[4+i];

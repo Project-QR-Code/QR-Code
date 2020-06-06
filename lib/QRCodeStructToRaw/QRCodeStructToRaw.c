@@ -103,22 +103,25 @@ void convertQrStructToRaw(struct QRCode data){
 
     integrityCheckDataArray(data);
 
-    // Create copy of lengthOfData because that counts +1 if amount of chars in odd 
+    // Create copy of lengthOfData because that counts +1 if amount of chars is odd 
     int lengthCache = data.lengthOfData;
 
     // Adjust length when using strings with odd length
     if(lengthCache % 2 == 1){
         lengthCache++;
+        // Add whitespace at the end
+        data.data[lengthCache] = ' ';
+        data.lengthOfData++;
     }
     
     
     // Create Blocks of 2 Characters and calculate binary Number
     for (int i = 0; i < lengthCache; i += 2){
-
+        
         // Calculate Block Value
         int blockDecValue = getIndexInMapCharacters((char)data.data[i]) * 45;
-        blockDecValue += (getIndexInMapCharacters((char)data.data[i + 1]) == -1 ? 0 : getIndexInMapCharacters((char)data.data[i + 1]));
-        
+        blockDecValue += (getIndexInMapCharacters((char)data.data[i + 1]) == -1 ? 36 : getIndexInMapCharacters((char)data.data[i + 1]));
+    
         // Convert block value to binary number
         struct BinaryNumber tempBinNumber = decToBin(blockDecValue, 11);
         
