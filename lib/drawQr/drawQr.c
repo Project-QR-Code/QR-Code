@@ -2,25 +2,11 @@
 #include <stdio.h>
 #include "./createPBMImage.h"
 
-int rectangle[LENGHT][LENGHT] = {4};
+int rectangle[LENGHT][LENGHT] = {{4}};
 
 void drawQr(int *data){
 	insertData(data);
-	
-	for (int i = 0; i < LENGHT; i++){
-		for (int j = 0; j < LENGHT; j++){
-			printf("%d ", rectangle[i][j]);
-			if(rectangle[i][j] == 5){
-				rectangle[i][j] = 1;
-			}else if(rectangle[i][j] == 4){
-				rectangle[i][j] = 0;
-			}
-		}
-		printf("\n");
-	}
 	createPBMImage(rectangle);
-
-	return 0;
 }
 
 void insertData(int *data){
@@ -35,9 +21,13 @@ void prepareRectangle(){
 
 	for (int j = 0; j < 3; j++){
 		int sizey, sizex;
+		(void)sizex;
+		(void)sizey;
 		int alternate = 5;
 		int startx, starty;
 		int county, countx;
+		(void)countx;
+		(void)county;
 		if (j == 0){
 			starty = 0;
 			startx = 0;
@@ -69,7 +59,7 @@ void prepareRectangle(){
 			else if (alternate == 4)
 				alternate++;
 			else
-				printf("Error");
+				perror("Error");
 
 			sizex--;
 			sizey--;

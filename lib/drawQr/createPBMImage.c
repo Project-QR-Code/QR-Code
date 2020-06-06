@@ -30,6 +30,7 @@ static int initialeFileHandler(){
     if(fileptr == NULL){
         return -1;
     }
+    return 0;
 }
 
 /**
@@ -63,7 +64,7 @@ static void writeArray(int rectangle[21][21]){
 
 int createPBMImage(int rectangle[21][21]){
     // Fill image metadata
-    strncpy(image.magicNumber, "P1", 2);
+    strcpy(image.magicNumber, "P1");
     image.height = 21;
     image.width = 21;
 
@@ -81,4 +82,5 @@ int createPBMImage(int rectangle[21][21]){
 
     // Closes File Handler
     closeFileHandler();
+    return 0;
 }
